@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="work">
+
+<!-- 등록 -->
+<insert id="add">
+insert into work(
+work_no, work_id, work_name,
+work_genre, work_sub_genre,
+work_prefer,
+work_wtime,
+work_paid,
+work_contract,
+work_book,
+work_subtotal
+)
+values
+(
+#{workNo},
+#{workId},
+#{workName},
+#{workGenre},
+#{workSubGenre},
+#{workPrefer},
+#{workWtime, jdbcType=TIMESTAMP},
+#{workPaid},
+#{workContract},
+#{workBook},
+#{workSubtotal}
+)
+</insert>
+
+<select id="sequence" resultType="int">
+select work_seq.nextval from dual
+</select>
+
+<!-- <select id="list">
+select * from work order by work_no desc
+</select> -->
+<!-- 수정 -->
+<!-- <update id="find">
+
+</update> -->
+<!-- 삭제 -->
+<!-- <delete id="delete">
+delete work where work_no = #{workNo}
+</delete> -->
+
+</mapper>
+  
+  
