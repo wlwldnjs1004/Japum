@@ -6,7 +6,7 @@
 
 <mapper namespace="work">
 
-	<!-- 등록 -->
+	<!-- 관리자 등록 -->
 	<insert id="add">
 		insert into work(
 		work_no, work_id, work_name,
@@ -33,40 +33,67 @@
 		#{workSubtotal}
 		)
 	</insert>
+	<!--일반 회원 등록 -->
+		<insert id="add2">
+		insert into work(
+		work_no,
+		work_id, 
+		work_name,
+		work_genre, 
+		work_sub_genre,
+		work_prefer,
+		work_wtime,
+		work_paid,
+		work_contract,
+		work_subtotal
+		)values
+		(
+		#{workNo},
+		#{workId},
+		#{workName},
+		#{workGenre},
+		#{workSubGenre},
+		#{workPrefer},
+		#{workWtime, jdbcType=TIMESTAMP},
+		#{workPaid},
+		#{workContract},
+		#{workSubtotal}
+		)
+	</insert>
+
 
 	<select id="sequence" resultType="int">
 		select work_seq.nextval from dual
 	</select>
 
+
 	<select id="list">
 		select * from work order by work_no desc
 	</select>
+
+
 	<select id="viewList" resultType="WorkListViewDto">
 		select * from work_list_view
 	</select>
+	
 	<!-- 수정 -->
 	<update id="edit"> 
 	update work
 	set
-	work_id=#{workName},
+	work_id=#{workId},
+	work_name=#{workName},
 	work_genre=#{workGenre},
-	work_sub_genre=#{work}
-	where work_no=#{workNo},
-	
+	work_sub_genre=#{workSubGenre},
+	work_paid=#{workPaid},
+	work_contract=#{workContract},
+	work_subtotal=#{workSubtotal}
+	where work_no=#{workNo},	
 	</update> 
-	<!-- 삭제  
-		insert into work(
-		work_no, work_id, work_name,
-		work_genre, work_sub_genre,
-		work_prefer,
-		work_wtime,
-		work_paid,
-		work_contract,
-		work_book,
-		work_subtotal
-		)-->
+	<!-- 삭제 -->
 	
-	<!-- <delete id="delete"> delete work where work_no = #{workNo} </delete> -->
+	 <delete id="delete">
+	  delete work where work_no=#{workNo} 
+	  </delete>
 
 </mapper>
   
