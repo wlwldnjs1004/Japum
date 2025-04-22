@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.kh.jagpum.dto.WorkDto;
+
 
 
 
@@ -17,11 +19,12 @@ public class WorkDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
+	private SqlSession sqlSession;
+	
 //	@Autowired
 //	private WorkMapper workMapper;
 //	
-//	@Autowired
-//	private SqlSession sqlSession;
 //	
 //	//커버 등록 
 //	public void insert(WorkDto workDto) {
@@ -189,13 +192,12 @@ public class WorkDao {
 //	
 //return rows > 0;
 //	}
-//	public WorkDto insert4(WorkDto workDto) {
-//		int workNo=sqlSession.selectOne("work.sequence");
-//		workDto.setWorkNo(workNo);
-//		sqlSession.insert("work.add",workDto);
-//		return workDto;
-//	}
-//	
+	public WorkDto insert4(WorkDto workDto) {
+		int workNo=sqlSession.selectOne("work.sequence");
+		workDto.setWorkNo(workNo);
+		sqlSession.insert("work.add",workDto);
+		return workDto;
+	}
 	
 	
 }

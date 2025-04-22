@@ -18,15 +18,23 @@
 	#{chapterOrder})  
   </insert>
   
+  
   <select id="sequence" resultType="int">
   select chapter_seq.nextval from dual
   </select>
+<select id="list">
+select * from chapter order by asc
+</select>
     
     <select id="getNextChapterOrder" resultType="int">
         SELECT NVL(MAX(chapter_order), 0) + 1
-        FROM chapter
-        WHERE work_no = #{workNo}
+        from chapter
+        where work_no = #{workNo}
     </select>
+    
+    
+    
+    
     
   </mapper>
   
