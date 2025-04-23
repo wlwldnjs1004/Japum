@@ -1,5 +1,6 @@
 package com.kh.jagpum.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +11,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.jagpum.dao.ChapterDao;
-import com.kh.jagpum.dao.WorkDao;
-import com.kh.jagpum.dto.ChapterDto;
-
-
+import com.kh.spring09.dao.ChapterDao;
+import com.kh.spring09.dao.WorkDao;
+import com.kh.spring09.dto.ChapterDto;
+import com.kh.spring09.dto.PokemonDto;
+import com.kh.spring09.dto.WorkDto;
+import com.kh.spring09.mapper.ChapterMapper;
+import com.kh.spring09.service.AttachmentService;
+import com.kh.spring09.vo.PageVO;
 
 @Controller
 @RequestMapping("/chapter")
@@ -24,13 +29,15 @@ public class ChapterController {
 	
 	@Autowired
 	private ChapterDao chapterDao;
-//	
+	
 	@Autowired
 	private WorkDao workDao;
 	
+	@Autowired
+	private ChapterMapper chapterMapper;
 	
-//	@Autowired
-//	private AttachmentService attachmentService;
+	@Autowired
+	private AttachmentService attachmentService;
 	
 	
 	 @GetMapping("/add")
@@ -49,7 +56,6 @@ public class ChapterController {
 //		 chapterDto.setWorkNo(workNo); 
 //	     chapterDao.insert(chapterDto);
 	     
-
 		    // [1] chapter_order 구하기
 		    int nextOrder = chapterDao.getNextChapterOrder(workNo);
 
@@ -75,6 +81,7 @@ public class ChapterController {
 		List<ChapterDto> list = chapterDao.selectList();
 		model.addAttribute("list", list);
 		return "/WEB-INF/views/chapter/list.jsp";
+	
 	}
 	
 	
@@ -99,7 +106,6 @@ public class ChapterController {
 			return "redirect:https://placehold.co/400x400?text=P";
 		}
 	}
-
 	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int chapterNo) {
@@ -110,17 +116,44 @@ public class ChapterController {
 //		}
 //		
 //		catch(Exception e) {}
+		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
+		int workNo=chapterDto.getWorkNo();
 		chapterDao.delete(chapterNo);
-		return "redirect:/work/list";
-//	}
+		return "redirect:/work/detail?workNo="+workNo;
 	
 	}	
 	@GetMapping("/edit")
-	public String edit(@RequestParam int chapterNo) {
+	public String edit(@RequestParam int chapterNo,
+			Model model) {
+		
+    ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
+    model.addAttribute("chapterDto",chapterDto);
 		
 		return"/WEB-INF/views/chapter/edit.jsp";
 	}
 	
+	
+	@PostMapping("/edit")
+	public String edit(@ModelAttribute ChapterDto chapterDto){
+		
+			chapterDao.update(chapterDto);
+//		if(!success) {
+//			return"redirect:list";
+//		}
+//		if(attach.isEmpty()==false) {
+//			try{
+//				int attachmentNo=workDao.findAttachment(chapterDto.getChapterNo());
+//				attachmentService.delete(attachmentNo);
+//			}
+//			catch(Exception e) {
+//			}
+//			int newAttchmentNo=attachmentService.save(attach);
+//			workDao.connect(chapterDto.getChapterNo(), newAttchmentNo);
+//		}
+	
+		return"redirect:detail?chapterNo="+chapterDto.getChapterNo();
+
+	}
 	
 	
 }

@@ -68,11 +68,6 @@
             <!--실제 매뉴 영역(폭에 따라 보이는 형태가 다름)-->
             <div class="collapse navbar-collapse" id="main-menui">
                 <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            엣날 홈페이지
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">
@@ -102,8 +97,7 @@
                             상품권 구매</a>
                     </li>
                     </c:if>
-
-				<c:if test="${sessionScope.userLevel =='관리자'}">
+                        <c:if test="${sessionScope.userId ==null}">
                           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">
@@ -113,24 +107,32 @@
                         		    <a class="nav-link" href="${pageContext.request.contextPath}/work/list">내 책 리스트</a>
                         		        <a class="nav-link" href="${pageContext.request.contextPath}/work/add">책 등록</a>
                             <!-- <div class="dropdown-divider"></div> -->
+				<c:if test="${sessionScope.userLevel =='관리자'}">
 					<a class="nav-link" href="${pageContext.request.contextPath}/admin/work/add">E북</a>			
+				</c:if>
                         </div>
                     </li>
-				</c:if>
+                        </c:if>
                 </ul>
                 <!--우측 메뉴-->
                 <c:choose>
                 <c:when test="${sessionScope.userId !=null}">
-                     <ul class="navbar-nav">
-                                <li class="nav-item">
-	                    <a class="nav-link" href="${pageContext.request.contextPath}/member/mypage" >
+                     <ul class="navbar-nav ">
+                                <li class="nav-item dropdown me-2">
+	                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+	                    aria-haspopup="true" aria-expanded="fasle">
 	                    <i class="fa-solid fa-user"></i>
 	                    ${sessionScope.userId} 님
 	                    </a>
+	                    <div class="dropdown-menu">
+	                    <c:if test="${sessionScope.userId !=null}">
+	                    <a class="dropdown-item" href="${pageContext.request.contextPath}/member/mypage">마이 페이지</a>
+	                    <a class="dropdown-item" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+	                    
+	                    </c:if>
+	                    </div>
 	                	</li>
-	                	
                      </ul>
-                  
                 </c:when>
                 <c:otherwise>
                 <ul class="navbar-nav">

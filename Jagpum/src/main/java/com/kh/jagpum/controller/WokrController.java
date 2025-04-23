@@ -13,7 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.jagpum.dao.WorkDao;
+import com.kh.spring09.dao.ChapterDao;
+import com.kh.spring09.dao.WorkDao;
+import com.kh.spring09.dao.workListViewDao;
+import com.kh.spring09.dto.ChapterDto;
+import com.kh.spring09.dto.WorkDto;
+import com.kh.spring09.dto.WorkListViewDto;
+import com.kh.spring09.mapper.WorkMapper;
+import com.kh.spring09.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -24,17 +31,17 @@ public class WokrController {
 	@Autowired
 	private WorkDao workDao;
 	
-//	@Autowired
-//	private WorkMapper workMapper;
-//	
-//	@Autowired
-//	private AttachmentService attachmentService;
-//	
-//	@Autowired
-//	private ChapterDao chapterDao;
-//	
-//	@Autowired
-//	private workListViewDao workListViewDao;
+	@Autowired
+	private WorkMapper workMapper;
+	
+	@Autowired
+	private AttachmentService attachmentService;
+	
+	@Autowired
+	private ChapterDao chapterDao;
+	
+	@Autowired
+	private workListViewDao workListViewDao;
 	
 	@GetMapping("/add")
 	public String add() {
@@ -93,22 +100,17 @@ public class WokrController {
 		
 		WorkListViewDto workDto=workListViewDao.seleOne(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
-		
 		model.addAttribute("workDto",workDto);
-		
 	    model.addAttribute("chapterList", chapterList);
-		
-		
-		return"/WEB-INF/views/work/detail.jsp";
+
+	    return"/WEB-INF/views/work/detail.jsp";
 	}
-	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
 		try {
 			int attachmentNo=workDao.findAttachment(workNo);
 			attachmentService.delete(attachmentNo);
 		}
-		
 		catch(Exception e) {}
 		workDao.delete(workNo);
 		return "redirect:list";
@@ -130,21 +132,21 @@ public class WokrController {
 	  */
 	
 	//채크 박스 삭제 구현
-	@PostMapping("/deleteAll")
-	public String deleteAll(@RequestParam (value = "chapterNo")
-	List<Integer> chapterListNo) {
-		for(int chapterNo:chapterListNo) {
+//	@PostMapping("/deleteAll")
+//	public String deleteAll(@RequestParam (value = "chapterNo")
+//	List<Integer> chapterListNo) {
+//		for(int chapterNo:chapterListNo) {
 //			try {
 //				int attachmentNo=workDao.findAttachment(workNo);
 //				attachmentService.delete(attachmentNo);
 //			}
 //			catch(Exception e) {}
-		chapterDao.delete(chapterNo);
+//		chapterDao.delete(chapterNo);
 
-		}	
-		return"redirect:list";
-		
-	}
+//		}	
+//		return"redirect:list";
+//		
+//	}
 	@GetMapping("/edit")
 	public String edit(@RequestParam int workNo, Model model) {
 		WorkDto workDto=workDao.seleOne(workNo);
@@ -165,7 +167,6 @@ public class WokrController {
 				attachmentService.delete(attachmentNo);
 			}
 			catch(Exception e) {
-				
 			}
 			int newAttchmentNo=attachmentService.save(attach);
 			workDao.connect(workDto.getWorkNo(), newAttchmentNo);

@@ -48,6 +48,7 @@
 		<a class="btn btn-primary w-25"
 		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
 	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">삭제 </a>
+		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">수정</a>
 		</div></div>
 		
 		

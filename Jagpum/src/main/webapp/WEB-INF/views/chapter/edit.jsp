@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
+
+
+	<form  action="edit" method="Post" class="p-3 rounded">
+
+<input type="hidden" name="chapterNo" value="${chapterDto.chapterNo}" />
+	<input type="hidden" name="workNo" value="${chapterDto.workNo}"/>
+
+		<div class="row mt-4">
+			<div class="col-sm-12">
+				<input type="text" name="chapterTitle" class="form-control"
+					value="${chapterDto.chapterTitle}">
+			</div>
+		</div>
+		<p class="fs-6">* 글 번호는 자동으로 생성됩니다. 소제목에 회차 번호를 입력하시면 중복 표기될 수
+			있습니다.</p>
+		<div class="row mt-5">
+			<div class="col-sm-12">
+				<textarea name="chapterDetail" class="form-control" rows="11">${chapterDto.chapterDetail}</textarea>
+			</div>
+		</div>
+		<div class="sss">
+		<span class="p-2">0</span>
+		</div>
+		
+		<div class="row mt-4">
+			<div class="col-sm-12">
+				<textarea type="text" name="chapterComment" class="form-control" rows="6">${chapterDto.chapterComment}</textarea>
+			</div>
+		</div>
+
+
+		<div class="row mt-5">
+			<div class="col text-end">
+				<button class="btn btn-primary w-25 btn-lg" type="submit">등록</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+<jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

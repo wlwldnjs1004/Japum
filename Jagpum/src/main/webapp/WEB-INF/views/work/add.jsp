@@ -169,6 +169,8 @@ $(function(){
 		<option value="BL">BL</option>
 		<option value="팬픽·페러디">팬픽 페러디</option>
 		</select>
+			<div class="valid-feedback"></div>
+				<div class="invalid-feedback">필수 선택 사항입니다</div>
 		</div>
 	</div>
 
