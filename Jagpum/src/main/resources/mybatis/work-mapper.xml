@@ -99,6 +99,10 @@
 	select * from work where work_no=#{workNo}
 	</select>	
 
+	<select id="workView" resultType="workListViewDto">
+	select * from work_list_view where work_no desc
+	</select>
+
 
 </mapper>
   

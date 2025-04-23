@@ -13,14 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.spring09.dao.ChapterDao;
-import com.kh.spring09.dao.WorkDao;
-import com.kh.spring09.dao.workListViewDao;
-import com.kh.spring09.dto.ChapterDto;
-import com.kh.spring09.dto.WorkDto;
-import com.kh.spring09.dto.WorkListViewDto;
-import com.kh.spring09.mapper.WorkMapper;
-import com.kh.spring09.service.AttachmentService;
+import com.kh.jagpum.dao.ChapterDao;
+import com.kh.jagpum.dao.WorkDao;
+import com.kh.jagpum.dao.workListViewDao;
+import com.kh.jagpum.dto.ChapterDto;
+import com.kh.jagpum.dto.WorkDto;
+import com.kh.jagpum.dto.WorkListViewDto;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -31,14 +29,14 @@ public class WokrController {
 	@Autowired
 	private WorkDao workDao;
 	
-	@Autowired
-	private WorkMapper workMapper;
+//	@Autowired
+//	private WorkMapper workMapper;
 	
+//	@Autowired
+//	private AttachmentService attachmentService;
+//	
 	@Autowired
-	private AttachmentService attachmentService;
-	
-	@Autowired
-	private ChapterDao chapterDao;
+	private ChapterDao chapterDao ;
 	
 	@Autowired
 	private workListViewDao workListViewDao;
@@ -57,13 +55,13 @@ public class WokrController {
 
 	    workDto.setWorkId(userId);
 	    
-	    int workNo = workDao.sequence();
-	    workDto.setWorkNo(workNo);
+//	    int workNo = workDao.sequence();
+//	    workDto.setWorkNo(workNo);
 	    workDao.insert2(workDto);
 
 	    if (!attach.isEmpty()) {
-	        int attachmentNo = attachmentService.save(attach);
-	        workDao.connect(workNo, attachmentNo);
+//	        int attachmentNo = attachmentService.save(attach);
+//	        workDao.connect(workNo, attachmentNo);
 	    }
 	    
 	    return "redirect:addFinish";

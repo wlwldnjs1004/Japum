@@ -13,14 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.kh.spring09.dao.ChapterDao;
-import com.kh.spring09.dao.WorkDao;
-import com.kh.spring09.dto.ChapterDto;
-import com.kh.spring09.dto.PokemonDto;
-import com.kh.spring09.dto.WorkDto;
-import com.kh.spring09.mapper.ChapterMapper;
-import com.kh.spring09.service.AttachmentService;
-import com.kh.spring09.vo.PageVO;
+import com.kh.jagpum.dao.ChapterDao;
+import com.kh.jagpum.dao.WorkDao;
+import com.kh.jagpum.dto.ChapterDto;
+import com.kh.jagpum.dto.WorkDto;
+
 
 @Controller
 @RequestMapping("/chapter")
@@ -33,11 +30,11 @@ public class ChapterController {
 	@Autowired
 	private WorkDao workDao;
 	
-	@Autowired
-	private ChapterMapper chapterMapper;
+//	@Autowired
+//	private ChapterMapper chapterMapper;
 	
-	@Autowired
-	private AttachmentService attachmentService;
+//	@Autowired
+//	private AttachmentService attachmentService;
 	
 	
 	 @GetMapping("/add")
@@ -57,11 +54,7 @@ public class ChapterController {
 //	     chapterDao.insert(chapterDto);
 	     
 		    // [1] chapter_order 구하기
-		    int nextOrder = chapterDao.getNextChapterOrder(workNo);
 
-		    // [2] Dto에 세팅
-		    chapterDto.setChapterOrder(nextOrder);
-		    chapterDto.setWorkNo(workNo);
 
 		    // [3] insert
 		    chapterDao.insert(chapterDto);
