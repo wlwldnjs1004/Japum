@@ -1,17 +1,19 @@
 package com.kh.jagpum.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.WorkDto;
+import com.kh.jagpum.dto.WorkListViewDto;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Repository
 public class WorkDao {
 
@@ -23,20 +25,28 @@ public class WorkDao {
 	private SqlSession sqlSession;
 
 
+//	public int sequence() {
+//		String sql = "select work_seq.nextval from dual";// dual=임시테이블
+//		return jdbcTemplate.queryForObject(sql, int.class);
+//	}
 
-	// 삭제 이미지 찾기
-	public int findAttachment(int workNo) {
-		String sql = "select attachment_no from work_profile " + "where work_no=?";
-		Object[] data = { workNo };
-		return jdbcTemplate.queryForObject(sql, int.class, data);
-	}
+	// 목록 조회
+
+	// 상세 페이지
+//	public WorkDto seleOne(int workNo) {
+//		String sql = "select * from work where work_no = ? ";
+//		Object[] data = { workNo };
+//		List<WorkDto> list = jdbcTemplate.query(sql, workMapper, data);
+//		return list.isEmpty() ? null : list.get(0);
+//	}
+
 
 	// 이미지 조회
-	public void connect(int workNo, int attachmentNo) {
-		String sql = "insert into work_profile (" + "work_no, attachment_no" + ") values(?, ?)";
-		Object[] data = { workNo, attachmentNo };
-		jdbcTemplate.update(sql, data);
-	}
+//	public void connect(int workNo, int attachmentNo) {
+//		String sql = "insert into work_profile (" + "work_no, attachment_no" + ") values(?, ?)";
+//		Object[] data = { workNo, attachmentNo };
+//		jdbcTemplate.update(sql, data);
+//	}
 
 	// 챕터 조회?
 //	public List<WorkDto> selectListByWorkNo(int workNo) {
@@ -73,16 +83,37 @@ public class WorkDao {
 	}
 
 	// 목록 조회
-	public List<WorkDto> selectList() {
-		return sqlSession.selectList("work.list");
+//	public List<WorkDto> selectList() {
+//		return sqlSession.selectList("work.list");
+//	}
+	public List<WorkListViewDto>selectList(){
+		return sqlSession.selectList("work.viewList");
 	}
 
 	// 상세 조회
 	public WorkDto seleOne(WorkDto workDto) {
 		return sqlSession.selectOne("work.find", workDto);
 	}
-	
+	// 조회
 	public WorkDto seleOne(int workNo) {
 		return sqlSession.selectOne("work.find", workNo);
 	}
+	//뷰 조회
+	public WorkListViewDto selectOne(int workNo) {
+		return sqlSession.selectOne("work.");
+	}
+	
+	//이미지 연결
+	public void connect(WorkDto workDto,AttachmentDto attachmentDto) {
+		Map<String, Object>params=new HashMap<>();
+		params.put("workNo", workDto.getWorkNo());
+		params.put("attachmentNo", attachmentDto.getAttachmentNo());
+		sqlSession.insert("work.connect",params);
+	}
+	// 삭제 이미지 찾기
+	public int findAttachment(int workNo) {
+		return sqlSession.selectOne("work.findProfile",workNo);
+	}
+	
+	
 }

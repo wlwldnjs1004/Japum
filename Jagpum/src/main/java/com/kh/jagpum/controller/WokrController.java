@@ -15,10 +15,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
-import com.kh.jagpum.dao.workListViewDao;
+import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
+import com.kh.jagpum.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -29,17 +30,14 @@ public class WokrController {
 	@Autowired
 	private WorkDao workDao;
 	
-//	@Autowired
-//	private WorkMapper workMapper;
-	
-//	@Autowired
-//	private AttachmentService attachmentService;
-//	
+
+
 	@Autowired
-	private ChapterDao chapterDao ;
+	private AttachmentService attachmentService;
 	
 	@Autowired
-	private workListViewDao workListViewDao;
+	private ChapterDao chapterDao;
+	
 	
 	@GetMapping("/add")
 	public String add() {
@@ -57,11 +55,11 @@ public class WokrController {
 	    
 //	    int workNo = workDao.sequence();
 //	    workDto.setWorkNo(workNo);
-	    workDao.insert2(workDto);
+	  WorkDto resultDto= workDao.insert2(workDto);
 
 	    if (!attach.isEmpty()) {
-//	        int attachmentNo = attachmentService.save(attach);
-//	        workDao.connect(workNo, attachmentNo);
+	        AttachmentDto attachmentDto = attachmentService.save(attach);
+	        workDao.connect(resultDto, attachmentDto);
 	    }
 	    
 	    return "redirect:addFinish";
@@ -74,7 +72,7 @@ public class WokrController {
 	
 	@RequestMapping("/list")
 	public String list(Model model) {
-		List<WorkListViewDto> list = workListViewDao.selectList();
+		List<WorkListViewDto> list = workDao.selectList();
 		model.addAttribute("list", list);
 		return "/WEB-INF/views/work/list.jsp";
 	}
@@ -96,7 +94,7 @@ public class WokrController {
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int workNo,Model model) {
 		
-		WorkListViewDto workDto=workListViewDao.seleOne(workNo);
+		WorkListViewDto workDto=workDao.seleOne(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 		model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);
@@ -166,8 +164,8 @@ public class WokrController {
 			}
 			catch(Exception e) {
 			}
-			int newAttchmentNo=attachmentService.save(attach);
-			workDao.connect(workDto.getWorkNo(), newAttchmentNo);
+			AttachmentDto attachmentDto=attachmentService.save(attach);
+						workDao.connect(workDto, attachmentDto);;
 		}
 	
 		return"redirect:detail?workNo="+workDto.getWorkNo();

@@ -17,6 +17,7 @@ import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
 import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
+import com.kh.jagpum.service.AttachmentService;
 
 
 @Controller
@@ -30,11 +31,9 @@ public class ChapterController {
 	@Autowired
 	private WorkDao workDao;
 	
-//	@Autowired
-//	private ChapterMapper chapterMapper;
 	
-//	@Autowired
-//	private AttachmentService attachmentService;
+	@Autowired
+	private AttachmentService attachmentService;
 	
 	
 	 @GetMapping("/add")
@@ -54,7 +53,11 @@ public class ChapterController {
 //	     chapterDao.insert(chapterDto);
 	     
 		    // [1] chapter_order 구하기
+//		    int nextOrder = chapterDao.getNextChapterOrder(workNo);
 
+		    // [2] Dto에 세팅
+//		    chapterDto.setChapterOrder(nextOrder);
+//		    chapterDto.setWorkNo(workNo);
 
 		    // [3] insert
 		    chapterDao.insert(chapterDto);

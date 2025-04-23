@@ -7,9 +7,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data@NoArgsConstructor@AllArgsConstructor @Builder
-public class ChapterDto {
 
+@Data @Builder@NoArgsConstructor @AllArgsConstructor
+public class ChapterDto {
+				
 	private int chapterNo;//챕터 키값
 	private int workNo;//작품 키값
 	private String chapterTitle;//제목

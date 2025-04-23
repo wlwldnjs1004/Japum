@@ -3,9 +3,13 @@ package com.kh.jagpum.dto;
 import java.text.DecimalFormat;
 import java.text.Format;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
+
+@Data@Builder @NoArgsConstructor@AllArgsConstructor
 public class AttachmentDto {
 private int attachmentNo;//스퀸스 번호
 private String attachmentName;//파일명

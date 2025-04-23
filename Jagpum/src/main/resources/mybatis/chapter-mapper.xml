@@ -51,11 +51,9 @@ select * from chapter order by chapter_order asc
 	select * from chapter where chapter_no=#{chapterNo}
 	</select>    
     
-    <select id="lists">
-    select * from chapter where work=#{workNo} order by chapter_order asc
+    <select id="lists" resultType="chapterDto">
+    select * from chapter where work_no=#{workNo} order by chapter_order asc
     </select>
-    
-    
     
   </mapper>
   

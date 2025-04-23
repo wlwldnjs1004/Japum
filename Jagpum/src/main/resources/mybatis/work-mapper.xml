@@ -99,9 +99,24 @@
 	select * from work where work_no=#{workNo}
 	</select>	
 
-	<select id="workView" resultType="workListViewDto">
-	select * from work_list_view where work_no desc
-	</select>
+<!-- 뷰 상세 조회 -->
+<select id=""></select>
+
+
+	<insert id="connect">
+	insert into work_profile(
+	work_no,
+	attachment_no)
+	values(
+	#{workNo},
+	#{attachmentNo}
+	)
+	</insert>
+
+<select id="findProfile" resultType="int">
+select attachment_no from work_profile where work_no=#{workNo}
+</select>
+
 
 
 </mapper>
