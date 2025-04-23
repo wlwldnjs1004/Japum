@@ -94,7 +94,7 @@ public class WokrController {
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int workNo,Model model) {
 		
-		WorkListViewDto workDto=workDao.selectList(workNo);
+		WorkListViewDto workDto=workDao.selectLists(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 		model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);

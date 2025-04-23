@@ -72,6 +72,7 @@ public class WorkDao {
 		return workDto;
 	}
 
+	
 	// 삭제
 	public boolean delete(int workNo) {
 		return sqlSession.delete("work.delete", workNo) > 0;
@@ -88,6 +89,9 @@ public class WorkDao {
 //	}
 	public List<WorkListViewDto>selectList(){
 		return sqlSession.selectList("work.viewList");
+	}
+	public List<WorkListViewDto>selectLists(){
+		return sqlSession.selectList("work.listViews");
 	}
 
 	// 상세 조회
