@@ -47,6 +47,14 @@
 				<c:choose>
 					<c:when test="${workDto.workBook =='Y'}">
 						<b>${workDto.workName}[E]북</b>
+							<br>
+							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+					<p>
+					${workDto.workPaid}
+					</p> 
+						<h4>${workDto.workGenre}
+						${workDto.workSubGenre} 
+				</h4>
 					</c:when>
 					<c:otherwise>
 						<label>작품 이름:${workDto.workName}</label>	
@@ -54,9 +62,23 @@
 							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
 					<p>
 					${workDto.workPaid}
-					${workDto.workGenre}
-				${workDto.workSubGenre} 
 					</p> 
+						<h4>${workDto.workGenre}
+						${workDto.workSubGenre} 
+				</h4>
+				<label>
+			${workDto.workMon == 'Y' ? '월요일 ' : ''}
+			${workDto.workTue == 'Y' ? '화요일 ' : ''}
+			${workDto.workWed == 'Y' ? '수요일 ' : ''}
+			${workDto.workThu == 'Y' ? '목요일 ' : ''}
+			${workDto.workFri == 'Y' ? '금요일 ' : ''}
+			${workDto.workSat == 'Y' ? '토요일 ' : ''}
+			${workDto.workSun == 'Y' ? '일요일 ' : ''}
+
+				</label>
+				
+				
+				
 					</c:otherwise>
 				</c:choose>
 			</div>
