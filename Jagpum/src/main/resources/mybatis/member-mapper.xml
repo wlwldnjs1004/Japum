@@ -9,12 +9,12 @@
 	  <!-- 등록 -->
 	  <insert id="add">
 	  insert into member(
-	  member_id,member_pw,
+	  member_id,
+	  member_pw,
 	  member_nickname,
 	  member_level,
 	  member_email,
 	  member_birth,
-	  member_item,
 	  member_gender
 	  )values(
 	  #{memberId},
@@ -23,7 +23,6 @@
 	  #{memberLevel},
 	  #{memberEmail},
 	  #{memberBirth},
-	  #{memberItem},
 	  #{memberGender}
 	  )
 	  </insert>

@@ -25,10 +25,10 @@ public class HomeController {
 //		return"/WEB-INF/views/home.jsp";
 		return"/WEB-INF/views/bootstrap-home.jsp";
 	}
-//	@RequestMapping("/bootstrap")	
-//	public String bootstrap(Model model) {
-//		List<WorkDto> list = workDao.selectList();
-//		model.addAttribute("list",list);
-//		return"/WEB-INF/views/bootstrap-home.jsp";
-//	}
+	@RequestMapping("/bootstrap")	
+	public String bootstrap(Model model) {
+		List<WorkDto> list = workDao.selectList();
+		model.addAttribute("list",list);
+		return"/WEB-INF/views/bootstrap-home.jsp";
+	}
 }
