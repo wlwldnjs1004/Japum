@@ -19,6 +19,7 @@ public class ChapterViewDto {
 	private Timestamp chapterRecent;//수정일자
 	private int chapterOrder;//챕터 등록 카운트
 	
+	//------------------------------------
 	
 	private int workNoView;//번호
 	private String workId;//회원 키값
@@ -31,6 +32,8 @@ public class ChapterViewDto {
 	private String workContract;//독점 여부
 	private String workBook;//1권인지 여부
 	private String workSubtotal;//작품 소게
+	
+	
 	
 	private String workMon;//월
 	private String workTue;//화

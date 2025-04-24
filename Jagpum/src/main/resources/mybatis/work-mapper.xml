@@ -9,8 +9,13 @@
 	<!-- 관리자 등록 -->
 	<insert id="add">
 		insert into work(
-		work_no, work_id, work_name,
-		work_genre, work_sub_genre,
+		work_no, 
+		work_id,
+		work_name,
+		work_genre, 
+		<if test="workSubGenre !=null">
+		work_sub_genre,
+		</if>
 		work_prefer,
 		work_wtime,
 		work_paid,
@@ -24,7 +29,9 @@
 		#{workId},
 		#{workName},
 		#{workGenre},
+		<if test="workSubGenre !=null">
 		#{workSubGenre},
+		</if>
 		#{workPrefer},
 		#{workWtime, jdbcType=TIMESTAMP},
 		#{workPaid},
@@ -40,7 +47,9 @@
 		work_id, 
 		work_name,
 		work_genre, 
+			<if test="workSubGenre !=null">
 		work_sub_genre,
+			</if>
 		work_prefer,
 		work_wtime,
 		work_paid,
@@ -59,7 +68,9 @@
 		#{workId},
 		#{workName},
 		#{workGenre},
+		<if test="workSubGenre !=null">
 		#{workSubGenre},
+		</if>
 		#{workPrefer},
 		#{workWtime, jdbcType=TIMESTAMP},
 		#{workPaid},
