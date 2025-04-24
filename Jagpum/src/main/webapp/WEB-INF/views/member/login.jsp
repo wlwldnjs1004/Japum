@@ -25,7 +25,7 @@
 <div class="row mt-4">
 <div class="col">
 <button type="submit" class="btn btn-success">
-<i></i>
+<i class="fa-solid fa-right-to-bracket"></i>
 로그인
 </button>
 </div>
