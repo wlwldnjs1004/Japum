@@ -31,9 +31,7 @@ public class MemberController {
 	
 //  회원 가입 메핑
 	@GetMapping("/join")
-	public String join(@ModelAttribute MemberDto memberDto,
-			@RequestParam(required= false) String remember,
-			HttpSession session) {
+	public String join(@ModelAttribute MemberDto memberDto) {
 		
 		memberDao.insert(memberDto);
 //		emailService.sendWelcomeMail(memberDto);
@@ -46,6 +44,13 @@ public class MemberController {
 		return "/WEB-INF/views/member/joinFinish.jsp";
 		
 	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("userId");
+		return "redirect:/";
+		
+	}
 	//로그인
 	@GetMapping("/login")
 	public String login() {
@@ -53,6 +58,28 @@ public class MemberController {
 	}
 	@PostMapping("/login")
 	public String loing(@ModelAttribute MemberDto memberDto,
-			@)
+			HttpSession session) {
+
+		MemberDto findDto=memberDao.seleOne(memberDto);
+		
+		boolean isValid =findDto.getMemberPw().equals(memberDto.getMemberPw());
+		if(isValid) {
+			
+			
+			session.setAttribute("userId", findDto.getMemberId());
+			
+			session.setAttribute("userLevel", findDto.getMemberLevel());
+	
+			
+			
+		return "redirect:/";
+		}
+		else {
+			return "redirect:login?error";
+	}
+		
+		
+	}
+	
 	
 }

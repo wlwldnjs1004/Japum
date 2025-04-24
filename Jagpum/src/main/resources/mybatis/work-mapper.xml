@@ -45,7 +45,14 @@
 		work_wtime,
 		work_paid,
 		work_contract,
-		work_subtotal
+		work_subtotal,
+		work_mon,
+		work_tue,
+		work_wed,
+		work_thu,
+		work_fri,
+		work_sat,
+		work_sun
 		)values
 		(
 		#{workNo},
@@ -57,7 +64,14 @@
 		#{workWtime, jdbcType=TIMESTAMP},
 		#{workPaid},
 		#{workContract},
-		#{workSubtotal}
+		#{workSubtotal},
+		#{workMon},
+		#{workTue},
+		#{workWed},
+		#{workThu},
+		#{workFri},
+		#{workSat},
+		#{workSun}
 		)
 	</insert>
 
@@ -71,10 +85,10 @@
 		select * from work order by work_no desc
 	</select>
 
-
 	<select id="viewList" resultType="WorkListViewDto">
-		select * from work_list_view
+		select * from work_list_view  
 	</select>
+	
 	
 	<!-- 수정 -->
 	<update id="edit"> 
@@ -98,10 +112,10 @@
 	<select id="find" resultType="workDto">
 	select * from work where work_no=#{workNo}
 	</select>	
-
-<!-- 뷰 상세 조회 -->
-<select id=""></select>
-
+	<!-- 뷰 상세조회 -->
+	<select id="listViews" resultType="workListViewDto">
+	select * from work_profile where work_no=#{workNo}
+	</select>
 
 	<insert id="connect">
 	insert into work_profile(

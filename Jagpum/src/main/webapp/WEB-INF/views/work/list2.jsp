@@ -12,6 +12,7 @@
   padding: 0;
   margin: 0;
 }
+
 .work-card {
   background-color: #f9f9f9;
   border-radius: 8px;
@@ -19,9 +20,11 @@
   box-shadow: 0 0 6px rgba(0,0,0,0.1);
   transition: transform 0.2s;
 }
+
 .work-card:hover {
   transform: scale(1.03);
 }
+
 </style>
 
 <div class="container">

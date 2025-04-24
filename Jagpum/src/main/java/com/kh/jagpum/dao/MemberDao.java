@@ -22,7 +22,7 @@ public class MemberDao {
 		sqlSession.insert("member.add",memberDto);
 	return memberDto;	
 	}
-	//회원 상세 페이지
+	//회원 상세 조회
 	public MemberDto seleOne(MemberDto memberDto) {
 		return sqlSession.selectOne("member.find",memberDto);
 	}

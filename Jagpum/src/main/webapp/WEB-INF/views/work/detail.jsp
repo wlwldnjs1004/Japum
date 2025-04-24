@@ -40,24 +40,33 @@
 		<div class="col-md-3">
 			<img src="image?workNo=${workDto.workNo}" width="150"
 				class="picture-book">
-		</div>
 
-		<div class="col-md-12 ">
+		</div>
+		<div class="col-md-9 ">
 			<div>
 				<c:choose>
 					<c:when test="${workDto.workBook =='Y'}">
 						<b>${workDto.workName}[E]북</b>
 					</c:when>
 					<c:otherwise>
-						<label>${workDto.workName}</label>
+						<label>작품 이름:${workDto.workName}</label>	
+							<br>
+							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+					<p>
+					${workDto.workPaid}
+					${workDto.workGenre}
+				${workDto.workSubGenre} 
+					</p> 
 					</c:otherwise>
 				</c:choose>
 			</div>
 		</div>
 
-		<div class="col-md-2">작가 ${workDto.memberNickname}</div>
+
+		<div class="col-md-6 mt-1">작가: ${workDto.memberNickname}</div>
 		<hr class="mt-5" />
 		<div class="col-md-12 mt-4 change-size">${workDto.workSubtotal}</div>
+
 	</div>
 
 

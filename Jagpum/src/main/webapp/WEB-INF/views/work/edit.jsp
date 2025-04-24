@@ -24,9 +24,8 @@
 
 		<div class="row mt-4">
 			<div class="col-sm-9">
-				<label class="col-sm-3 col-form-label">작품명</label> <input
-					name="workName" type="text" class="form-control"
-					placeholder="작품명을 입력하세요" value="${workDto.workName}">
+				<label class="col-sm-3 col-form-label">작품명</label> 
+				<input name="workName" type="text" class="form-control" placeholder="작품명을 입력하세요" value="${workDto.workName}">
 				<div class="valid-feedback"></div>
 				<div class="invalid-feedback">필수조건입니다</div>
 			</div>

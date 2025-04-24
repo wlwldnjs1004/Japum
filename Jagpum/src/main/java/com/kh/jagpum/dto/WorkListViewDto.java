@@ -22,6 +22,14 @@ public class WorkListViewDto {
 	private String workBook;//1권인지 여부
 	private String workSubtotal;//작품 소게
 	
+	private String workMon;//월
+	private String workTue;//화
+	private String workWed;//수
+	private String workThu;//목
+	private String workFri;//금
+	private String workSat;//토
+	private String workSun;//일
+	
 	private String memberNickname;
 	
 }

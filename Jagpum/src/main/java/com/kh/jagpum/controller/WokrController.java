@@ -15,11 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
-import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
-import com.kh.jagpum.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -30,8 +28,7 @@ public class WokrController {
 	@Autowired
 	private WorkDao workDao;
 	
-
-
+	
 	@Autowired
 	private AttachmentService attachmentService;
 	
@@ -55,8 +52,17 @@ public class WokrController {
 	    
 //	    int workNo = workDao.sequence();
 //	    workDto.setWorkNo(workNo);
+	    workDto.setWorkMon(workDto.getWorkMon()==null? "N":workDto.getWorkMon());
+	    workDto.setWorkTue(workDto.getWorkTue()==null? "N":workDto.getWorkTue());
+	    workDto.setWorkWed(workDto.getWorkWed()==null? "N":workDto.getWorkWed());
+	    workDto.setWorkThu(workDto.getWorkThu()==null? "N":workDto.getWorkThu());
+	    workDto.setWorkFri(workDto.getWorkFri()==null? "N":workDto.getWorkFri());
+	    workDto.setWorkSat(workDto.getWorkSat()==null? "N":workDto.getWorkSat());
+	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
+	    
 	  WorkDto resultDto= workDao.insert2(workDto);
 
+	  
 	    if (!attach.isEmpty()) {
 	        AttachmentDto attachmentDto = attachmentService.save(attach);
 	        workDao.connect(resultDto, attachmentDto);
@@ -72,7 +78,7 @@ public class WokrController {
 	
 	@RequestMapping("/list")
 	public String list(Model model) {
-		List<WorkListViewDto> list = workDao.selectList();
+		List<WorkListViewDto> list = workDao.selectListview();
 		model.addAttribute("list", list);
 		return "/WEB-INF/views/work/list.jsp";
 	}
@@ -80,9 +86,10 @@ public class WokrController {
 	
 	@RequestMapping("/image")
 	public String image(@RequestParam int workNo) {
-	
+//	    System.out.println("이미지 요청 받은 workNo: " + workNo);
 		try {
 			int attachmentNo = workDao.findAttachment(workNo);
+//			System.out.println(attachmentNo);
 			return "redirect:/attachment/download?attachmentNo="+attachmentNo;
 		}
 		catch(Exception e) {
@@ -94,13 +101,14 @@ public class WokrController {
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int workNo,Model model) {
 		
-		WorkListViewDto workDto=workDao.selectLists(workNo);
+		WorkListViewDto workDto=workDao.selectListview(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 		model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);
 
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
+
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
 		try {
@@ -152,6 +160,17 @@ public class WokrController {
 	@PostMapping("/edit")
 	public String edit(@ModelAttribute WorkDto workDto,
 			@RequestParam MultipartFile attach) throws IllegalStateException, IOException {
+		
+	    workDto.setWorkMon(workDto.getWorkMon()==null? "N":workDto.getWorkMon());
+	    workDto.setWorkTue(workDto.getWorkTue()==null? "N":workDto.getWorkTue());
+	    workDto.setWorkWed(workDto.getWorkWed()==null? "N":workDto.getWorkWed());
+	    workDto.setWorkThu(workDto.getWorkThu()==null? "N":workDto.getWorkThu());
+	    workDto.setWorkFri(workDto.getWorkFri()==null? "N":workDto.getWorkFri());
+	    workDto.setWorkSat(workDto.getWorkSat()==null? "N":workDto.getWorkSat());
+	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
+	    
+		
+		
 		
 		boolean success=workDao.update(workDto);
 		if(!success) {
