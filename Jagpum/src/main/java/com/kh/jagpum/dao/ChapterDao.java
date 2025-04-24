@@ -24,9 +24,11 @@ public ChapterDto insert(ChapterDto chapterDto) {
 
 	int nextChapterOrder = sqlSession.selectOne("chapter.getNextChapterOrder", chapterDto.getWorkNo());
 	int chapterNo = sqlSession.selectOne("chapter.sequence");
-
+	
+	
 	chapterDto.setChapterNo(chapterNo);
 	chapterDto.setChapterOrder(nextChapterOrder);
+	
 	sqlSession.insert("chapter.add", chapterDto);
 
 	return chapterDto;
@@ -36,6 +38,15 @@ public ChapterDto insert(ChapterDto chapterDto) {
 public boolean update(ChapterDto chapterDto) {
 	return sqlSession.update("chapter.edit", chapterDto) > 0;
 }
+//가격 변경 
+public boolean ChapterPriceBy(ChapterDto chapterDto) {
+	return sqlSession.update("chapter.updateChapterPriceByWorkNo",chapterDto)>0;
+}
+//work 을 이용한 조회
+public ChapterDto workList(int workNo) {
+	return sqlSession.selectOne("chapter.workList",workNo);
+}
+
 
 // 상세
 public ChapterDto seleOne(ChapterDto chapterDto) {

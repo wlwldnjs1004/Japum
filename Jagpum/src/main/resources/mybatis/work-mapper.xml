@@ -9,13 +9,8 @@
 	<!-- 관리자 등록 -->
 	<insert id="add">
 		insert into work(
-		work_no, 
-		work_id,
-		work_name,
-		work_genre, 
-		<if test="workSubGenre !=null">
-		work_sub_genre,
-		</if>
+		work_no, work_id, work_name,
+		work_genre, work_sub_genre,
 		work_prefer,
 		work_wtime,
 		work_paid,
@@ -29,9 +24,7 @@
 		#{workId},
 		#{workName},
 		#{workGenre},
-		<if test="workSubGenre !=null">
 		#{workSubGenre},
-		</if>
 		#{workPrefer},
 		#{workWtime, jdbcType=TIMESTAMP},
 		#{workPaid},
@@ -47,9 +40,9 @@
 		work_id, 
 		work_name,
 		work_genre, 
-			<if test="workSubGenre !=null">
+		<if test="workSubGenre !=null">
 		work_sub_genre,
-			</if>
+		</if>
 		work_prefer,
 		work_wtime,
 		work_paid,
@@ -86,6 +79,7 @@
 		)
 	</insert>
 
+	<!--  -->
 	<select id="sequence" resultType="int">
 		select work_seq.nextval from dual
 	</select>
@@ -94,7 +88,7 @@
 	<select id="list" resultType="workDto">
 		select * from work order by work_no desc
 	</select>
-	<!-- 뷰 목록 조회 -->
+
 	<select id="viewList" resultType="WorkListViewDto">
 		select * from work_list_view  
 	</select>
@@ -122,12 +116,15 @@
 	<select id="find" resultType="workDto">
 	select * from work where work_no=#{workNo}
 	</select>	
-	
-
 	<!-- 뷰 상세조회 -->
-<select id="workListView" resultType="workListViewDto">
+	<select id="listViews" resultType="workListViewDto">
+	select * from work_profile where work_no=#{workNo}
+	</select>
+
+	<select id="workListView" resultType="workListViewDto">
 	select * from work_list_view where work_no = #{workNo}
 	</select>
+
 
 
 	<insert id="connect">
@@ -143,8 +140,6 @@
 <select id="findProfile" resultType="int">
 select attachment_no from work_profile where work_no=#{workNo}
 </select>
-
-
 
 </mapper>
   

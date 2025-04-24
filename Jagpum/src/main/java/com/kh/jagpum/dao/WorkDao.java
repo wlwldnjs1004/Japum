@@ -26,6 +26,7 @@ public class WorkDao {
 
 
 
+
 	// 1권 등록 관리자 전용 등록 창
 	public WorkDto insert(WorkDto workDto) {
 		int workNo = sqlSession.selectOne("work.sequence");
@@ -39,6 +40,7 @@ public class WorkDao {
 		int workNo = sqlSession.selectOne("work.sequence");
 		workDto.setWorkNo(workNo);
 		sqlSession.insert("work.add2", workDto);
+		
 		return workDto;
 	}
 
@@ -46,22 +48,25 @@ public class WorkDao {
 	public boolean delete(int workNo) {
 		return sqlSession.delete("work.delete", workNo) > 0;
 	}
+	
 	// 수정
 	public boolean update(WorkDto workDto) {
 		return sqlSession.update("work.edit", workDto) > 0;
 	}
+	
 	// 목록 조회
 	public List<WorkDto> selectList() {
 		return sqlSession.selectList("work.list");
 	}
+	
 	public List<WorkListViewDto>selectListview(){
 		return sqlSession.selectList("work.viewList");
 	}
+	
 	//뷰 상세 조회
 	public WorkListViewDto selectListviewBy(int workNo) {
 		return sqlSession.selectOne("work.workListView",workNo);
 	}
-	
 	
 	// 상세 조회
 	public WorkDto seleOne(WorkDto workDto) {
@@ -87,3 +92,5 @@ public class WorkDao {
 	
 	
 }
+
+	

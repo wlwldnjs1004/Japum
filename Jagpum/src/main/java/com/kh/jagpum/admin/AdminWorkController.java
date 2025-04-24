@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.kh.jagpum.dao.WorkDao;
+import com.kh.jagpum.dto.AttachmentDto;
+import com.kh.jagpum.dto.WorkDto;
+import com.kh.jagpum.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -19,39 +23,37 @@ import jakarta.servlet.http.HttpSession;
 public class AdminWorkController {
 
 	
-//	@Autowired
-//	private WorkDao workDao;
-//	
-//	@Autowired
-//	private AttachmentService attachmentService;
-//	
-//	@GetMapping("/add")
-//	public String addBook() {
-//		
-//		return"/WEB-INF/views/admin/work/add.jsp"; 
-//	}
-//	
-//	@PostMapping("/add")
-//	public String addBook(@ModelAttribute WorkDto workDto,
-//	                  @RequestParam MultipartFile attach,
-//	                  HttpSession session) throws IllegalStateException, IOException {
-//
-//	    String userId = (String) session.getAttribute("userId");
-//
-//	    workDto.setWorkId(userId);
-//
-//	    int workNo = workDao.sequence();
-//	    workDto.setWorkNo(workNo);
-//	    workDao.insert4(workDto);
-//
-//	    if (!attach.isEmpty()) {
-//	        int attachmentNo = attachmentService.save(attach);
-//	        workDao.connect(workNo, attachmentNo);
-//	    }
-//	    
-//	    return "redirect:/work/addFinish";
-//	}
-//	
+	@Autowired
+	private WorkDao workDao;
+	
+	@Autowired
+	private AttachmentService attachmentService;
+	
+	@GetMapping("/add")
+	public String addBook() {
+		
+		return"/WEB-INF/views/admin/work/add.jsp"; 
+	}
+	
+	@PostMapping("/add")
+	public String addBook(@ModelAttribute WorkDto workDto,
+	                  @RequestParam MultipartFile attach,
+	                  HttpSession session) throws IllegalStateException, IOException {
+
+	    String userId = (String) session.getAttribute("userId");
+
+	    workDto.setWorkId(userId);
+
+	  WorkDto resultDto =workDao.insert(workDto);
+
+	    if (!attach.isEmpty()) {
+	        AttachmentDto attachmentDto = attachmentService.save(attach);
+	        workDao.connect(resultDto, attachmentDto);
+	    }
+	    
+	    return "redirect:/work/addFinish";
+	}
+	
 	
 	
 }

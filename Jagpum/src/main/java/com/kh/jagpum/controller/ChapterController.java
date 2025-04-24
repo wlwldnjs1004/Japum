@@ -58,8 +58,10 @@ public class ChapterController {
 		    // [2] Dto에 세팅
 //		    chapterDto.setChapterOrder(nextOrder);
 //		    chapterDto.setWorkNo(workNo);
-
+		 
 		    // [3] insert
+		 
+//		chapterDto.setChapterPrice(chapterDto.getChapterPrice()==null? "N":chapterDto.getChapterPrice());
 		    chapterDao.insert(chapterDto);
 		    
 		    

@@ -23,6 +23,7 @@ import com.kh.jagpum.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
+
 @Controller
 @RequestMapping("/work")
 public class WokrController {
@@ -80,7 +81,7 @@ public class WokrController {
 	
 	@RequestMapping("/list")
 	public String list(Model model) {
-		List<WorkListViewDto> list = workDao.selectListview();
+		List<WorkDto> list = workDao.selectList();
 		model.addAttribute("list", list);
 		return "/WEB-INF/views/work/list.jsp";
 	}
@@ -105,9 +106,12 @@ public class WokrController {
 		
 		WorkListViewDto workDto=workDao.selectListviewBy(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
-		model.addAttribute("workDto",workDto);
+		ChapterDto  chapterDto=chapterDao.seleOne(workNo);
+	    
+	    model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);
 
+	    
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
 
@@ -193,6 +197,5 @@ public class WokrController {
 
 	}
 	
-
 	
 }

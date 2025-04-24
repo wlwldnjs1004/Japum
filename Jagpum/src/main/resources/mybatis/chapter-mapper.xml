@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -10,16 +11,42 @@
 	insert into chapter(
 	chapter_no, work_no, chapter_title,
 	chapter_detail, chapter_comment,
-	chapter_order)values(
+	chapter_order
+	<if test="chapterPrice !=null">
+	,chapter_price
+	</if>
+	)values(
 	#{chapterNo},#{workNo},#{chapterTitle},
 	#{chapterDetail}, #{chapterComment},
-	#{chapterOrder})  
+	#{chapterOrder}
+	<if test="chapterPrice !=null">
+	,#{chapterPrice}
+	</if>
+	)  
   </insert>
-  
+     <update id="updateChapterPriceByWorkNo" >
+    update chapter set chapter_price=#{chapterPrice}
+    where work_no=#{workNo, jdbcType=INTEGER} 
+    </update> 
   
   <select id="sequence" resultType="int">
   select chapter_seq.nextval from dual
   </select>
+  
+  
+  <select id="price">
+  select NVL(MAX(chapter_price),0)+chapter_price=#{chapterPrice}
+  from chapter
+  where work_no=#{workNo}
+  </select>
+  
+    <select id="getNextChapterOrder" resultType="int">
+        SELECT NVL(MAX(chapter_order), 0) + 1
+        from chapter
+        where work_no = #{workNo}
+    </select>
+    
+  
 	<update id="edit"> 
 	update chapter
 	set
@@ -30,22 +57,26 @@
 	  chapter_recent = SYSTIMESTAMP
 	where chapter_no=#{chapterNo}
 	</update> 
+	
+	
 <!-- 조회 -->
 <select id="list">
 select * from chapter order by chapter_order asc
 </select>
 
+
+<!--  조회 -->
+<select id="workList">
+select * from chapter where work_no=#{workNo}
+</select>
+
+
+
+
     <!-- 삭제 -->
     <delete id="delete">
     delete chapter where chapter_no=#{chapterNo}
     </delete>
-    
-    
-    <select id="getNextChapterOrder" resultType="int">
-        SELECT NVL(MAX(chapter_order), 0) + 1
-        from chapter
-        where work_no = #{workNo}
-    </select>
     
 	<select id="find" resultType="chapterDto">
 	select * from chapter where chapter_no=#{chapterNo}
@@ -55,6 +86,9 @@ select * from chapter order by chapter_order asc
     select * from chapter where work_no=#{workNo} order by chapter_order asc
     </select>
     
+    
+
+    
+    
   </mapper>
-  
   

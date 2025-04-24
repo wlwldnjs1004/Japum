@@ -19,4 +19,5 @@ public class ChapterDto {
 	private Timestamp chapterModified;//등록 일자
 	private Timestamp chapterRecent;//수정일자
 	private int chapterOrder;//챕터 등록 카운트
+	private int chapterPrice;
 }

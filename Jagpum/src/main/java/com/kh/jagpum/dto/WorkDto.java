@@ -16,8 +16,8 @@ public class WorkDto {
 	private int workNo;//번호
 	private String workId;//회원 키값
 	private String workName;//작품 일므
-	private String workGenre;//작품 분류
-	private String workSubGenre;//작품 분류2
+	private String workGenre;//장르 분류
+	private String workSubGenre;//보조 장르 분류2
 	private String workPrefer;//태그
 	private Timestamp workWtime;//등록 시간
 	private String workPaid;//
