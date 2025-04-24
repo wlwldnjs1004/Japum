@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
 
@@ -57,6 +58,12 @@ public class WorkDao {
 	public List<WorkListViewDto>selectListview(){
 		return sqlSession.selectList("work.viewList");
 	}
+	
+	// 뷰 상세 조회
+	public WorkListViewDto selectListviews(int workNo){
+		return sqlSession.selectOne("work.listViews",workNo);
+	}
+	
 	// 상세 조회
 	public WorkDto seleOne(WorkDto workDto) {
 		return sqlSession.selectOne("work.find", workDto);

@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kh.jagpum.configuration.FileuploadProperties;
 import com.kh.jagpum.dao.AttachmentDao;
 import com.kh.jagpum.dto.AttachmentDto;
+import com.kh.spring09.error.TargetNotFoundException;
 
 
 @Service
@@ -82,4 +83,6 @@ public class AttachmentService {
 		return data;
 	}
 }
+
+
 

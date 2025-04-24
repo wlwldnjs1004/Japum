@@ -15,9 +15,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
+import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
+import com.kh.jagpum.service.AttachmentService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -101,7 +103,7 @@ public class WokrController {
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int workNo,Model model) {
 		
-		WorkListViewDto workDto=workDao.selectListview(workNo);
+		WorkListViewDto workDto=workDao.selectListviews(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 		model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);
