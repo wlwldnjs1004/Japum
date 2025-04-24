@@ -128,6 +128,11 @@
 					<tbody>
 						<c:forEach var="chapter" items="${chapterList}">
 							<tr>
+								<td>
+	<c:if test="${chapter.priceVisible}">
+		<fmt:formatNumber value="${chapter.chapterPrice}" type="currency" currencySymbol="₩"/>
+	</c:if>
+	</td>
 								<td>${chapter.chapterOrder}</td>
 								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}"
 									class="aa"> ${chapter.chapterTitle} </a></td>

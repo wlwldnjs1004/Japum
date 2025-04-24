@@ -1,6 +1,7 @@
 package com.kh.jagpum.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
 import com.kh.jagpum.service.AttachmentService;
+import com.kh.jagpum.vo.ChapterPriceVO;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -106,8 +108,14 @@ public class WokrController {
 		
 		WorkListViewDto workDto=workDao.selectListviewBy(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
-		ChapterDto  chapterDto=chapterDao.seleOne(workNo);
-	    
+//		ChapterDto  chapterDto=chapterDao.seleOne(workNo);
+	  
+		List<ChapterPriceVO> priceVoList = new ArrayList<>();
+		for (ChapterDto chapterDto : chapterList) {
+			priceVoList.add(new ChapterPriceVO(chapterDto));
+		}
+
+		
 	    model.addAttribute("workDto",workDto);
 	    model.addAttribute("chapterList", chapterList);
 
