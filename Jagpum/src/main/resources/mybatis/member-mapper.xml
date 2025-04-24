@@ -12,17 +12,15 @@
 	  member_id,
 	  member_pw,
 	  member_nickname,
-	  member_level,
-	  member_email,
 	  member_birth,
+	  member_email,
 	  member_gender
 	  )values(
 	  #{memberId},
 	  #{memberPw},
 	  #{memberNickname},
-	  #{memberLevel},
-	  #{memberEmail},
 	  #{memberBirth},
+	  #{memberEmail},
 	  #{memberGender}
 	  )
 	  </insert>
@@ -40,11 +38,11 @@
   member_gender=#{memberGender}
   </update>
   <!-- 회원 탈퇴 -->
-  <delete id="delete">
+  <delete id="delete" >
   delete member where member_id=#{memberId}
   </delete>
   <!-- 상세 조회 -->
-  <select id="find">
+  <select id="find" resultType="memberDto">
   select * from member where member_id=#{memberId}
   </select>
   

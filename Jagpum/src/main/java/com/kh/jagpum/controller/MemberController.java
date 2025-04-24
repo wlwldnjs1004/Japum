@@ -20,25 +20,17 @@ public class MemberController {
 	@Autowired
 	private MemberDao memberDao;
 	
-//	//
-//	@GetMapping("/long")
-//	public String long(){
-//			
-//	}
-//  삭제
-	
-//  수정
-	
 //  회원 가입 메핑
 	@GetMapping("/join")
-	public String join(@ModelAttribute MemberDto memberDto) {
-		
-		memberDao.insert(memberDto);
-//		emailService.sendWelcomeMail(memberDto);
-		
-		
-		return"refirect:joinFinish";
+	public String join() {
+		return"/WEB-INF/views/member/join.jsp";
 	}
+	@PostMapping("/join")
+	public String join(@ModelAttribute MemberDto memberDto) {
+		memberDao.insert(memberDto);
+		return"refirect:/";
+	}
+	
 	@RequestMapping("/joinFinish")
 	public String joinFinish() {
 		return "/WEB-INF/views/member/joinFinish.jsp";
@@ -48,6 +40,7 @@ public class MemberController {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("userId");
+		
 		return "redirect:/";
 		
 	}

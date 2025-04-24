@@ -97,7 +97,7 @@
                             상품권 구매</a>
                     </li>
                     </c:if>
-                        <c:if test="${sessionScope.userId ==null}">
+                        <c:if test="${sessionScope.userId !=null}">
                           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">

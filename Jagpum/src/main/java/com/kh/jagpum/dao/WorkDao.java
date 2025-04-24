@@ -39,7 +39,6 @@ public class WorkDao {
 		int workNo = sqlSession.selectOne("work.sequence");
 		workDto.setWorkNo(workNo);
 		sqlSession.insert("work.add2", workDto);
-		
 		return workDto;
 	}
 
@@ -58,11 +57,11 @@ public class WorkDao {
 	public List<WorkListViewDto>selectListview(){
 		return sqlSession.selectList("work.viewList");
 	}
-	
-	// 뷰 상세 조회
-	public WorkListViewDto selectListviews(int workNo){
-		return sqlSession.selectOne("work.listViews",workNo);
+	//뷰 상세 조회
+	public WorkListViewDto selectListviewBy(int workNo) {
+		return sqlSession.selectOne("work.workListView",workNo);
 	}
+	
 	
 	// 상세 조회
 	public WorkDto seleOne(WorkDto workDto) {
