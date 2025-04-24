@@ -46,6 +46,7 @@ public class MemberController {
 		return "/WEB-INF/views/member/joinFinish.jsp";
 		
 	}
+	//로그인
 	@GetMapping("/login")
 	public String login() {
 		return "/WEB-INF/views/member/login.jsp";
