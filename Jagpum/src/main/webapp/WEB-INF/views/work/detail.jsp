@@ -29,6 +29,10 @@
 .change-size {
 	font-size: 18px;
 }
+.w{
+ font-size:20px
+ ;
+}
 </style>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
@@ -47,38 +51,40 @@
 				<c:choose>
 					<c:when test="${workDto.workBook =='Y'}">
 						<b>${workDto.workName}[E]북</b>
-							<br>
-							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
-					<p>
-					${workDto.workPaid}
-					</p> 
-						<h4>${workDto.workGenre}
-						${workDto.workSubGenre} 
-				</h4>
+						<br>
+						<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+						<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
+						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
+							<div class="row mt-5 ">
+							<div class="col w">
+							${workDto.workMon == 'Y' ? '월 ' : ''}</div>
+							<div class="col w">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
+							<div class="col w">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
+							<div class="col w">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
+							<div class="col w">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
+							<div class="col w">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
+							<div class="col w">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
+						</div>
 					</c:when>
 					<c:otherwise>
-						<label>작품 이름:${workDto.workName}</label>	
-							<br>
-							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
-					<p>
-					${workDto.workPaid}
-					</p> 
-						<h4>${workDto.workGenre}
-						${workDto.workSubGenre} 
-				</h4>
-				<label>
-			${workDto.workMon == 'Y' ? '월요일 ' : ''}
-			${workDto.workTue == 'Y' ? '화요일 ' : ''}
-			${workDto.workWed == 'Y' ? '수요일 ' : ''}
-			${workDto.workThu == 'Y' ? '목요일 ' : ''}
-			${workDto.workFri == 'Y' ? '금요일 ' : ''}
-			${workDto.workSat == 'Y' ? '토요일 ' : ''}
-			${workDto.workSun == 'Y' ? '일요일 ' : ''}
+						<label>작품 이름:${workDto.workName}</label>
+						<br>
+						<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+												<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
+						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
+						<div class="row mt-5 ">
+							<div class="col "><span class="w">
+							${workDto.workMon == 'Y' ? '월 ' : ''}
+							</span>
+							</div>
+							<div class="col w"><span class="w">${workDto.workTue == 'Y' ? '화 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workWed == 'Y' ? '수 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workThu == 'Y' ? '목 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workFri == 'Y' ? '금 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workSat == 'Y' ? '토 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workSun == 'Y' ? '일 ' : ''}</span></div>
+						</div>
 
-				</label>
-				
-				
-				
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -102,9 +108,7 @@
 	<div class="my-3 mt-1"></div>
 
 	<div class="row mt-4">
-		<div class="col-md-12">
-		
-		</div>
+		<div class="col-md-12"></div>
 	</div>
 
 
@@ -128,13 +132,13 @@
 					<tbody>
 						<c:forEach var="chapter" items="${chapterList}">
 							<tr>
-								<td>
-	<c:if test="${chapter.priceVisible}">
-		<fmt:formatNumber value="${chapter.chapterPrice}" type="currency" currencySymbol="₩"/>
-	</c:if>
-	</td>
+								<td><c:if test="${chapter.priceVisible}">
+										<fmt:formatNumber value="${chapter.chapterPrice}"
+											type="currency" currencySymbol="₩" />
+									</c:if></td>
 								<td>${chapter.chapterOrder}</td>
-								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}"
+								<td><a
+									href="/chapter/detail?chapterNo=${chapter.chapterNo}"
 									class="aa"> ${chapter.chapterTitle} </a></td>
 								<td>${chapter.chapterModified}</td>
 							</tr>
@@ -143,7 +147,6 @@
 				</table>
 			</c:otherwise>
 		</c:choose>
-
 		<div class="my-4"></div>
 
 		<div class="row mt-5">
@@ -153,7 +156,6 @@
 					href="/work/delete?workNo=${workDto.workNo}"
 					class="btn btn-primary ">작품 삭제</a> <a
 					href="/work/edit?workNo=${workDto.workNo}" class="btn btn-primary">수정하기</a>
-
 			</div>
 		</div>
 

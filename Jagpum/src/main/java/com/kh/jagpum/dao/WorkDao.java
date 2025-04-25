@@ -90,7 +90,6 @@ public class WorkDao {
 		return sqlSession.selectOne("work.findProfile",workNo);
 	}
 	
-	
 }
 
 	

@@ -193,6 +193,8 @@
 			</c:otherwise>
 		</c:choose>
 
+${workDto.workMon=='N'?'<input class="form-check-input" type="checkbox" name="workSun" value="N">':'<input class="form-check-input" type="checkbox" name="workSun" value="Y" checked="checked" >'}
+월
 
 		<div class="row mt-5">
 			<div class="col text-end">

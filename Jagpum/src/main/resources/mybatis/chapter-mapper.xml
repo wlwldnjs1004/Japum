@@ -66,7 +66,7 @@ select * from chapter order by chapter_order asc
 
 
 <!--  조회 -->
-<select id="workList">
+<select id="workList" resultType="chapterDto">
 select * from chapter where work_no=#{workNo}
 </select>
 

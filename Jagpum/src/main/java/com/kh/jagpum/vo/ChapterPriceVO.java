@@ -16,13 +16,14 @@ public class ChapterPriceVO {
 	    // 오라클에서 가격이 정해졌다면, 그대로 넘겨받아서 저장
 	    public ChapterPriceVO(ChapterDto chapterDto) {
 	        this.chapterOrder = chapterDto.getChapterOrder();
-	        this.chapterPrice = chapterDto.getChapterPrice(); // 그대로 복사
+	        this.chapterPrice = chapterDto.getChapterPrice();
 	    }
 
 	    // 가격 노출 여부만 로직으로 제공 (30화 이상만 보여줌)
 	    public boolean isPriceVisible() {
 	        return chapterOrder >= 30;
 	    }
-	}
+	    
+}
 
 	

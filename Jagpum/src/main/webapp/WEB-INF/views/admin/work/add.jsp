@@ -11,7 +11,6 @@
 	-khtml-user-select: none;
 	user-select: none;
 }
-
 .size-r{
 font-size: 20px;
 }
@@ -38,8 +37,6 @@ font-size: 20px;
 				<input name="workName" type="text" class="form-control" placeholder="작품명을 입력하세요">
 			</div>
 		</div>
-
-
 
 
 		<div class="row mt-4">

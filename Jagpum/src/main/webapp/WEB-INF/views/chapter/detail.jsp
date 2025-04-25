@@ -3,6 +3,7 @@
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
+
 <style>	
 .drag-prevent{
     -ms-user-select: none;
@@ -12,23 +13,26 @@
     user-select: none;
 }
 </style>
+
+
 <div class="container">
-
-
-
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="">${chapterDto.chapterTitle}</div>
 		</div>
 	</div>
+
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="font-family drag-prevent" style="height: 400px;">
 				${chapterDto.chapterDetail}</div>
 		</div>
 	</div>
+	
+	
 	<div class="row mt-2">
 	<div class="col-sm-12">
+	
 	</div>
 	</div>
 	

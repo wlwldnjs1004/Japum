@@ -40,8 +40,7 @@
 
 	<div class="row mt-4">
 	<div class="col">
-	<a class="btn btn-primary " href="${pageContext.request.contextPath}/work/add">
-	작품 등록</a>
+	<a class="btn btn-primary " href="${pageContext.request.contextPath}/work/add">작품 등록</a>
 	</div>
 	</div>
 

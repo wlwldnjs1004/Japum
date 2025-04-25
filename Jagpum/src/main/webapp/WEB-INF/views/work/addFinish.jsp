@@ -13,9 +13,11 @@
 
 <div class="row mt-5">
 <div class="col">
-  <a href="list">
-  목록 페이지로 돌아가ㅣㄱ</a>
+  <a href="list" class="btn btn-success">목록</a>
   </div>
   </div>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
+
+
+

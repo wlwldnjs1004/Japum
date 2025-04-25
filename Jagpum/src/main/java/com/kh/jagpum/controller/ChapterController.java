@@ -48,31 +48,20 @@ public class ChapterController {
 	 @PostMapping("/add")
 	 public String add(@ModelAttribute ChapterDto chapterDto,
 	                   @RequestParam int workNo) {
-//		 chapterDto.setChapterOrder(nextOrder);
-//		 chapterDto.setWorkNo(workNo); 
-//	     chapterDao.insert(chapterDto);
-	     
-		    // [1] chapter_order 구하기
-//		    int nextOrder = chapterDao.getNextChapterOrder(workNo);
-
-		    // [2] Dto에 세팅
-//		    chapterDto.setChapterOrder(nextOrder);
-//		    chapterDto.setWorkNo(workNo);
 		 
-		    // [3] insert
-		 
-//		chapterDto.setChapterPrice(chapterDto.getChapterPrice()==null? "N":chapterDto.getChapterPrice());
 		    chapterDao.insert(chapterDto);
 		    
-		    
-	     return "redirect:/chapter/addFinish";
+	     return "redirect:/work/detail?workNo="+workNo;
 	 }
 
 	
-	@RequestMapping("/addFinish")
-	public String addFininsh() {
-		return "/WEB-INF/views/chapter/addFinish.jsp";
-	}
+//	@RequestMapping("/addFinish")
+//	public String addFininsh(@RequestParam int workNo,
+//			Model model) {
+//		ChapterDto chapterDto=chapterDao.workList(workNo);
+//		model.addAttribute("chapterDto",chapterDto);
+//		return "/WEB-INF/views/chapter/addFinish.jsp";
+//	}
 	
 	@RequestMapping("/list")
 	public String list(Model model) {
