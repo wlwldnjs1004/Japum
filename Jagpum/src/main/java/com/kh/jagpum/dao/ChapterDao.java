@@ -42,6 +42,7 @@ public boolean update(ChapterDto chapterDto) {
 public boolean ChapterPriceBy(ChapterDto chapterDto) {
 	return sqlSession.update("chapter.updateChapterPriceByWorkNo",chapterDto)>0;
 }
+
 //work 을 이용한 조회
 public ChapterDto workList(int workNo) {
 	return sqlSession.selectOne("chapter.workList",workNo);

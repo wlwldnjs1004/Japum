@@ -47,38 +47,34 @@
 				<c:choose>
 					<c:when test="${workDto.workBook =='Y'}">
 						<b>${workDto.workName}[E]북</b>
-							<br>
-							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
-					<p>
-					${workDto.workPaid}
-					</p> 
-						<h4>${workDto.workGenre}
-						${workDto.workSubGenre} 
-				</h4>
+						<br>
+						<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+						<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
+						<h4>${workDto.workGenre}</h4>
+					
+					${workDto.workSubGenre}
+
 					</c:when>
 					<c:otherwise>
-						<label>작품 이름:${workDto.workName}</label>	
-							<br>
-							<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
-					<p>
-					${workDto.workPaid}
-					</p> 
-						<h4>${workDto.workGenre}
-						${workDto.workSubGenre} 
-				</h4>
-				<label>
-			${workDto.workMon == 'Y' ? '월요일 ' : ''}
-			${workDto.workTue == 'Y' ? '화요일 ' : ''}
-			${workDto.workWed == 'Y' ? '수요일 ' : ''}
-			${workDto.workThu == 'Y' ? '목요일 ' : ''}
-			${workDto.workFri == 'Y' ? '금요일 ' : ''}
-			${workDto.workSat == 'Y' ? '토요일 ' : ''}
-			${workDto.workSun == 'Y' ? '일요일 ' : ''}
+						<label>작품 이름:${workDto.workName}</label>
+						<br>
+						<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
+												<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
+						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
+						<div class="row mt-5 ">
+							<div class="col"></div>
+							<div class="col">
+							${workDto.workMon == 'Y' ? '월 ' : ''}</div>
+							<div class="col">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
+							<div class="col">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
+							<div class="col">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
+							<div class="col">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
+							<div class="col">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
+							<div class="col">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
+						</div>
 
-				</label>
-				
-				
-				
+
+
 					</c:otherwise>
 				</c:choose>
 			</div>
@@ -102,9 +98,7 @@
 	<div class="my-3 mt-1"></div>
 
 	<div class="row mt-4">
-		<div class="col-md-12">
-		
-		</div>
+		<div class="col-md-12"></div>
 	</div>
 
 
@@ -128,13 +122,13 @@
 					<tbody>
 						<c:forEach var="chapter" items="${chapterList}">
 							<tr>
-								<td>
-	<c:if test="${chapter.priceVisible}">
-		<fmt:formatNumber value="${chapter.chapterPrice}" type="currency" currencySymbol="₩"/>
-	</c:if>
-	</td>
+								<td><c:if test="${chapter.priceVisible}">
+										<fmt:formatNumber value="${chapter.chapterPrice}"
+											type="currency" currencySymbol="₩" />
+									</c:if></td>
 								<td>${chapter.chapterOrder}</td>
-								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}"
+								<td><a
+									href="/chapter/detail?chapterNo=${chapter.chapterNo}"
 									class="aa"> ${chapter.chapterTitle} </a></td>
 								<td>${chapter.chapterModified}</td>
 							</tr>

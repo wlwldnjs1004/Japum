@@ -232,7 +232,6 @@
 				 <input class="form-check-input" type="checkbox" name="workSat" value="Y">
 						<span class=""> 일 </span> 
 				<input class="form-check-input" type="checkbox" name="workSun" value="Y"> 
-
 			</div>
 		</div>
 

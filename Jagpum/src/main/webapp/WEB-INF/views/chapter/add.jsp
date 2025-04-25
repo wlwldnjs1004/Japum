@@ -27,7 +27,6 @@
 
 <style>
 
-
 .sss{
 font-size: 20px;
 }
@@ -57,13 +56,11 @@ font-size: 20px;
 			</div>
 		</div>
 	</div>
-	
-	
 	<hr>
+
 
 	<form action="add" method="Post" class="p-3 rounded">
 		<input type="hidden" name="workNo" value="${workNo}">
-
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
@@ -78,9 +75,6 @@ font-size: 20px;
 				<textarea name="chapterDetail" class="form-control"
 					placeholder="내용입력" rows="11"></textarea>
 			</div>
-		</div>
-		<div class="sss">
-		<span class="p-2">0</span>
 		</div>
 		
 		<div class="row mt-4">

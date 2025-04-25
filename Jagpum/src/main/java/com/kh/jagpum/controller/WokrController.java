@@ -125,6 +125,7 @@ public class WokrController {
 
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
+		
 		try {
 			int attachmentNo=workDao.findAttachment(workNo);
 			attachmentService.delete(attachmentNo);
