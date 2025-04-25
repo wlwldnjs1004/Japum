@@ -23,6 +23,7 @@ public class ChapterPriceVO {
 	    public boolean isPriceVisible() {
 	        return chapterOrder >= 30;
 	    }
-	}
+	    
+}
 
 	

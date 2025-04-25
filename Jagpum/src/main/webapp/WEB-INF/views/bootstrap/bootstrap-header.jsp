@@ -80,11 +80,13 @@
                            <c:if test="${sessionScope.userId !=null}">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/game-user/list">게임유저정보</a>
                            </c:if>
-                            <!-- <div class="dropdown-divider"></div> -->
-
+                             <div class="dropdown-divider"></div> 
+                             <c:if test="${sessionScope.userLevel=='관리자'}">
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/admin/home">관리자 페이지</a>
+                             </c:if>
                         </div>
                     </li>
-                    <li class="nav-item">
+                  <%--   <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa-solid  fa-list-ul"></i>
                             게시판
@@ -95,8 +97,8 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/">
                             <i class="fa-solid fa-money-check-dollar"></i>
                             상품권 구매</a>
-                    </li>
-                    </c:if>
+                    </li> 
+                    </c:if>--%>
                         <c:if test="${sessionScope.userId !=null}">
                           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"

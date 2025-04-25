@@ -41,22 +41,18 @@ public class WokrController {
 	private ChapterDao chapterDao;
 	
 	
+	
 	@GetMapping("/add")
 	public String add() {
 		return"/WEB-INF/views/work/add.jsp"; 
 	}
-	
 	@PostMapping("/add")
 	public String add(@ModelAttribute WorkDto workDto,
 	                  @RequestParam MultipartFile attach,
 	                  HttpSession session) throws IllegalStateException, IOException {
-
 	    String userId = (String) session.getAttribute("userId");
-
 	    workDto.setWorkId(userId);
-	    
-//	    int workNo = workDao.sequence();
-//	    workDto.setWorkNo(workNo);
+
 	    workDto.setWorkMon(workDto.getWorkMon()==null? "N":workDto.getWorkMon());
 	    workDto.setWorkTue(workDto.getWorkTue()==null? "N":workDto.getWorkTue());
 	    workDto.setWorkWed(workDto.getWorkWed()==null? "N":workDto.getWorkWed());
@@ -66,7 +62,6 @@ public class WokrController {
 	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
 	    
 	  WorkDto resultDto= workDao.insert2(workDto);
-
 	  
 	    if (!attach.isEmpty()) {
 	        AttachmentDto attachmentDto = attachmentService.save(attach);
@@ -104,12 +99,14 @@ public class WokrController {
 	
 	}
 	@RequestMapping("/detail")
-	public String detail(@RequestParam int workNo,Model model) {
+	public String detail(@RequestParam int workNo,Model model
+			) {
 		
 		WorkListViewDto workDto=workDao.selectListviewBy(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 //		ChapterDto  chapterDto=chapterDao.seleOne(workNo);
-	  
+
+	    
 		List<ChapterPriceVO> priceVoList = new ArrayList<>();
 		for (ChapterDto chapterDto : chapterList) {
 			priceVoList.add(new ChapterPriceVO(chapterDto));

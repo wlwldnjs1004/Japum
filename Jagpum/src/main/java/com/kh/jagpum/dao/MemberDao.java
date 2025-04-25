@@ -26,6 +26,10 @@ public class MemberDao {
 	public MemberDto seleOne(MemberDto memberDto) {
 		return sqlSession.selectOne("member.find",memberDto);
 	}
+	public MemberDto seleOne(String memberId) {
+		return sqlSession.selectOne("member.find",memberId);
+	}
+	
 	
 	//회원 탈퇴
 	public boolean delete(String memberId) {

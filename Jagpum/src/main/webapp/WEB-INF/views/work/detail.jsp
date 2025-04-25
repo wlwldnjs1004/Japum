@@ -29,6 +29,10 @@
 .change-size {
 	font-size: 18px;
 }
+.w{
+ font-size:20px
+ ;
+}
 </style>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
@@ -50,10 +54,17 @@
 						<br>
 						<span>${workDto.workContract =='N'?'비독점':'독점'}</span>
 						<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
-						<h4>${workDto.workGenre}</h4>
-					
-					${workDto.workSubGenre}
-
+						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
+							<div class="row mt-5 ">
+							<div class="col w">
+							${workDto.workMon == 'Y' ? '월 ' : ''}</div>
+							<div class="col w">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
+							<div class="col w">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
+							<div class="col w">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
+							<div class="col w">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
+							<div class="col w">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
+							<div class="col w">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
+						</div>
 					</c:when>
 					<c:otherwise>
 						<label>작품 이름:${workDto.workName}</label>
@@ -62,18 +73,17 @@
 												<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
 						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
 						<div class="row mt-5 ">
-							<div class="col"></div>
-							<div class="col">
-							${workDto.workMon == 'Y' ? '월 ' : ''}</div>
-							<div class="col">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
-							<div class="col">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
-							<div class="col">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
-							<div class="col">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
-							<div class="col">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
-							<div class="col">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
+							<div class="col "><span class="w">
+							${workDto.workMon == 'Y' ? '월 ' : ''}
+							</span>
+							</div>
+							<div class="col w"><span class="w">${workDto.workTue == 'Y' ? '화 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workWed == 'Y' ? '수 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workThu == 'Y' ? '목 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workFri == 'Y' ? '금 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workSat == 'Y' ? '토 ' : ''}</span></div>
+							<div class="col w"><span class="w">${workDto.workSun == 'Y' ? '일 ' : ''}</span></div>
 						</div>
-
-
 
 					</c:otherwise>
 				</c:choose>
@@ -137,7 +147,6 @@
 				</table>
 			</c:otherwise>
 		</c:choose>
-
 		<div class="my-4"></div>
 
 		<div class="row mt-5">
@@ -147,7 +156,6 @@
 					href="/work/delete?workNo=${workDto.workNo}"
 					class="btn btn-primary ">작품 삭제</a> <a
 					href="/work/edit?workNo=${workDto.workNo}" class="btn btn-primary">수정하기</a>
-
 			</div>
 		</div>
 
