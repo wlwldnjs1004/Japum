@@ -18,7 +18,6 @@
 
 		$("[name=chapterTitle]").blur(
 				function() {
-
 					const size = $(this).val().length > 0;
 					$(this).removeClass("is-valid is-invalid").addClass(
 							size ? "is-valid" : "is-invalid");
@@ -31,7 +30,6 @@
 							size ? "is-valid" : "is-invalid");
 					status.chapterDetail = size;
 				});
-
 		$(".needs-validation").submit(function() {
 			$("[name]").trigger("blur");
 			return status.ok();
@@ -106,8 +104,7 @@
 									var form = new FormData();//form을 대신할 도구
 									form.append("attach", files[0]);
 
-									$
-											.ajax({
+									$.ajax({
 												processData : false,//파일업로드를 위해 반드시 필요한 설정
 												contentType : false,//파일업로드를 위해 반드시 필요한 설정
 												url : "http://localhost:8080/rest/board/upload",

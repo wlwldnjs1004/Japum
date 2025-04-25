@@ -17,6 +17,7 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/member")
 public class MemberController {
 
+	
 	@Autowired
 	private MemberDao memberDao;
 	
@@ -50,7 +51,11 @@ public class MemberController {
 	@GetMapping("/login")
 	public String login() {
 		return "/WEB-INF/views/member/login.jsp";
+	
+	
 	}
+	
+	
 	@PostMapping("/login")
 	public String loing(@ModelAttribute MemberDto memberDto,
 			HttpSession session) {

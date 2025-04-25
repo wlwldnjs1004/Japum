@@ -52,4 +52,14 @@ public class MemberDao {
 		return sqlSession.selectOne("member.findImage",memberId);
 	}
 	
+	//닉네임 찾기
+	public MemberDto selectOneByMemberNickname(String memberNickname) {
+		return sqlSession.selectOne("member.selectOneByMemberNickname",memberNickname);
+	}
+	//닉네임 찾기
+	public MemberDto selectOneByMemberNickname(MemberDto  memeberDto) {
+		return sqlSession.selectOne("member.selectOneByMemberNickname",memeberDto);
+	}
+	
+	
 }
