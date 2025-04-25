@@ -30,8 +30,10 @@
 	font-size: 18px;
 }
 .w{
- font-size:20px
- ;
+ font-size:20px;
+}
+.sss{
+font-size:20px;
 }
 </style>
 
@@ -121,7 +123,18 @@
 			<c:otherwise>
 
 				<h3 class="my-2">챕터 목록</h3>
-				<table class="table table-hover">
+					<c:forEach var="chapter" items="${chapterList}">
+					<ul class="list-group">
+					<li class="list-group-item sss mt-2 md-2">${chapter.chapterOrder}
+					<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa"> ${chapter.chapterTitle} </a>
+					${chapter.chapterModified}
+	<c:if test="${chapter.chapterOrder >=30}">가격${chapter.chapterPrice}
+				</c:if>	
+				</li>
+					</ul>
+					</c:forEach>
+						
+							<table class="table table-hover">
 					<thead>
 						<tr>
 							<th>챕터 번호</th>
@@ -133,8 +146,7 @@
 						<c:forEach var="chapter" items="${chapterList}">
 							<tr>
 								<td>${chapter.chapterOrder}</td>
-								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}"
-									class="aa"> ${chapter.chapterTitle} </a></td>
+								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa"> ${chapter.chapterTitle} </a></td>
 								<td>${chapter.chapterModified}</td>
 								<c:if test="${chapter.chapterOrder >=30}">
 								<td>가격${chapter.chapterPrice}</td></c:if>
