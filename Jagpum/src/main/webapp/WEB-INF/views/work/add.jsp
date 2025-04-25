@@ -166,7 +166,7 @@
 					<input class="form-check-input" type="checkbox" name="workFri" value="Y">
 				<span class="ms-4"> 토 </span>
 				 <input class="form-check-input" type="checkbox" name="workSat" value="Y">
-						<span class=""> 일 </span> 
+						<span class="ms-4"> 일 </span> 
 				<input class="form-check-input" type="checkbox" name="workSun" value="Y"> 
 			</div>
 		</div>
