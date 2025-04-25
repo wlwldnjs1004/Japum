@@ -105,18 +105,19 @@ public class WokrController {
 		WorkListViewDto workDto=workDao.selectListviewBy(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
 //		ChapterDto  chapterDto=chapterDao.seleOne(workNo);
-	    ChapterDto chapterDtovo = chapterDao.workList(workNo);
-//	    	ChapterPriceVO  vo=new ChapterPriceVO(chapterDtovo);
-	    	
+
 	    
 		List<ChapterPriceVO> priceVoList = new ArrayList<>();
 		for (ChapterDto chapterDto : chapterList) {
 			priceVoList.add(new ChapterPriceVO(chapterDto));
 		}
-		
-	    model.addAttribute("workDto",workDto);
-	    model.addAttribute("chapterList", chapterList);
 
+		model.addAttribute("priceVoList",priceVoList);
+//		System.out.println(priceVoList);
+	    model.addAttribute("workDto",workDto);
+//	    System.out.println(chapterList);
+	    model.addAttribute("chapterList", chapterList);
+	    	
 	    
 	    return"/WEB-INF/views/work/detail.jsp";
 	}

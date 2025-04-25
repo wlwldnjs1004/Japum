@@ -79,6 +79,7 @@ public class ChapterController {
 		int workNo=chapterDto.getWorkNo();
 		
 		model.addAttribute("chapterDto",chapterDto);
+		
 		return"/WEB-INF/views/chapter/detail.jsp";
 	}
 
