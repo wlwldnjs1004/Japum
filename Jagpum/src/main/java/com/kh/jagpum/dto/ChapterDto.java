@@ -21,7 +21,12 @@ public class ChapterDto {
 	private int chapterOrder;//챕터 등록 카운트
 	private int chapterPrice;
 
-private Boolean priceVisible;
+    
+	
+	public boolean isPriceVisible() {
+        return chapterOrder >= 30;
+    }
+    
 
 
 }

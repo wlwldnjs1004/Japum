@@ -39,20 +39,15 @@ public class AdminWorkController {
 	public String addBook(@ModelAttribute WorkDto workDto,
 	                  @RequestParam MultipartFile attach,
 	                  HttpSession session) throws IllegalStateException, IOException {
-
 	    String userId = (String) session.getAttribute("userId");
 
 	    workDto.setWorkId(userId);
-
 	  WorkDto resultDto =workDao.insert(workDto);
-
 	    if (!attach.isEmpty()) {
 	        AttachmentDto attachmentDto = attachmentService.save(attach);
 	        workDao.connect(resultDto, attachmentDto);
 	    }
-	    
 	    return "redirect:/work/addFinish";
 	}
-	
 	
 }

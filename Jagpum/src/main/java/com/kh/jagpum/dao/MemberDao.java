@@ -1,6 +1,7 @@
 package com.kh.jagpum.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -18,7 +19,6 @@ public class MemberDao {
 	
 	//등록
 	public MemberDto insert(MemberDto memberDto) {
-		
 		sqlSession.insert("member.add",memberDto);
 	return memberDto;	
 	}
@@ -28,6 +28,11 @@ public class MemberDao {
 	}
 	public MemberDto seleOne(String memberId) {
 		return sqlSession.selectOne("member.find",memberId);
+	}
+
+	//리스트 불러오기
+	public List<MemberDto>selectList(){
+		return sqlSession.selectList("member.list");
 	}
 	
 	
@@ -51,5 +56,15 @@ public class MemberDao {
 	public int findAttachment(String memberId) {
 		return sqlSession.selectOne("member.findImage",memberId);
 	}
+	
+	//닉네임 찾기
+	public MemberDto selectOneByMemberNickname(String memberNickname) {
+		return sqlSession.selectOne("member.selectOneByMemberNickname",memberNickname);
+	}
+	//닉네임 찾기
+	public MemberDto selectOneByMemberNickname(MemberDto  memeberDto) {
+		return sqlSession.selectOne("member.selectOneByMemberNickname",memeberDto);
+	}
+	
 	
 }

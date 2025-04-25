@@ -112,10 +112,12 @@ public class WokrController {
 			priceVoList.add(new ChapterPriceVO(chapterDto));
 		}
 
-		
+		model.addAttribute("priceVoList",priceVoList);
+//		System.out.println(priceVoList);
 	    model.addAttribute("workDto",workDto);
+//	    System.out.println(chapterList);
 	    model.addAttribute("chapterList", chapterList);
-
+	    	
 	    
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
