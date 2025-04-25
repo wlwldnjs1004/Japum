@@ -48,7 +48,11 @@
 			</div>
 		</div>
 	</div>
+	<div class="row mt-4">
+	<div class="col">
 	
+	</div>
+	</div>
 		<div class="row mt-5 ">
 		<div class="col-sm-12">
 		<a class="btn btn-primary w-25"
@@ -63,9 +67,6 @@
 
 		</div>
 		</div>
-		
-		
-		
 		
 </div>
 
