@@ -22,8 +22,9 @@ public class MemberRestController {
 		MemberDto memberDto=memberDao.seleOne(memberId);
 		return memberDto==null;
 	}
+	
 		@RequestMapping("/checkMemberNickname")
-	public boolean checkMemberNickname(@RequestParam String memberNickname) {
+			public boolean checkMemberNickname(@RequestParam String memberNickname) {
 			MemberDto memberDto=memberDao.selectOneByMemberNickname(memberNickname);
 			return memberDto==null;
 		}

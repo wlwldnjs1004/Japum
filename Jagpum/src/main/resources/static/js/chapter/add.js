@@ -1,8 +1,29 @@
 /*글자 수를 카운트 하기 위한 jQery*/
-$(function () {
+/*$(function () {
   $("[name=chapterDetail]").on("input", function () {
     const text = $(this).val();
     $(".sss span").text(text.length);
+  });
+});*/
+let inputValue = "";
+
+$(function () {
+  const $input = $("[name=chapterDetail]");
+
+  // keydown 때마다 직접 누른 키를 기록
+  $input.on("keydown", function (e) {
+    if (e.key.length === 1) {
+      inputValue += e.key;
+    } else if (e.key === "Backspace") {
+      inputValue = inputValue.slice(0, -1);
+    }
+    $(".sss span").text(inputValue.length);
+  });
+
+  // input이 바뀌면 val 기준으로 초기화 (실제 텍스트와 동기화)
+  $input.on("input", function () {
+    inputValue = $(this).val();
+    $(".sss span").text(inputValue.length);
   });
 });
 
