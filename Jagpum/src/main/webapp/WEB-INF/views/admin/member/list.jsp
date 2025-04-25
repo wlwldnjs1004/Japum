@@ -17,20 +17,28 @@
 	</div>
 </div>
 
-
 <c:forEach var="memberDto" items="${list}">
 
 <table class="table table-hover">
 <thead>
 <tr>
-<th>회원 이미지</th>
+<!-- <th>회원 이미지</th> -->
 <th>회원 아이디</th>
 <th>회원 등급</th>
 <th>회원 이메일</th>
 <th>회원 가입일</th>
+<th>성별</th>
 </tr>
 </thead>
-
+<tbody>
+<tr>
+<td>${memberDto.memberId}</td>
+<td>${memberDto.memberLevel}</td>
+<td>${memberDto.memberEmail}</td>
+<td>${memberDto.memberItem}</td>
+<td>${memberDto.memberGender==N?'남자':'여자'}</td>
+</tr>
+</tbody>
 </table>
 
 
