@@ -71,8 +71,6 @@ public class ChapterController {
 	
 	}
 	
-	
-	
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int chapterNo,Model model) {
 		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
@@ -142,6 +140,20 @@ public class ChapterController {
 		return"redirect:detail?chapterNo="+chapterDto.getChapterNo();
 
 	}
+	
+	@GetMapping("/List")
+	public String List(@RequestParam int chapterNo,
+			Model model) {
+		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
+		model.addAttribute("chapterDto",chapterDto);
+		return "/WEB-INF/views/admin/chapter/edit.jsp";
+	}
+	@PostMapping("/List")
+	public String List(@ModelAttribute ChapterDto chapterDto) {
+		chapterDao.ChapterPriceBy(chapterDto);
+		return "redirect:/bootstrap";
+	}
+
 	
 	
 }

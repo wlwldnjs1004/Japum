@@ -59,23 +59,21 @@
 		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
 	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">삭제 </a>
 		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">수정</a>
-<c:if test="${sessionScope.userLevel=='관리자'}">
-		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-</c:if>		
-	가격 변경
-</button>
-
+			<c:if test="${sessionScope.userLevel=='관리자'}">
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			가격 변경
+		</button>
+			</c:if>		
 		</div>
 		</div>
 		
 </div>
 
 
-
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 </button> -->
-
 <!-- Modal -->
+
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -84,6 +82,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+	<input type="hidden" name="workNo" value="${chapterDto.workNo}"/>
      <input type="text" inputmode="numeric" name="chapterPrice" class="form-control" />
       </div>
       <div class="modal-footer">

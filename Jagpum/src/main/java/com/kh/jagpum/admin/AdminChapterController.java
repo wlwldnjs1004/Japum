@@ -24,16 +24,13 @@ public class AdminChapterController {
 	@GetMapping("/edit")
 	public String add(@RequestParam int chapterNo,
 			Model model) {
-		
 		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
 		model.addAttribute("chapterDto",chapterDto);
-		
 		return "/WEB-INF/views/admin/chapter/edit.jsp";
 	}
 	@PostMapping("/edit")
 	public String add(@ModelAttribute ChapterDto chapterDto) {
 		chapterDao.ChapterPriceBy(chapterDto);
-		
 		return "redirect:/bootstrap";
 	}
 	

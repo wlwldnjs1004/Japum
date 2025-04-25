@@ -61,6 +61,10 @@
   select * from member where member_nickname=#{memberNickname}  
   </select>
   
+  <select id="list" resultType="memberDto">
+  select * from member order by member_id desc
+  </select>
+  
   
   </mapper>
   

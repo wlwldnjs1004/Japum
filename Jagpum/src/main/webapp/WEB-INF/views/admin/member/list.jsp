@@ -8,15 +8,6 @@
 
 
 
-<!--점보트론-->
-<!-- <div class="row mt-4">
-	<div class="col">
-		<div class="bg-dark text-light p-4 rounded">
-			<h1>부트스크랩 래이아웃</h1>
-			<p>설명</p>
-		</div>
-	</div>
-</div> -->
 
 <div class="row mt-4">
 	<div class="col">
@@ -25,6 +16,26 @@
 		</div>
 	</div>
 </div>
+
+
+<c:forEach var="memberDto" items="${list}">
+
+<table class="table table-hover">
+<thead>
+<tr>
+<th>회원 이미지</th>
+<th>회원 아이디</th>
+<th>회원 등급</th>
+<th>회원 이메일</th>
+<th>회원 가입일</th>
+</tr>
+</thead>
+
+</table>
+
+
+</c:forEach>
+
 
 
 
