@@ -9,7 +9,7 @@
 <h1>
 글이 등록 되었습니다
 </h1>
-  <a class="btn btn-success" href="/work/detail?workNo=${workDto.workNo}">돌아기기</a> 
+  <a class="btn btn-success" href="/work/detail?workNo=${chapterDto.workNo}">돌아기기</a> 
 
 
 
