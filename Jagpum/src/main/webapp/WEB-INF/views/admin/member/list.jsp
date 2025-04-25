@@ -6,9 +6,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-
-
-
 <div class="row mt-4">
 	<div class="col">
 		<div class="bg-dark text-light p-4 rounded">
@@ -16,9 +13,6 @@
 		</div>
 	</div>
 </div>
-
-<c:forEach var="memberDto" items="${list}">
-
 <table class="table table-hover">
 <thead>
 <tr>
@@ -31,18 +25,18 @@
 </tr>
 </thead>
 <tbody>
+<c:forEach var="memberDto" items="${list}">
 <tr>
 <td>${memberDto.memberId}</td>
 <td>${memberDto.memberLevel}</td>
 <td>${memberDto.memberEmail}</td>
 <td>${memberDto.memberItem}</td>
 <td>${memberDto.memberGender==N?'남자':'여자'}</td>
+</c:forEach>
 </tr>
 </tbody>
 </table>
 
-
-</c:forEach>
 
 
 
