@@ -32,18 +32,15 @@ public class AdminMemberController {
 		MemberDto memberDto=memberDao.seleOne(memberId);
 		if(memberId== null) {
 		}
-		
 		model.addAttribute("memberDto",memberDto);
 		return"/WEB-INF/views/admin/member.jsp";
 	}
-	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam String memberId) {
 		boolean success=memberDao.delete(memberId);
 		if(success) {
 //			throw new TargetedNotification();
 		}
-		
 		return "redirect:home";
 		
 	}
