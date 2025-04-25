@@ -19,6 +19,7 @@
 .text {
 	resize: none;
 }
+
 </style>
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
@@ -152,8 +153,9 @@
 			</div>
 		</div>
 
+
 		<div class="row ">
-			<div class="col-sm-12 mb-3">
+			<div class="col-sm-12 mb-3 ws">
 				<span class="ms-4">월 </span> 
 					<input class="form-check-input" type="checkbox" name="workMon" value="Y">
 					 <span class="ms-4"> 화 </span> 
