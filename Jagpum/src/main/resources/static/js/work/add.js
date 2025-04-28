@@ -72,3 +72,60 @@ $(function() {
 	});
 
 });
+
+/*document.addEventListener("DOMContentLoaded", function() {
+  var input = document.querySelector('#workPrefer');
+  new Tagify(input);
+});*/
+document.addEventListener("DOMContentLoaded", function() {
+  var input = document.querySelector('#workPrefer');
+  var tagify = new Tagify(input, {
+    animationDuration: 0,
+    dropdown: {
+      enabled: 0
+    }
+  });
+  tagify.on('add', function(e) {
+    let tag = e.detail.data.value;
+    if (!tag.startsWith('#')) {
+      // # 없으면 자동 추가
+      let newValue = '#' + tag;
+      tagify.removeTag(tag); // 기존 태그 삭제
+      tagify.addTags([newValue]); // #붙은 태그 새로 추가
+    }
+  });
+});
+/*
+document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById('tagInput');
+  const list = document.getElementById('tagList');
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.key === 'Enter') {
+      const value = input.value.trim();
+      
+      if (value.length > 0) { // 글자가 있는 경우만
+        let finalValue = value;
+        
+        if (!finalValue.startsWith('#')) {
+          finalValue = '#' + finalValue;
+        }
+        
+        const tag = document.createElement('span');
+        tag.textContent = finalValue;
+        tag.className = 'tag';
+        tag.style.marginRight = '8px';
+        tag.style.padding = '5px 10px';
+        tag.style.background = '#e0e0e0';
+        tag.style.borderRadius = '20px';
+        tag.style.display = 'inline-block';
+        
+        list.appendChild(tag);
+        input.value = ''; // 입력창 비워
+      }
+      e.preventDefault(); // **이걸 정확히 preventDefault 해야 동작 충돌 없음**
+    }
+  });
+});
+*/
+
