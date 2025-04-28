@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
+import com.kh.jagpum.vo.PageVO;
 
 
 @Repository
@@ -92,20 +93,33 @@ public class WorkDao {
 
 	
 	//검색 원하는 태그 검색하고 용도가 다름
-//	public List<WorkDto> Hash(String column,String keyword) {
-//		Map<String, Object> params=new HashMap<>();
-//		params.put("column", column);
-//		params.put("keyword", keyword);
-//		return sqlSession.selectList("work.listOrSearch",params);
-		
-	//원하는 검색을하기 위해선 태그 값을 따로 뽑거나 리스트 배열 형태로 분리할 필요가 있음
-	public List<WorkDto> Hash(WorkDto workDto){
-		
-		return sqlSession.selectList("work.listPrefer",workDto);
+	public List<WorkDto> Hash(String column,String keyword) {
+		Map<String, Object> params=new HashMap<>();
+		params.put("column", column);
+		params.put("keyword", keyword);
+		return sqlSession.selectList("work.listOrSearch",params);
 	}
 	
 	
 	
+	//원하는 검색을하기 위해선 태그 값을 따로 뽑거나 리스트 배열 형태로 분리할 필요가 있음
+	public List<WorkDto> Hash(WorkDto workDto){
+		return sqlSession.selectList("work.listPrefer",workDto);
+	}
+	//검색
+	public List<WorkDto>serch(String keyword){
+		return sqlSession.selectList("work.searchList",keyword);
+	} 
+	
+//	
+//	public List<WorkDto> selectListByPaging(PageVO pageVO) {
+//	    if (pageVO.isList()) {
+//	        return selectListByPaging(pageVO.getPage(), pageVO.getSize());
+//	    } else {
+//	        return selectListByPaging(pageVO.getColumn(), pageVO.getKeyword(), pageVO.getPage(), pageVO.getSize());
+//	    }
+//	}	
+//	
 	
 	
 }

@@ -15,17 +15,18 @@ $(function () {
     } else if (e.key === "Backspace") {
       inputValue = inputValue.slice(0, -1);
     }
+	
     $(".sss span").text(inputValue.length);
   });
-
   // input이 바뀌면 val 기준으로 초기화 (실제 텍스트와 동기화)
   $input.on("input", function () {
     inputValue = $(this).val();
     $(".sss span").text(inputValue.length);
   });
 });
+
 $(function() {
-	$("[name=chapterDetail],[name=chapterComment]")
+	$("[name=chapterDetail]")
 			.summernote(
 					{height : 250,//높이(px)
 						minHeight : 200,//최소 높이(px)
@@ -36,8 +37,8 @@ $(function() {
 								[ "attach", [ "picture" ] ]
 						],
 						placeholder : "내용",
-						callback : {
-							onlmageUpload : function(files) {
+						callbacks : {
+							onImageUpload : function(files) {
 								if (files.length != 1)
 									return;
 
@@ -50,26 +51,21 @@ $(function() {
 											url : "http://localhost:8080/rest/chapter/upload",
 											method : "post",
 											data : form,
-											success : function(response) {//첨부파일번호(attachmentNo)
-												//첨부파일 번호를 이용해서 src생성
-												//http://localhost:8080/attachment/download?attachmentNo=번호
-												var tag = $("<img>").attr(
-														"src",
-														"http://localhost:8080/attachment/download?attachmentNo="
-																+ response)
-
-												.addClass("summernote-img");
-												$("[name=chapterDetail],[name=chapterComment]")
-														.summernpte(
-																"insertNode",
-																tag[0]);
+											success: function(response) {
+											    for (var i = 0; i < response.length; i++) {
+											        var tag = $("<img>").attr(
+											            "src", "http://localhost:8080/attachment/download?attachmentNo=" + response[i]
+											        ).addClass("summernote-img")
+											         .attr("data-attachment-no", response[i]);
+											        $("[name=chapterDetail]").summernote("insertNode", tag[0]);
+											    }
 											}
+
 										});
 							},
 						},
 					});
 				});
-
 $(function() {
 	const status = {
 		chapterTitle : false,
@@ -78,8 +74,8 @@ $(function() {
 			return this.chapterTitle && this.chpaterDetail;
 		},
 	};
-
-	$("[name=chapterTitle]").blur(
+	
+		$("[name=chapterTitle]").blur(
 			function() {
 				const size = $(this).val().length > 0;
 				$(this).removeClass("is-valid is-invalid").addClass(

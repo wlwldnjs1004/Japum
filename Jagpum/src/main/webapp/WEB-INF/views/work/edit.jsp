@@ -193,8 +193,23 @@
 			</c:otherwise>
 		</c:choose>
 
-${workDto.workMon=='N'?'<input class="form-check-input" type="checkbox" name="workSun" value="N">':'<input class="form-check-input" type="checkbox" name="workSun" value="Y" checked="checked" >'}
+<!--요일 구분  -->
+${workDto.workMon=='N'?'<input class="form-check-input" type="checkbox" name="workMon" value="N">':'<input class="form-check-input" type="checkbox" name="workMon" value="Y" checked="checked" >'}
 월
+${workDto.workTue=='N'?'<input class="form-check-input" type="checkbox" name="workTue" value="N">':'<input class="form-check-input" type="checkbox" name="workTue" value="Y" checked="checked" >'}
+화
+${workDto.workWed=='N'?'<input class="form-check-input" type="checkbox" name="workWed" value="N">':'<input class="form-check-input" type="checkbox" name="workWed" value="Y" checked="checked" >'}
+수
+${workDto.workThu=='N'?'<input class="form-check-input" type="checkbox" name="workThu" value="N">':'<input class="form-check-input" type="checkbox" name="workThu" value="Y" checked="checked" >'}
+목
+${workDto.workFri=='N'?'<input class="form-check-input" type="checkbox" name="workFri" value="N">':'<input class="form-check-input" type="checkbox" name="workFri" value="Y" checked="checked" >'}
+금
+${workDto.workSat=='N'?'<input class="form-check-input" type="checkbox" name="workSat" value="N">':'<input class="form-check-input" type="checkbox" name="workSat" value="Y" checked="checked" >'}
+토
+${workDto.workSun=='N'?'<input class="form-check-input" type="checkbox" name="workSun" value="N">':'<input class="form-check-input" type="checkbox" name="workSun" value="Y" checked="checked" >'}
+일
+
+
 
 		<div class="row mt-5">
 			<div class="col text-end">

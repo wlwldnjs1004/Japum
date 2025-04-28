@@ -16,8 +16,6 @@ import com.kh.jagpum.dto.WorkDto;
 
 public class HomeController {
 
-	@Autowired
-	private WorkDao workDao;
 	
 	
 	@RequestMapping("/")

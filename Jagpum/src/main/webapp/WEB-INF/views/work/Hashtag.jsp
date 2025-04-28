@@ -13,22 +13,11 @@
 		<div class="row mt-4">
 			<div class="col">
 				<div class="bg-dark text-light p-4 rounded">
-					<h1>해시 검색창</h1>
-					<p>설명창</p>
+					<h1>태그 검색창</h1>
 				</div>
 			</div>
 		</div>
-		<div class="row mt-4">
-			<div class="col">
-				<form action="Hashtag" method="post">
-					<input type="text" name="column" class="form-control"> 
-					<input type="text" name="keyword" class="form-control">
-				<button class="btn btn-primary">검색</button>
-				</form>
-				
-			</div>
-		</div>
-
+		
 
 
 

@@ -17,7 +17,7 @@ public class FileuploadProperties {
 	
 	
 	public File getRootDir() {
-		return new File(root);
+		return new File(root);//custom.fileupload.root=c:/upload
 	}
 
 	

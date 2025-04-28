@@ -9,6 +9,16 @@
     
     <div class="container">
     
+       <!--점보트론-->
+    <div class="row mt-4">
+      <div class="col">
+        <div class="bg-dark text-light p-4 rounded">
+          <h1>로그인창</h1>
+        </div>
+      </div>
+    </div>
+    
+    
     <form action="login" method="post" class="needs-validation">
     
         <div class="row mt-4">
@@ -24,7 +34,7 @@
     </div>
 <div class="row mt-4">
 <div class="col">
-<button type="submit" class="btn btn-success">
+<button type="submit" class="btn btn-success w-100">
 <i class="fa-solid fa-right-to-bracket"></i>
 로그인
 </button>

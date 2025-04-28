@@ -45,6 +45,7 @@ $(function(){
                     method:"post",
                     data: form,
                     success:function(response){//첨부파일번호들(List<Integer>)
+						
                         for(var i=0; i < response.length; i++) {
                             var tag = $("<img>").attr("src", "/attachment/download?attachmentNo="+response[i])
                                                          .addClass("summernote-img")
