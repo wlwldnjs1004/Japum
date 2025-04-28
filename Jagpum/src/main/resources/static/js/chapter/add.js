@@ -9,8 +9,6 @@ let inputValue = "";
 
 $(function () {
   const $input = $("[name=chapterDetail]");
-
-  // keydown 때마다 직접 누른 키를 기록
   $input.on("keydown", function (e) {
     if (e.key.length === 1) {
       inputValue += e.key;
@@ -28,13 +26,13 @@ $(function () {
 });
 
 $(function() {
-	$("[name=chapterDetail]")
+	$("[name=chapterDetail],[name=chapterComment]")
 			.summernote(
 					{height : 250,//높이(px)
 						minHeight : 200,//최소 높이(px)
 						maxHeight : 400,//최대 높이(px)
 
-						placeholder : "",
+						placeholder : "내용",
 
 						toolbar : [
 								["font",[ "fontsize"] ],
@@ -66,7 +64,7 @@ $(function() {
 																+ response)
 
 												.addClass("summernote-img");
-												$("[name=chapterDetail]")
+												$("[name=chapterDetail],[name=chapterComment]")
 														.summernpte(
 																"insertNode",
 																tag[0]);
@@ -75,55 +73,51 @@ $(function() {
 							},
 						},
 					});
-});
+					/*					
+					$("[name=chapterComment]")
+								.summernote(
+										{height : 150,//높이(px)
+											minHeight : 200,//최소 높이(px)
+											maxHeight : 200,//최대 높이(px)
+											
+											placeholder : "작가의 말",
+											
+											toolbar : [
+													["font",[ "fontsize"] ],
+													["style",[ "bold", "italic", "underline","strikethrough" ] ],
+													[ "attach", [ "picture" ] ]
+											],
+											callback : {
+												onlmageUpload : function(files) {
+													if (files.length != 1)
+														return;
 
-//작가의 말
-$(function() {
-	$("[name=chapterComment]")
-			.summernote(
-					{height : 250,//높이(px)
-						minHeight : 200,//최소 높이(px)
-						maxHeight : 400,//최대 높이(px)
+													var form = new FormData();//form을 대신할 도구
+													form.append("attach", files[0]);
 
-						placeholder : "",
+													$.ajax({
+																processData : false,//파일업로드를 위해 반드시 필요한 설정
+																contentType : false,//파일업로드를 위해 반드시 필요한 설정
+																url : "http://localhost:8080/rest/chapter/upload",
+																method : "post",
+																data : form,
+																success : function(response) {//첨부파일번호(attachmentNo)
+																	var tag = $("<img>").attr(
+																			"src",
+																			"http://localhost:8080/attachment/download?attachmentNo="
+																					+ response)
 
-						toolbar : [
-								["font",[ "fontsize"] ],
-								["style",[ "bold", "italic", "underline","strikethrough" ] ],
-								[ "attach", [ "picture" ] ]
-						],
-
-						callback : {
-							onlmageUpload : function(files) {
-								if (files.length != 1)
-									return;
-
-								var form = new FormData();//form을 대신할 도구
-								form.append("attach", files[0]);
-
-								$.ajax({
-											processData : false,//파일업로드를 위해 반드시 필요한 설정
-											contentType : false,//파일업로드를 위해 반드시 필요한 설정
-											url : "http://localhost:8080/rest/chapter/upload",
-											method : "post",
-											data : form,
-											success : function(response) {//첨부파일번호(attachmentNo)
-												var tag = $("<img>").attr(
-														"src",
-														"http://localhost:8080/attachment/download?attachmentNo="
-																+ response)
-
-												.addClass("summernote-img");
-												$("[name=chapterComment]")
-														.summernpte(
-																"insertNode",
-																tag[0]);
-											}
-										});
-							},
-						},
-					});
-});
+																	.addClass("summernote-img");
+																	$("[name=chapterComment]")
+																			.summernpte(
+																					"insertNode",
+																					tag[0]);
+																}
+															});
+												},
+											},
+									});*/
+				});
 
 
 $(function() {
