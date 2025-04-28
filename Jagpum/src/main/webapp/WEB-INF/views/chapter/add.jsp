@@ -77,7 +77,8 @@
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<textarea type="text" name="chapterComment" class="form-control" placeholder="작가의 말을 입력해주세요" rows="6"></textarea>
+				<textarea type="text" name="chapterComment" class="form-control" placeholder="작가의 말을 입력해주세요" rows="6">
+				</textarea>
 			</div>
 		</div>
 

@@ -5,7 +5,7 @@ $(function(){
         minHeight:200, //최소높이(px)
         maxHeight:400, //최대높이(px)
 
-        placeholder:"타인에 대한 무분별한 비방 시 예고 없이 삭제될 수 있습니다",
+        placeholder:"",
 
         //메뉴(toolbar) 설정
         toolbar: [
