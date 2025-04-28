@@ -5,7 +5,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="work">
-
 	<!-- 관리자 등록 -->
 	<insert id="add">
 		insert into work(
@@ -93,7 +92,6 @@
 		select * from work_list_view  
 	</select>
 	
-	
 	<!-- 수정 -->
 	<update id="edit"> 
 	update work
@@ -125,8 +123,6 @@
 	select * from work_list_view where work_no = #{workNo}
 	</select>
 
-
-
 	<insert id="connect">
 	insert into work_profile(
 	work_no,
@@ -137,10 +133,11 @@
 	)
 	</insert>
 
-
 <select id="findProfile" resultType="int">
 select attachment_no from work_profile where work_no=#{workNo}
 </select>
+
+
 
 </mapper>
   

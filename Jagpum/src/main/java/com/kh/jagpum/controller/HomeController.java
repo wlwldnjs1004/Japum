@@ -26,9 +26,7 @@ public class HomeController {
 		return"/WEB-INF/views/bootstrap-home.jsp";
 	}
 	@RequestMapping("/bootstrap")	
-	public String bootstrap(Model model) {
-		List<WorkDto> list = workDao.selectList();
-		model.addAttribute("list",list);
+	public String bootstrap() {
 		return"/WEB-INF/views/bootstrap-home.jsp";
 	}
 }

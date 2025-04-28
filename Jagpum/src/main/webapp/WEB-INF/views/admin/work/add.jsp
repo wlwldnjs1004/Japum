@@ -20,10 +20,6 @@ font-size: 20px;
 
 
 <script type="text/javascript">
-/* $(function(){
-	ok:
-	
-}); */
 </script>
 
 <div class="container drag-prevent">

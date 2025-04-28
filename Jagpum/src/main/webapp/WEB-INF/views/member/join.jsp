@@ -21,7 +21,6 @@
 		<div class="row mt-4">
 			<div class="col">
 				<input type="text" class="form-control" name="memberId">
-			
 			<div class="invalid-feedback"></div>
 			</div>
 		</div>
@@ -46,6 +45,7 @@
 				<label>닉네임</label>
 			</div>
 		</div>
+
 
 		<div class="row mt-4">
 			<div class="col">

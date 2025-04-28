@@ -26,9 +26,10 @@ public class MemberDao {
 	public MemberDto seleOne(MemberDto memberDto) {
 		return sqlSession.selectOne("member.find",memberDto);
 	}
-	public MemberDto seleOne(String memberId) {
-		return sqlSession.selectOne("member.find",memberId);
-	}
+
+	//	public MemberDto seleOne(String memberId) {
+//		return sqlSession.selectOne("member.find",memberId);
+//	}
 
 	//리스트 불러오기
 	public List<MemberDto>selectList(){
@@ -56,11 +57,11 @@ public class MemberDao {
 	public int findAttachment(String memberId) {
 		return sqlSession.selectOne("member.findImage",memberId);
 	}
-	
 	//닉네임 찾기
 	public MemberDto selectOneByMemberNickname(String memberNickname) {
 		return sqlSession.selectOne("member.selectOneByMemberNickname",memberNickname);
 	}
+	
 	//닉네임 찾기
 	public MemberDto selectOneByMemberNickname(MemberDto  memeberDto) {
 		return sqlSession.selectOne("member.selectOneByMemberNickname",memeberDto);

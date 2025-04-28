@@ -37,7 +37,6 @@ public class ChapterController {
 	
 	 @GetMapping("/add")
 	public String add(@RequestParam int workNo, Model model) {
-			
 		   WorkDto workDto = workDao.seleOne(workNo);
 		    model.addAttribute("workNo", workNo);
 		    model.addAttribute("workDto", workDto); 
@@ -45,22 +44,14 @@ public class ChapterController {
 	 }
 	
 	 @PostMapping("/add")
-	 public String add(@ModelAttribute ChapterDto chapterDto,
-	                   @RequestParam int workNo) {
-		 
+	 public String add(@ModelAttribute ChapterDto chapterDto) {
 		    chapterDao.insert(chapterDto);
-		    
-	     return "redirect:/work/detail?workNo="+workNo;
+	     return "redirect:/chapter/addFinish";
 	 }
-
-	
-//	@RequestMapping("/addFinish")
-//	public String addFininsh(@RequestParam int workNo,
-//			Model model) {
-//		ChapterDto chapterDto=chapterDao.workList(workNo);
-//		model.addAttribute("chapterDto",chapterDto);
-//		return "/WEB-INF/views/chapter/addFinish.jsp";
-//	}
+	 @RequestMapping("/addFinish")
+	public String addFininsh() {
+		return "/WEB-INF/views/chapter/addFinish.jsp";
+	}
 	
 	@RequestMapping("/list")
 	public String list(Model model) {

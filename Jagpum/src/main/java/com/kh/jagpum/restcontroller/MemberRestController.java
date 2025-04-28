@@ -17,17 +17,6 @@ public class MemberRestController {
 	@Autowired
 	private MemberDao memberDao;
 	
-	@RequestMapping("/checkMemberId")
-	public boolean checkMemberId(@RequestParam String memberId) {
-		MemberDto memberDto=memberDao.seleOne(memberId);
-		return memberDto==null;
-	}
-
-	@RequestMapping("/checkMemberNickname")
-			public boolean checkMemberNickname(@RequestParam String memberNickname) {
-			MemberDto memberDto=memberDao.selectOneByMemberNickname(memberNickname);
-			return memberDto==null;
-		}
 
 
 	

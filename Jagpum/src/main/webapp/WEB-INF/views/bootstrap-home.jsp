@@ -37,17 +37,6 @@ ul::-webkit-scrollbar-track {
     <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
     
 <%-- 
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 mt-4">
-    <c:forEach var="workDto" items="${list}">
-      <div class="col text-center">
-        <a href="/work/detail?workNo=${workDto.workNo}">
-          <img src="/work/image?workNo=${workDto.workNo}" class="img-fixed" alt="${workDto.workName}">
-        </a>
-        <p class="mt-2 fw-bold">${workDto.workName}</p>
-      </div>
-    </c:forEach>
-  </div>
-</div>
  --%>
             <div class="" style="height:500px"></div>
      <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

@@ -63,22 +63,15 @@ public class MemberController {
 		
 		boolean isValid =findDto.getMemberPw().equals(memberDto.getMemberPw());
 		if(isValid) {
-			
-			
 			session.setAttribute("userId", findDto.getMemberId());
-			
 			session.setAttribute("userLevel", findDto.getMemberLevel());
-	
-			
 			
 		return "redirect:/";
 		}
 		else {
 			return "redirect:login?error";
 	}
-		
-		
-	}
 	
+	}
 	
 }

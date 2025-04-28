@@ -73,6 +73,7 @@ public class WokrController {
 	
 	@RequestMapping("/addFinish")//방식 무관
 	public String addFinish() {
+		
 		return "/WEB-INF/views/work/addFinish.jsp";
 	}
 	
@@ -132,38 +133,7 @@ public class WokrController {
 		workDao.delete(workNo);
 		return "redirect:list";
 	}
-	/*
-	 @RequestMapping("/delete")
-	 public String delete(@RequestParam int workNo){
-	 try{
-	 int attachmentNo=workDao.findAttachment(workNo);
-	 attachmentService.delete(attachmentNo);
-	 }
-	 //try을 쓰는 이유는 트라이 캐치 오류를 잡기 위해 서 이다
-		catch(Exception e){}
-		workDao.delete(workNo);
-		return "redirect:list";
-	 	return
-	 } 
-	  
-	  */
 	
-	//채크 박스 삭제 구현
-//	@PostMapping("/deleteAll")
-//	public String deleteAll(@RequestParam (value = "chapterNo")
-//	List<Integer> chapterListNo) {
-//		for(int chapterNo:chapterListNo) {
-//			try {
-//				int attachmentNo=workDao.findAttachment(workNo);
-//				attachmentService.delete(attachmentNo);
-//			}
-//			catch(Exception e) {}
-//		chapterDao.delete(chapterNo);
-
-//		}	
-//		return"redirect:list";
-//		
-//	}
 	@GetMapping("/edit")
 	public String edit(@RequestParam int workNo, Model model) {
 		WorkDto workDto=workDao.seleOne(workNo);
@@ -203,6 +173,14 @@ public class WokrController {
 		return"redirect:detail?workNo="+workDto.getWorkNo();
 
 	}
+
+	// 해시 태그 검색 페이지
+	@RequestMapping("/Hashtag")
+	public String Hashtag() {
+		
+
+		return "/WEB-INF/views/work/Hashtag.jsp";
+	} 
 	
-	
+
 }
