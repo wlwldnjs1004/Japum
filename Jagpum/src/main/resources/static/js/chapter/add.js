@@ -74,7 +74,6 @@ $(function() {
 			return this.chapterTitle && this.chpaterDetail;
 		},
 	};
-	
 		$("[name=chapterTitle]").blur(
 			function() {
 				const size = $(this).val().length > 0;
