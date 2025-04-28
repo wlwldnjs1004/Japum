@@ -72,3 +72,8 @@ $(function() {
 	});
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var input = document.querySelector('#workPrefer');
+  new Tagify(input);
+});

@@ -37,32 +37,32 @@ $(function() {
 								[ "attach", [ "picture" ] ]
 						],
 						placeholder : "내용",
-						callbacks : {
-							onImageUpload : function(files) {
-								if (files.length != 1)
-									return;
+						callbacks: {
+						  onImageUpload: function(files) {
+						    if (files.length === 0) return;
 
-								var form = new FormData();//form을 대신할 도구
-								form.append("attach", files[0]);
+						    var form = new FormData();
+						    for (var i = 0; i < files.length; i++) {
+						      form.append("attach", files[i]); // attach가 여러 개 들어감
+						    }
 
-								$.ajax({
-											processData : false,//파일업로드를 위해 반드시 필요한 설정
-											contentType : false,//파일업로드를 위해 반드시 필요한 설정
-											url : "http://localhost:8080/rest/chapter/upload",
-											method : "post",
-											data : form,
-											success: function(response) {
-											    for (var i = 0; i < response.length; i++) {
-											        var tag = $("<img>").attr(
-											            "src", "http://localhost:8080/attachment/download?attachmentNo=" + response[i]
-											        ).addClass("summernote-img")
-											         .attr("data-attachment-no", response[i]);
-											        $("[name=chapterDetail]").summernote("insertNode", tag[0]);
-											    }
-											}
-
-										});
-							},
+						    $.ajax({
+						      processData: false,
+						      contentType: false,
+						      url: "/rest/chapter/uploads", // **여기로**
+						      method: "post",
+						      data: form,
+						      success: function(response) { // response = List<Integer>
+						        for (var i = 0; i < response.length; i++) {
+						          var tag = $("<img>")
+						            .attr("src", "/attachment/download?attachmentNo=" + response[i])
+						            .addClass("summernote-img")
+						            .attr("data-attachment-no", response[i]);
+						          $("[name=chapterDetail]").summernote("insertNode", tag[0]);
+						        }
+						      }
+						    });
+						  },
 						},
 					});
 				});
