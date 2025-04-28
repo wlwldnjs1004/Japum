@@ -142,7 +142,6 @@
 		</div>
 
 
-
 		<div class="row mt-5">
 			<div class="col">
 				<label>작품 부가설명</label>
