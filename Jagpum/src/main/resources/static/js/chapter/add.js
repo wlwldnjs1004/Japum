@@ -24,6 +24,7 @@ $(function () {
     $(".sss span").text(inputValue.length);
   });
 });
+
 $(function() {
 	$("[name=chapterDetail],[name=chapterComment]")
 			.summernote(
