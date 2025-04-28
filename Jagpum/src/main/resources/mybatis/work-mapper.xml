@@ -147,9 +147,12 @@ select attachment_no from work_profile where work_no=#{workNo}
  원하는 태그 조회하곤 다름.
  -->
  <!-- 태그를 리스트 형태로 뽑아야 될 가능성 높음 -->
- <select id="listPrefer" resultType="workDto">
- select * from  where work_prefer=#{workPrefer}
+ <select id="searchList" resultType="workDto" parameterType="String">
+select* from work
+where work_prefer LIKE '%'||#{keyword}||'%'
+
  </select>
+
 
 </mapper>
   

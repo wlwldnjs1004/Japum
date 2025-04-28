@@ -44,6 +44,18 @@
 	</div>
 	</div>
 
+
+		<div class="row mt-4">
+			<div class="col">
+				<form action="Hashtag" method="post">
+					<input type="text" name="keywod" class="form-control"> 
+				<button class="btn btn-primary">검색</button>
+				</form>
+			</div>
+		</div>
+
+
+
 </div>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

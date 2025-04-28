@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
 import com.kh.jagpum.dto.AttachmentDto;
@@ -21,6 +22,7 @@ import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
 import com.kh.jagpum.service.AttachmentService;
+import com.kh.jagpum.service.WorkHashService;
 import com.kh.jagpum.vo.ChapterPriceVO;
 
 import jakarta.servlet.http.HttpSession;
@@ -174,12 +176,18 @@ public class WokrController {
 
 	}
 
+	@Autowired
+	private WorkHashService workHashService;
 	// 해시 태그 검색 페이지
 	@RequestMapping("/Hashtag")
-	public String Hashtag() {
+	public String Hashtag(@RequestParam String keyword, Model model) {
+		
+		List<WorkDto>list=workHashService.searchByTag(keyword);
+		model.addAttribute("list", list);
 		
 		return "/WEB-INF/views/work/Hashtag.jsp";
 	} 
+	
 	
 
 }
