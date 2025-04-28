@@ -21,6 +21,7 @@
 		<div class="row mt-4">
 			<div class="col">
 				<input type="text" class="form-control" name="memberId">
+			<div class="invalid-feedback"></div>
 			</div>
 		</div>
 
@@ -34,6 +35,7 @@
 		<div class="row mt-4">
 			<div class="col">
 				<input type="password" name="memberPw" class="form-control">
+			<div class="invalid-feedback"></div>
 			</div>
 		</div>
 
@@ -44,9 +46,11 @@
 			</div>
 		</div>
 
+
 		<div class="row mt-4">
 			<div class="col">
 				<input type="text" name="memberNickname" class="form-control">
+			<div class="fnvalid-feedback"></div>
 			</div>
 		</div>
 
@@ -59,9 +63,10 @@
 
 		<div class="row mt-4">
 			<div class="col">
-				<input type="email" name="memberEmail" class="form-control">
+					<input type="email" name="memberEmail" class="form-control">
 			</div>
 		</div>
+
 
 
 		<div class="row mt-4">
@@ -72,7 +77,9 @@
 
 		<div class="row mt-4">
 			<div class="col">
-				<input type="tel" inputmode="tel" name="memberBirth" class="form-control">
+				<input type="tel" inputmode="tel" name="memberBirth"
+					class="form-control">
+					<div class="invalid-feedback"></div>
 			</div>
 		</div>
 
@@ -85,12 +92,10 @@
 
 		<div class="row mt-4">
 			<div class="col">
-				<input type="radio"  name="memberGender" class="form-control-check" value="N">
-				<span>남자</span>
-				
-				<input type="radio"  name="memberGender" class="form-control-check" value="Y">
-				<span>여자</span>
-				
+				<input type="radio" name="memberGender" class="form-control-check"
+					value="N"> <span>남자</span> <input type="radio"
+					name="memberGender" class="form-control-check" value="Y"> <span>여자</span>
+<div class="invalid-feedback"></div>
 			</div>
 		</div>
 

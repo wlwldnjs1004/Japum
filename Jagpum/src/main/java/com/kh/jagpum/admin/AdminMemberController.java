@@ -30,14 +30,14 @@ public class AdminMemberController {
 		
 		return "/WEB-INF/views/admin/member/list.jsp";
 	}
-	@RequestMapping("/detail")
-	public String detail(@RequestParam String memberId,Model model) {
-		MemberDto memberDto=memberDao.seleOne(memberId);
-		if(memberId== null) {
-		}
-		model.addAttribute("memberDto",memberDto);
-		return"/WEB-INF/views/admin/member.jsp";
-	}
+//	@RequestMapping("/detail")
+//	public String detail(@RequestParam String memberId,Model model) {
+//		MemberDto memberDto=memberDao.seleOne(memberId);
+//		if(memberId== null) {
+//		}
+//		model.addAttribute("memberDto",memberDto);
+//		return"/WEB-INF/views/admin/member.jsp";
+//	}
 	@RequestMapping("/delete")
 	public String delete(@RequestParam String memberId) {
 		boolean success=memberDao.delete(memberId);

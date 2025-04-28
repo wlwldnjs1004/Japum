@@ -19,6 +19,7 @@
 .text {
 	resize: none;
 }
+
 </style>
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
@@ -92,8 +93,6 @@
 			<label class="col-sm-3">부장르 선택</label>
 		</div>
 
-
-
 		<div class="row mt-4">
 			<div class="col-sm-12">
 				<select class="form-select" name="workSubGenre" disabled>
@@ -139,7 +138,7 @@
 		</div>
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<textarea name="workSubtotal" class="form-control text"
+				<textarea name="workSubtotal" 목록을 조회 class="form-control text"
 					placeholder="작품명 설명을 입력하세요" rows="6" cols="7"></textarea>
 				<div class="vdlid-feedback"></div>
 			</div>
@@ -152,8 +151,9 @@
 			</div>
 		</div>
 
+
 		<div class="row ">
-			<div class="col-sm-12 mb-3">
+			<div class="col-sm-12 mb-3 ws">
 				<span class="ms-4">월 </span> 
 					<input class="form-check-input" type="checkbox" name="workMon" value="Y">
 					 <span class="ms-4"> 화 </span> 

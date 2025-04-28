@@ -12,8 +12,6 @@
 	font-size: 20px;
 }
 </style>
-<!-- Include stylesheet -->
-
 
 <link
 	href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
@@ -61,13 +59,13 @@
 				<div class="invalid-feedback">필수조건입니다</div>
 			</div>
 		</div>
-		s
 		<div class="row mt-3">
 			<div class="col">
 				<p class="fs-6">* 글 번호는 자동으로 생성됩니다. 소제목에 회차 번호를 입력하시면 중복 표기될 수
 					있습니다.</p>
 			</div>
 		</div>
+		
 		<div class="row mt-5">
 			<div class="col-sm-12">
 				<textarea name="chapterDetail" class="form-control"
@@ -77,10 +75,10 @@
 			</div>
 		</div>
 
-		<div class="row mt-4">
+		<div class="row mt-5 my-4">
 			<div class="col-sm-12">
-				<textarea type="text" name="chapterComment" class="form-control"
-					placeholder="작가의 말을 입력해주세요" rows="6"></textarea>
+				<textarea type="text" name="chapterComment" class="form-control" placeholder="작가의 말을 입력해주세요" rows="6">
+				</textarea>
 			</div>
 		</div>
 

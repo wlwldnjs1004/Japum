@@ -5,7 +5,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="work">
-
 	<!-- 관리자 등록 -->
 	<insert id="add">
 		insert into work(
@@ -93,7 +92,6 @@
 		select * from work_list_view  
 	</select>
 	
-	
 	<!-- 수정 -->
 	<update id="edit"> 
 	update work
@@ -116,15 +114,17 @@
 	<select id="find" resultType="workDto">
 	select * from work where work_no=#{workNo}
 	</select>	
+	
+	
 	<!-- 뷰 상세조회 -->
 	<select id="listViews" resultType="workListViewDto">
 	select * from work_profile where work_no=#{workNo}
 	</select>
 
+
 	<select id="workListView" resultType="workListViewDto">
 	select * from work_list_view where work_no = #{workNo}
 	</select>
-
 
 
 	<insert id="connect">
@@ -141,6 +141,15 @@
 <select id="findProfile" resultType="int">
 select attachment_no from work_profile where work_no=#{workNo}
 </select>
+
+<!-- 해쉬 색이검 안됨 -->
+ <!--  이건 상세 조회 
+ 원하는 태그 조회하곤 다름.
+ -->
+ <!-- 태그를 리스트 형태로 뽑아야 될 가능성 높음 -->
+ <select id="listPrefer" resultType="workDto">
+ select * from  where work_prefer=#{workPrefer}
+ </select>
 
 </mapper>
   

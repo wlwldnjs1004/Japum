@@ -7,15 +7,19 @@ import org.springframework.stereotype.Component;
 
 import lombok.Data;
 
+
+
 @Data
 @Component
 @ConfigurationProperties(prefix="custom.fileupload")
 public class FileuploadProperties {
 	private String root;
 	
+	
 	public File getRootDir() {
 		return new File(root);
 	}
+
 	
 	
 }

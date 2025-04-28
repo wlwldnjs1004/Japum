@@ -19,7 +19,9 @@
 			#{attachmentType}, #{attachmentSize}
 		)
 	</insert>
-	
+
+
+
 	<!-- 상세조회 -->
 	<select id="find" resultType="AttachmentDto">
 		select * from attachment where attachment_no = #{attachmentNo}
