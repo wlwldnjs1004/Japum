@@ -20,20 +20,16 @@
 	resize: none;
 }
 
-.tagify__tag,
+/* .tagify__tag,
 .tagify__tag__removeBtn,
 .tagify__input {
   transition: none !important;
-}
+} */
 </style>
-
-
-</style>
-
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
- <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-
+<!--  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+ -->
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
 
@@ -139,8 +135,8 @@
 		<div class="row mt-5">
 			<div class="col-sm-12">
 				<input name="workPrefer" type="text" class="form-control ss"
-					placeholder="태그 입력창" id="workPrefer">
-		<!-- 	<div id="tagList"></div> -->
+					placeholder="태그 입력창" id="tagInput">
+		 	<div id="tagList"></div> 
 				<div class="vdlid-feedback"></div>
 			</div>
 		</div>
