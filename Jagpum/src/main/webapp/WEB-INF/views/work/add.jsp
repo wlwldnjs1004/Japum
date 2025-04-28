@@ -28,8 +28,8 @@
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
-<!--  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
- -->
+ <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
 
