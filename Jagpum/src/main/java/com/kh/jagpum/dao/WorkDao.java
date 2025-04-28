@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.kh.jagpum.dto.AttachmentDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
+import com.kh.jagpum.vo.PageVO;
 
 
 @Repository
@@ -110,8 +111,15 @@ public class WorkDao {
 		return sqlSession.selectList("work.searchList",keyword);
 	} 
 	
-	
-	
+//	
+//	public List<WorkDto> selectListByPaging(PageVO pageVO) {
+//	    if (pageVO.isList()) {
+//	        return selectListByPaging(pageVO.getPage(), pageVO.getSize());
+//	    } else {
+//	        return selectListByPaging(pageVO.getColumn(), pageVO.getKeyword(), pageVO.getPage(), pageVO.getSize());
+//	    }
+//	}	
+//	
 	
 	
 }

@@ -22,8 +22,8 @@ import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
 import com.kh.jagpum.dto.WorkListViewDto;
 import com.kh.jagpum.service.AttachmentService;
-import com.kh.jagpum.service.WorkHashService;
 import com.kh.jagpum.vo.ChapterPriceVO;
+import com.kh.jagpum.vo.PageVO;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -75,14 +75,20 @@ public class WokrController {
 	
 	@RequestMapping("/addFinish")//방식 무관
 	public String addFinish() {
-		
 		return "/WEB-INF/views/work/addFinish.jsp";
 	}
 	
 	@RequestMapping("/list")
-	public String list(Model model) {
-		List<WorkDto> list = workDao.selectList();
-		model.addAttribute("list", list);
+	public String list(@RequestParam(required = false) String keyword, Model model) {
+	    List<WorkDto> list;
+	    if (keyword != null && !keyword.isEmpty()) {
+	        list = workDao.serch(keyword); // 검색 기능
+	    }
+	    else {
+	        list = workDao.selectList(); // 전체 목록
+	    }
+	    model.addAttribute("list", list);
+	    model.addAttribute("keyword", keyword);
 		return "/WEB-INF/views/work/list.jsp";
 	}
 	
@@ -123,10 +129,10 @@ public class WokrController {
 	    	
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
+
 	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
-		
 		try {
 			int attachmentNo=workDao.findAttachment(workNo);
 			attachmentService.delete(attachmentNo);
@@ -155,8 +161,6 @@ public class WokrController {
 	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
 	    
 		
-		
-		
 		boolean success=workDao.update(workDto);
 		if(!success) {
 			return"redirect:list";
@@ -176,17 +180,20 @@ public class WokrController {
 
 	}
 
-	@Autowired
-	private WorkHashService workHashService;
-	// 해시 태그 검색 페이지
-	@RequestMapping("/Hashtag")
-	public String Hashtag(@RequestParam String keyword, Model model) {
-		
-		List<WorkDto>list=workHashService.searchByTag(keyword);
-		model.addAttribute("list", list);
-		
-		return "/WEB-INF/views/work/Hashtag.jsp";
-	} 
+//	@GetMapping("/search")
+//	public String postMethodName(Model model,
+//		@RequestParam String keyword) {
+//		List<WorkDto> list=workDao.serch(keyword);
+//		model.addAttribute("list",list);
+//		return "/WEB-INF/views/work/list.jsp";
+//	}
+	
+	
+
+	
+	
+	
+//	// 해시 태그 검색 페이지
 	
 	
 

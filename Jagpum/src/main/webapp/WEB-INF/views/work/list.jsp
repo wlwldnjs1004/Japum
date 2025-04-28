@@ -26,9 +26,8 @@
 <div class="container drag-prevent">
 
 
-
 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
-  <c:forEach var="workDto" items="${list}">
+	  <c:forEach var="workDto" items="${list}">
     <li class="text-center" >
       <a href="detail?workNo=${workDto.workNo}">
         <img src="image?workNo=${workDto.workNo}" class="img-fixed">
@@ -45,16 +44,11 @@
 	</div>
 
 
-		<div class="row mt-4">
-			<div class="col">
-				<form action="Hashtag" method="post">
-					<input type="text" name="keywod" class="form-control"> 
-				<button class="btn btn-primary">검색</button>
-				</form>
-			</div>
-		</div>
 
-
+<form class="d-flex mt-5" action="list"  >
+  <input class="form-control me-2" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
+  <button class="btn btn-outline-success text-nowrap" type="submit">검색</button>
+</form>
 
 </div>
 

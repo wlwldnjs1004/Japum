@@ -18,7 +18,7 @@ import com.kh.jagpum.service.AttachmentService;
 
 @CrossOrigin
 @RequestMapping("/rest/chapter")
-public class chapterRestController {
+public class ChapterRestController {
 
 	
 	@Autowired
@@ -41,7 +41,8 @@ public class chapterRestController {
 		if(attach.isEmpty()) continue;
 		AttachmentDto attachmentNo=attachmentService.save(attach);
 		numbers.add(attachmentNo.getAttachmentNo());
-	}	
+	}
+	
 	return numbers;
 	}
 	
