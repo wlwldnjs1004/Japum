@@ -118,10 +118,9 @@ public class WokrController {
 //	    System.out.println(chapterList);
 	    model.addAttribute("chapterList", chapterList);
 	    	
-	    
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
-
+	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
 		
