@@ -163,7 +163,6 @@ where work_prefer LIKE '%'||#{keyword}||'%'
 		select * from work
 		<if test="column != null and keyword !=null">
 			where
-			<!-- instr(${column}, #{keyword})1 -->
 			${column} like #{keyword}||'%'
 		</if>
 		order by

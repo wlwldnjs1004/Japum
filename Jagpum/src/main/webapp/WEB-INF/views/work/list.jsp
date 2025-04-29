@@ -20,10 +20,37 @@
 }
 </style>
 
+<script >
+$(function(){
+	$(".input").blur(function(){
+		let text = "#";
+		let newText = text.replace("#웹소설", ""); 
+	});
+});
+
+
+</script>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
 <div class="container drag-prevent">
+
+
+<div class="row mt-4">
+<div class="col">
+
+<form class="d-flex mt-5" action="list">
+	<!-- <select name="column" class="form-select w-25">
+	<option value="work_paid">태그</option>
+	<option value="work_">작가</option>
+	<option value="">작품제목</option>
+	</select> -->
+  <input class="form-control me-2 input" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
+  <button class="btn btn-success text-nowrap" type="submit">검색</button>
+</form>
+
+</div>
+</div>
 
 
 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
@@ -44,11 +71,6 @@
 	</div>
 
 
-
-<form class="d-flex mt-5" action="list"  >
-  <input class="form-control me-2" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
-  <button class="btn btn-outline-success text-nowrap" type="submit">검색</button>
-</form>
 
 </div>
 

@@ -30,8 +30,7 @@
 	font-size: 18px;
 }
 .w{
- font-size:20px
- ;
+ font-size:10px;
 }
 </style>
 
@@ -39,12 +38,24 @@
 
 <div class="container drag-prevent">
 
+<div class="row mt-4">
+<div class="col">
+
+<form class="d-flex mt-5" action="list">
+  <input class="form-control me-2 input" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
+  <button class="btn btn-outline-success text-nowrap" type="submit">검색</button>
+</form>
+
+</div>
+</div>
+
+
+
 
 	<div class="row mt-4">
 		<div class="col-md-3">
-			<img src="image?workNo=${workDto.workNo}" width="150"
+			<img src="image?workNo=${workDto.workNo}" width="120"
 				class="picture-book">
-
 		</div>
 		<div class="col-md-9 ">
 			<div>
@@ -94,25 +105,21 @@
 		<div class="col-md-6 mt-1">작가: ${workDto.memberNickname}</div>
 		<hr class="mt-5" />
 		<div class="col-md-12 mt-4 change-size">${workDto.workSubtotal}</div>
-
 	</div>
-
 
 	<div class="row ">
 		<div class="col">
 			<label class="" style="height: 50px"></label>
 		</div>
 	</div>
-
-
+	
 	<div class="my-3 mt-1"></div>
 
 	<div class="row mt-4">
 		<div class="col-md-12"></div>
 	</div>
-
-
 	<hr>
+	
 	<form class="form-check" action="deleteAll" method="post">
 		<c:choose>
 			<c:when test="${empty chapterList}">
@@ -144,20 +151,18 @@
 				</table>
 			</c:otherwise>
 		</c:choose>
+		
 		<div class="my-4"></div>
-
 		<div class="row mt-5">
 			<div class="col text-end">
 				<a href="/chapter/add?workNo=${workDto.workNo}"
 					class="btn btn-primary ">챕터 작성</a> <a
 					href="/work/delete?workNo=${workDto.workNo}"
-					class="btn btn-primary ">작품 삭제</a> <a
+					class="btn btn-primary">작품 삭제</a> <a
 					href="/work/edit?workNo=${workDto.workNo}" class="btn btn-primary">수정하기</a>
 			</div>
 		</div>
 
-
-		<!-- 					<button class="btn btn-danger" id="checkCount">채크항목 삭제</button> -->
 	</form>
 
 </div>

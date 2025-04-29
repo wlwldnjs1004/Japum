@@ -26,8 +26,9 @@ import com.kh.jagpum.vo.ChapterPriceVO;
 import com.kh.jagpum.vo.PageVO;
 
 import jakarta.servlet.http.HttpSession;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 @Controller
 @RequestMapping("/work")
 public class WokrController {
@@ -79,16 +80,25 @@ public class WokrController {
 	}
 	
 	@RequestMapping("/list")
-	public String list(@RequestParam(required = false) String keyword, Model model) {
-	    List<WorkDto> list;
-	    if (keyword != null && !keyword.isEmpty()) {
-	        list = workDao.serch(keyword); // 검색 기능
+	public String list(@RequestParam(required = false) String keyword,Model model) {
+	   
+		List<WorkDto> list;
+		
+		
+		
+		 if (keyword != null && !keyword.isEmpty()) {
+//			 log.debug("검색 결과: {}", keyword); 
+			 if (keyword.contains("#")) {
+		            list = workDao.selectList(); // 목록
+		        } 
+			 list = workDao.serch(keyword); 
 	    }
 	    else {
-	        list = workDao.selectList(); // 전체 목록
+	        list = workDao.selectList();//목록 
 	    }
 	    model.addAttribute("list", list);
 	    model.addAttribute("keyword", keyword);
+//	    model.addAttribute()
 		return "/WEB-INF/views/work/list.jsp";
 	}
 	
@@ -108,8 +118,7 @@ public class WokrController {
 	
 	}
 	@RequestMapping("/detail")
-	public String detail(@RequestParam int workNo,Model model
-			) {
+	public String detail(@RequestParam int workNo,Model model) {
 		
 		WorkListViewDto workDto=workDao.selectListviewBy(workNo);
 	    List<ChapterDto> chapterList = chapterDao.selectListByWorkNo(workNo);
@@ -122,15 +131,11 @@ public class WokrController {
 		}
 
 		model.addAttribute("priceVoList",priceVoList);
-//		System.out.println(priceVoList);
 	    model.addAttribute("workDto",workDto);
-//	    System.out.println(chapterList);
 	    model.addAttribute("chapterList", chapterList);
 	    	
 	    return"/WEB-INF/views/work/detail.jsp";
 	}
-
-	
 	@RequestMapping("/delete")
 	public String delete(@RequestParam int workNo) {
 		try {

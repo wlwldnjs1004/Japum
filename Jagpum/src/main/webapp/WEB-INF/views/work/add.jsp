@@ -20,16 +20,20 @@
 	resize: none;
 }
 
+.text-name{
+font-size:15px;
+}
+
  .tagify__tag,
 .tagify__tag__removeBtn,
 .tagify__input {
   transition: none !important;
 } 
 </style>
-
+<!-- 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-
+ -->
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
 
@@ -70,63 +74,66 @@
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<select class="form-select" name="workGenre">
-					<option value="">주장르 선택</option>
-					<option value="판타지">판타지</option>
-					<option value="무협">무협</option>
-					<option value="게임">게임</option>
-					<option value="퓨전">퓨전</option>
-					<option value="스포츠">스포츠</option>
-					<option value="로멘스">로멘스</option>
-					<option value="라이트노벨">라이트노벨</option>
-					<option value="현대판타지">현대판타지</option>
-					<option value="대체역사">대체역사</option>
-					<option value="전쟁밀리터리">전쟁밀리터리</option>
-					<option value="SF">SF</option>
-					<option value="추리">추리</option>
-					<option value="공포·미스테리">공보 미스테리</option>
-					<option value="일반소설">일반소설</option>
-					<option value="시·수필">시 수필</option>
-					<option value="종단편">종단편</option>
-					<option value="드라마">드라마</option>
-					<option value="연극·시나리오">연극 시나리오</option>
-					<option value="BL">BL</option>
-					<option value="팬픽·페러디">팬픽 페러디</option>
+				<select class="form-select" name="workGenre"  size="3" aria-label="size 3 select example">
+						<option class="text-name" value="">주장르 선택</option>
+					<option class="text-name" value="판타지">판타지</option>
+					<option class="text-name" value="무협">무협</option>
+					<option class="text-name" value="게임">게임</option>
+					<option class="text-name" value="퓨전">퓨전</option>
+					<option class="text-name" value="스포츠">스포츠</option>
+					<option class="text-name" value="로멘스">로멘스</option>
+					<option class="text-name" value="라이트노벨">라이트노벨</option>
+					<option class="text-name" value="현대판타지">현대판타지</option>
+					<option class="text-name" value="대체역사">대체역사</option>
+					<option class="text-name" value="전쟁밀리터리">전쟁밀리터리</option>
+					<option class="text-name" value="SF">SF</option>
+					<option class="text-name" value="추리">추리</option>
+					<option class="text-name" value="공포·미스테리">공보 미스테리</option>
+					<option class="text-name" value="일반소설">일반소설</option>
+					<option class="text-name" value="시·수필">시 수필</option>
+					<option class="text-name" value="종단편">종단편</option>
+					<option class="text-name" value="드라마">드라마</option>
+					<option class="text-name" value="연극·시나리오">연극 시나리오</option>
+					<option class="text-name" value="BL">BL</option>
+					<option class="text-name" value="팬픽·페러디">팬픽 페러디</option>
 				</select>
 				<div class="valid-feedback"></div>
 				<div class="invalid-feedback">필수 선택 사항입니다</div>
 			</div>
 		</div>
-
+		
 		<div class="row mt-4">
 			<label class="col-sm-3">부장르 선택</label>
 		</div>
 
+
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<select class="form-select" name="workSubGenre" disabled>
-					<option value="">부장르 선택</option>
-					<option value="판타지">판타지</option>
-					<option value="무협">무협</option>
-					<option value="게임">게임</option>
-					<option value="퓨전">퓨전</option>
-					<option value="스포츠">스포츠</option>
-					<option value="로멘스">로멘스</option>
-					<option value="라이트노벨">라이트노벨</option>
-					<option value="현대판타지">현대판타지</option>
-					<option value="대체역사">대체역사</option>
-					<option value="전쟁밀리터리">전쟁밀리터리</option>
-					<option value="SF">SF</option>
-					<option value="추리">추리</option>
-					<option value="공포·미스테리">공보 미스테리</option>
-					<option value="일반소설">일반소설</option>
-					<option value="시·수필">시 수필</option>
-					<option value="종단편">종단편</option>
-					<option value="드라마">드라마</option>
-					<option value="연극·시나리오">연극 시나리오</option>
-					<option value="BL">BL</option>
-					<option value="팬픽·페러디">팬픽 페러디</option>
+				<select class="form-select" name="workSubGenre"  disabled  size="3" aria-label="size 3 select example">
+					<option class="text-name" value="">부장르 선택</option>
+					<option class="text-name" value="판타지">판타지</option>
+					<option class="text-name" value="무협">무협</option>
+					<option class="text-name" value="게임">게임</option>
+					<option class="text-name" value="퓨전">퓨전</option>
+					<option class="text-name" value="스포츠">스포츠</option>
+					<option class="text-name" value="로멘스">로멘스</option>
+					<option class="text-name" value="라이트노벨">라이트노벨</option>
+					<option class="text-name" value="현대판타지">현대판타지</option>
+					<option class="text-name" value="대체역사">대체역사</option>
+					<option class="text-name" value="전쟁밀리터리">전쟁밀리터리</option>
+					<option class="text-name" value="SF">SF</option>
+					<option class="text-name" value="추리">추리</option>
+					<option class="text-name" value="공포·미스테리">공보 미스테리</option>
+					<option class="text-name" value="일반소설">일반소설</option>
+					<option class="text-name" value="시·수필">시 수필</option>
+					<option class="text-name" value="종단편">종단편</option>
+					<option class="text-name" value="드라마">드라마</option>
+					<option class="text-name" value="연극·시나리오">연극 시나리오</option>
+					<option class="text-name" value="BL">BL</option>
+					<option class="text-name" value="팬픽·페러디">팬픽 페러디</option>
 				</select>
+
+
 				<div class="valid-feedback"></div>
 				<div class="invalid-feedback">필수 선택 사항입니다</div>
 			</div>
