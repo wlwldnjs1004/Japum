@@ -30,7 +30,7 @@
 		<div class="row align-items-center">
 			<div class="col-md-3 text-center a">
 				<img src="/work/image?workNo=${workDto.workNo}"
-					class="img-fluid rounded " style=""200">
+					class="img-fluid rounded " style="200">
 			</div>
 			<div class="col-md-9">
 				<h3 class="fw-bold">${workDto.workName}</h3>
@@ -38,7 +38,8 @@
 					<strong>태그:</strong> ${workDto.workPrefer}
 				</p>
 				<p class="mb-1">
-					<strong>작품 설명:</strong> ${workDto.workSubtotal}
+					<strong>작품 설명:</strong> 
+					${workDto.workSubtotal}
 				</p>
 				<p class="text-muted">
 					<strong>작성자:</strong> ${workDto.workId}

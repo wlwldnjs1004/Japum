@@ -11,11 +11,9 @@
 	-khtml-user-select: none;
 	user-select: none;
 }
-
 .size-r {
 	font-size: 20px;
 }
-
 .text {
 	resize: none;
 }
