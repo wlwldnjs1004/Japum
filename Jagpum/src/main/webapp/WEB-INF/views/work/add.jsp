@@ -20,10 +20,9 @@
 	resize: none;
 }
 
-.text-name{
+.form-select text-name{
 font-size:15px;
 }
-
  .tagify__tag,
 .tagify__tag__removeBtn,
 .tagify__input {
@@ -66,12 +65,9 @@ font-size:15px;
 			</div>
 		</div>
 
-
-
 	<div class="row mt-4">
 			<label class="col-sm-3">부장르 선택</label>
 		</div>
-
 		<div class="row mt-4">
 			<div class="col-sm-12">
 				<select class="form-select" name="workGenre"  size="3" aria-label="size 3 select example">
