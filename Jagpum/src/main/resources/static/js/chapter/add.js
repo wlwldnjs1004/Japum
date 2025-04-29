@@ -1,10 +1,4 @@
 /*글자 수를 카운트 하기 위한 jQery*/
-/*$(function () {
-  $("[name=chapterDetail]").on("input", function () {
-	const text = $(this).val();
-	$(".sss span").text(text.length);
-  });
-});*/
 let inputValue = "";
 
 $(function() {
@@ -23,8 +17,6 @@ $(function() {
 		inputValue = $(this).val();
 		$(".sss span").text(inputValue.length);
 	});
-
-
 $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
@@ -127,7 +119,7 @@ $(function() {
 	
 	$("[name=chapterTitle]").blur(
 		function() {
-			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;
+			const regex = /^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
 			
 			
