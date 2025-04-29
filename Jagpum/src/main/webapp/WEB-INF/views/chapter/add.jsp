@@ -8,15 +8,13 @@
 
 
 <style>
-.sss {
+.sss{
 	font-size: 20px;
 }
 </style>
 
 
-<link
-	href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
-	rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
 <!-- summernote cdn -->
@@ -30,7 +28,7 @@
 		<div class="row align-items-center">
 			<div class="col-md-3 text-center a">
 				<img src="/work/image?workNo=${workDto.workNo}"
-					class="img-fluid rounded " style=""200">
+					class="img-fluid rounded " style="200">
 			</div>
 			<div class="col-md-9">
 				<h3 class="fw-bold">${workDto.workName}</h3>
@@ -38,7 +36,8 @@
 					<strong>태그:</strong> ${workDto.workPrefer}
 				</p>
 				<p class="mb-1">
-					<strong>작품 설명:</strong> ${workDto.workSubtotal}
+					<strong>작품 설명:</strong> 
+					${workDto.workSubtotal}
 				</p>
 				<p class="text-muted">
 					<strong>작성자:</strong> ${workDto.workId}
@@ -47,8 +46,8 @@
 		</div>
 	</div>
 	<hr>
-
-
+	
+	
 	<form action="add" method="Post" class="needs-validation">
 		<input type="hidden" name="workNo" value="${workNo}">
 

@@ -48,7 +48,6 @@ $(function(){
   <input class="form-control me-2 input" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
   <button class="btn btn-success text-nowrap" type="submit">검색</button>
 </form>
-
 </div>
 </div>
 
@@ -66,7 +65,7 @@ $(function(){
 
 	<div class="row mt-4">
 	<div class="col">
-	<a class="btn btn-primary " href="${pageContext.request.contextPath}/work/add">작품 등록</a>
+	<a class="btn btn-primary" href="${pageContext.request.contextPath}/work/add">작품 등록</a>
 	</div>
 	</div>
 
