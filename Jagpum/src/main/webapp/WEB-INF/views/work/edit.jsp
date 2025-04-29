@@ -4,6 +4,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+ <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
@@ -109,7 +111,7 @@
 		<div class="row mt-4">
 			<div class="col-sm-12">
 				<input name="workPrefer" type="text" class="form-control"
-					placeholder="태그 입력창" value="${workDto.workPrefer}">
+					value="${workDto.workPrefer}" id="workPrefer">
 				<div class="vdlid-feedback"></div>
 			</div>
 		</div>

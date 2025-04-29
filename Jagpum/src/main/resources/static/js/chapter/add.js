@@ -43,16 +43,15 @@ $(function() {
 
 						    var form = new FormData();
 						    for (var i = 0; i < files.length; i++) {
-						      form.append("attach", files[i]); // attach가 여러 개 들어감
+						      form.append("attach", files[i]); 
 						    }
-
 						    $.ajax({
 						      processData: false,
 						      contentType: false,
-						      url: "/rest/chapter/uploads", // **여기로**
+						      url: "/rest/chapter/uploads", 
 						      method: "post",
 						      data: form,
-						      success: function(response) { // response = List<Integer>
+						      success: function(response) { 
 						        for (var i = 0; i < response.length; i++) {
 						          var tag = $("<img>")
 						            .attr("src", "/attachment/download?attachmentNo=" + response[i])
@@ -66,6 +65,49 @@ $(function() {
 						},
 					});
 				});
+				
+		$(function(){
+			$("[name=chapterComment]")
+						.summernote(
+								{height : 250,//높이(px)
+									minHeight : 200,//최소 높이(px)
+									maxHeight : 400,//최대 높이(px)
+									toolbar : [
+											["font",[ "fontsize"] ],
+											["style",[ "bold", "italic", "underline","strikethrough" ] ],
+											[ "attach", [ "picture" ]]
+									],
+									placeholder : "작가의말",
+									callbacks: {
+									  onImageUpload: function(files) {
+									    if (files.length === 0) return;
+
+									    var form = new FormData();
+									    for (var i = 0; i < files.length; i++) {
+									      form.append("attach", files[i]); 
+									    }
+									    $.ajax({
+									      processData: false,
+									      contentType: false,
+									      url: "/rest/chapter/uploads", 
+									      method: "post",
+									      data: form,
+									      success: function(response) { 
+									        for (var i = 0; i < response.length; i++) {
+									          var tag = $("<img>")
+									            .attr("src", "/attachment/download?attachmentNo=" + response[i])
+									            .addClass("summernote-img")
+									            .attr("data-attachment-no", response[i]);
+									          $("[name=chapterComment]").summernote("insertNode", tag[0]);
+									        }
+									      }
+									    });
+									  },
+									},
+								});
+		});	
+				
+				
 $(function() {
 	const status = {
 		chapterTitle : false,

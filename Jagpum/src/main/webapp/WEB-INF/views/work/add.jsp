@@ -26,10 +26,10 @@
   transition: none !important;
 } 
 </style>
-
+<!-- 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-
+ -->
 
 <script src="${pageContext.request.contextPath}/js/work/add.js"></script>
 
@@ -70,7 +70,7 @@
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<select class="form-select" name="workGenre">
+				<select class="form-select" name="workGenre"  size="3" aria-label="size 3 select example">
 					<option value="">주장르 선택</option>
 					<option value="판타지">판타지</option>
 					<option value="무협">무협</option>
@@ -104,7 +104,7 @@
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
-				<select class="form-select" name="workSubGenre" disabled>
+				<select class="form-select" name="workSubGenre"  disabled  size="3" aria-label="size 3 select example">
 					<option value="">부장르 선택</option>
 					<option value="판타지">판타지</option>
 					<option value="무협">무협</option>

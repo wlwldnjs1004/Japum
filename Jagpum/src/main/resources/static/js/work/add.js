@@ -12,6 +12,7 @@ $(function() {
 		},
 	};
 	
+	
 	$("[name=workName]").blur(
 			function() {
 				const size = $(this).val().length > 0;
@@ -19,12 +20,15 @@ $(function() {
 						size ? "is-valid" : "is-invalid");
 				status.workName = size;
 			});
-	const workGenresList=["판타지","무협","게임","퓨전",
+	
+			
+			const workGenresList=["판타지","무협","게임","퓨전",
 		  "스포츠","로멘스","라이트노벨","현대판타지","대체역사",
 		  "전쟁밀리터리","SF","추리","공포·미스터리","일반소설","종단편"
 		  ,"드라마","연극·시나리오","BL","팬픽·페러디"];
-	
-	$("[name=workGenre]").blur(
+
+		  
+		  	$("[name=workGenre]").blur(
 			function() {
 				const val=$(this).val();
 				const subSelect=$("[name=workSubGenre]");
@@ -39,7 +43,6 @@ $(function() {
           if(opt !==val){
         	  subSelect.append(`<option value="` + opt + `">` + opt + `</option>`);
           }
-
         });
 				subSelect.prop("disabled", !size).val("");
             status.workGenre = size;
@@ -73,7 +76,8 @@ $(function() {
 
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+
+/*Sdocument.addEventListener("DOMContentLoaded", function() {
   var input = document.querySelector('#workPrefer');
   var tagify = new Tagify(input, {
     animationDuration: 0,
@@ -91,3 +95,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+*/
