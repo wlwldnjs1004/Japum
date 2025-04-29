@@ -8,15 +8,13 @@
 
 
 <style>
-.sss {
+.sss{
 	font-size: 20px;
 }
 </style>
 
 
-<link
-	href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
-	rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
 <!-- summernote cdn -->
@@ -48,8 +46,8 @@
 		</div>
 	</div>
 	<hr>
-
-
+	
+	
 	<form action="add" method="Post" class="needs-validation">
 		<input type="hidden" name="workNo" value="${workNo}">
 
