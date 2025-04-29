@@ -23,6 +23,13 @@ $(function() {
 		inputValue = $(this).val();
 		$(".sss span").text(inputValue.length);
 	});
+	$(".chapterTitle").on('input', function() {
+	    let content = $(this).val();
+	    if (content.length > 60) {
+	        $(this).val(content.substring(0, 60));
+	        console.log("60자 초과로 자동 잘림");
+	    }
+	});
 });
 
 
@@ -89,7 +96,6 @@ $(function() {
 						for (var i = 0; i < files.length; i++) {
 							form.append("attach", files[i]);
 						}
-						
 						$.ajax({
 							processData: false,
 							contentType: false,
@@ -123,7 +129,11 @@ $(function() {
 			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
 
-			
+			$(this).removeClass("is-valid is-invalid").addClass(
+				isValid ? "is-valid" : "is-invalid");
+			status.chapterTitle = isValid;
+		});
+
 
 	$("[name=chapterDetail]").blur(
 		function() {
