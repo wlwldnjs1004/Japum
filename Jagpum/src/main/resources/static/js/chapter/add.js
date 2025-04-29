@@ -25,25 +25,14 @@ $(function() {
 	});
 });
 
-$(".chapterTitle").keyup(function(e){
-	let content=$(this).val().length();
-	console.log(content);
-	if(content.length>60){
-		$(this).val($(this).val().substring(0,60));
-
-		console.log(content)
-	}
-
-});
-
 
 $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
 			{
-				height: 250,//높이(px)
-				minHeight: 200,//최소 높이(px)
-				maxHeight: 400,//최대 높이(px)
+				height: 250,
+				minHeight: 200,
+				maxHeight: 400,
 				toolbar: [
 					["font", ["fontsize"]],
 					["style", ["bold", "italic", "underline", "strikethrough"]],
@@ -100,6 +89,7 @@ $(function() {
 						for (var i = 0; i < files.length; i++) {
 							form.append("attach", files[i]);
 						}
+						
 						$.ajax({
 							processData: false,
 							contentType: false,
@@ -120,14 +110,12 @@ $(function() {
 				},
 			});
 });
-
-
 $(function() {
 	const status = {
 		chapterTitle: false,
 		chapterDetail: false,
 		ok: function() {
-			return this.chapterTitle && this.chpaterDetail;
+			return  this.chapterTitle && this.chapterDetail;
 		},
 	};
 	$("[name=chapterTitle]").blur(
@@ -135,11 +123,7 @@ $(function() {
 			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
 
-			$(this).removeClass("is-valid is-invalid").addClass(
-				isValid ? "is-valid" : "is-invalid");
-			status.chapterTitle = isValid;
-		});
-
+			
 
 	$("[name=chapterDetail]").blur(
 		function() {
