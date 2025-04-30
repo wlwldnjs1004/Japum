@@ -8,7 +8,7 @@
 let inputValue = "";
 
 $(function() {
-	const $input = $("[name=chapterDetail]");
+	const $input = $("[name=chapterTitle]");
 	$input.on("keydown", function(e) {
 		if (e.key.length === 1) {
 			inputValue += e.key;
@@ -121,6 +121,8 @@ $(function() {
 			return  this.chapterTitle && this.chapterDetail;
 		},
 	};
+	
+	
 	$("[name=chapterTitle]").blur(
 		function() {
 			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;

@@ -5,8 +5,8 @@
 
 <style>
 .img-fixed {
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 10px;
 }
 
@@ -52,7 +52,7 @@ $(function(){
 </div>
 
 
-	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
+<%-- 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
 	  <c:forEach var="workDto" items="${list}">
     <li class="text-center" >
       <a href="detail?workNo=${workDto.workNo}">
@@ -61,7 +61,35 @@ $(function(){
       <p class="mt-2 fw-bold">${workDto.workName}</p>
     </li>
   </c:forEach>
-</ul>
+</ul> --%>
+
+
+<table class="table table-borderless mb-5">
+<tbody>
+  <tr>
+    <td>
+    <c:forEach var="workDto" items="${list}">
+      <ul class="list-group mt-4">
+        <li class="list-group-item">
+          <div class="row align-items-center mb-3">
+            <div class="col-auto">
+                    <a href="detail?workNo=${workDto.workNo}">
+        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
+      </a>
+            </div>
+            <div class="col">
+              <h5>      ${workDto.workName}</h5>
+              <p class="text-muted"></p>
+            </div>
+          </div>
+        </li>        
+      </ul>
+  </c:forEach>
+    </td>
+  </tr>
+</tbody>
+
+</table>
 
 	<div class="row mt-4">
 	<div class="col">

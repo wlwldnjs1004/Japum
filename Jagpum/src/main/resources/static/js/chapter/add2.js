@@ -92,6 +92,8 @@ $(function() {
 					});
 });
 
+
+
 $(function() {
 	const status = {
 		chapterTitle : false,
