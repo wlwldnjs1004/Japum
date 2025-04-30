@@ -39,6 +39,11 @@
 	-khtml-user-select: none;
 	user-select: none;
 }
+.custom-dark {
+  background-color: e67e22 !important;
+}
+
+
 </style>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -50,7 +55,7 @@
     </head>
 
 	<body class="drag-prevent">
-	   <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+	   <nav class="navbar navbar-expand-lg bg-dark fixed-top " data-bs-theme="dark">
         <div class="container-fluid">
 
             <!--좌측 로고(택스트 또는 이미지) -->
