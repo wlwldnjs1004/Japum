@@ -44,7 +44,19 @@
   background-color: e67e22 !important;
 }
 
+.navbar {
+  background-color: #1a1d23 !important;
+}
+.nav-link {
+  font-size: 0.95rem;
+  padding-left: 12px;
+  padding-right: 12px;
+}
 
+.navbar {
+  background-color: #1a1d23 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ← 이 줄 추가 */
+}
 
 </style>
 
@@ -67,6 +79,9 @@
 
             <a class="navbar-brand" href="/bootstrap">KH정보교육원</a>
 
+
+
+
             <!-- 메뉴 펄침 버튼(폭이 작을 때만 나옴)-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menui"
                 aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,6 +91,12 @@
             <!--실제 매뉴 영역(폭에 따라 보이는 형태가 다름)-->
             <div class="collapse navbar-collapse" id="main-menui">
                 <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                               <form class="d-flex mx-auto" action="/search" method="get">
+     <input class="form-control form-control-sm me-2" type="search" placeholder="작품명 검색" name="keyword">
+     <button class="btn btn-outline-light btn-sm" type="submit">검색</button>
+   </form>
+                            </li>
                              <c:if test="${sessionScope.userLevel=='관리자'}">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"

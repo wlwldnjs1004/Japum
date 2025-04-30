@@ -51,12 +51,32 @@ public ChapterDto workList(int workNo) {
 
 // 상세
 public ChapterDto seleOne(ChapterDto chapterDto) {
+	
+	
+	
+	
 	return sqlSession.selectOne("chapter.find", chapterDto);
 }
 //상세 조회
+//public ChapterDto seleOne(int chapterNo) {
+//	return sqlSession.selectOne("chapter.find", chapterNo);
+//}
+
+
+//상세 조회 + 조회수 증가 포함
 public ChapterDto seleOne(int chapterNo) {
-	return sqlSession.selectOne("chapter.find", chapterNo);
+ // 1. 조회수 증가
+ this.increaseView(chapterNo);
+
+ // 2. 상세 정보 반환
+ return sqlSession.selectOne("chapter.selectOne", chapterNo);
 }
+
+//조회수 증가
+public void increaseView(int chapterNo) {
+    sqlSession.update("chapter.increaseView", chapterNo);
+}
+
 
 //삭제
 public boolean delete(int chapterNo) {

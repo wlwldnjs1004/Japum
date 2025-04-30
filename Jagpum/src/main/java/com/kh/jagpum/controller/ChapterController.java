@@ -63,8 +63,12 @@ public class ChapterController {
 	
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int chapterNo,Model model) {
+		
+//		chapterDao.increaseView(chapterNo);
+
 		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
 		int workNo=chapterDto.getWorkNo();
+		
 		
 		model.addAttribute("chapterDto",chapterDto);
 		
