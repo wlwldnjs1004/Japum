@@ -67,24 +67,42 @@
     .change-size {
     font-size: 13px;
   }
+ 
   }
   
   @media ( max-width :768px) {
   .text-day{
    font-size:13px;
   }
+   .text-name{
+    font-size:13px;
+  }
+  
   }
   @media ( max-width :968px) {
   .text-day{
    font-size:15px;
   }
+   .text-name{
+    font-size:15px;
   }
   
-
+  
+  }
+  
+  
+  @media ( max-width :479px;){
+    .picture-book {
+    box-shadow: 0 0 1px 1px #bdc3c7;
+    height: 70px;
+    width:70px;
+  }
+  }
+  
+  
   .text-letter{
     letter-spacing:10px;
   }
-
   </style>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
@@ -179,7 +197,7 @@
 			</c:when>
 			<c:otherwise>
 
-				<h4 class="my-2">챕터 목록</h4>
+				<h4 class="text-name">챕터 목록</h4>
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -192,11 +210,11 @@
 						<c:forEach var="chapter" items="${chapterList}">
 							<tr>
 								<td>${chapter.chapterOrder}</td>
-								<td><a href="/chapter/detail?chapterNo=${chapter.chapterNo}"
-									class="aa ellipsis"> ${chapter.chapterTitle} </a></td>
-								<td>${chapter.chapterModified}</td>
+								<td>
+								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa ellipsis "> ${chapter.chapterTitle} </a></td>
+								<td class="text-name">${chapter.chapterModified}</td>
 								<c:if test="${chapter.chapterOrder >=30}">
-								<td>가격${chapter.chapterPrice}</td></c:if>
+								<td class="text-name">가격${chapter.chapterPrice}</td></c:if>
 							</tr>
 						</c:forEach>
 					</tbody>
