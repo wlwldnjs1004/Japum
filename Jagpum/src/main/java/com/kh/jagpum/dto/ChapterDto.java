@@ -20,7 +20,7 @@ public class ChapterDto {
 	private Timestamp chapterRecent;//수정일자
 	private int chapterOrder;//챕터 등록 카운트
 	private int chapterPrice;
-
+	private int chapterViews;
     
 	
 	public boolean isPriceVisible() {

@@ -3,35 +3,10 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style>
-.img-fixed {
-	width: 110px;
-	height: 110px;
-	border-radius: 10px;
-}
 
-@media ( max-width :768px) {
-	.img-fixed {
-		width: 90px;
-		height: 90px;
-		border-radius: 5px;
-	}
-}
-@media ( max-width :768px) {
-	.text-name{
-	font-size: 14px;
-	}
+<link rel="stylesheet" href="/css/work/list.css">
 
-}
 
-.drag-prevent {
-	-ms-user-select: none;
-	-moz-user-select: -moz-none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	user-select: none;
-}
-</style>
 <script>
 	/* $(document).ready(function () {
 	 $('.sdd').click(function () {

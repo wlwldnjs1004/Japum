@@ -87,6 +87,17 @@ select * from chapter where work_no=#{workNo}
     </select>
     
     
+ <update id="increaseView">
+    UPDATE chapter
+    SET chapter_view = chapter_view + 1
+    WHERE chapter_no = #{chapterNo}
+</update>
+
+<select id="selectOne" resultType="ChapterDto">
+    SELECT * FROM chapter WHERE chapter_no = #{chapterNo}
+</select>
+
+    
 
     
     
