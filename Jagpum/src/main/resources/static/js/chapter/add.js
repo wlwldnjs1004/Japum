@@ -1,4 +1,10 @@
 /*글자 수를 카운트 하기 위한 jQery*/
+/*$(function () {
+  $("[name=chapterDetail]").on("input", function () {
+	const text = $(this).val();
+	$(".sss span").text(text.length);
+  });
+});*/
 let inputValue = "";
 
 $(function() {
@@ -18,6 +24,8 @@ $(function() {
 		$(".sss span").text(inputValue.length);
 	});
 	});
+	
+	
 	
 $(function() {
 	$("[name=chapterDetail]")
@@ -82,6 +90,7 @@ $(function() {
 						for (var i = 0; i < files.length; i++) {
 							form.append("attach", files[i]);
 						}
+						
 						$.ajax({
 							processData: false,
 							contentType: false,
@@ -112,28 +121,12 @@ $(function() {
 			return  this.chapterTitle && this.chapterDetail;
 		},
 	};
-	
-	$("[name=chapterTitle]").on('input', function() {
-	    let content = $(this).val();
-	    if (content.length > 60) {
-	        $(this).val(content.substring(0, 60));
-	        console.log("60자 초과로 자동 잘림");
-	    }
-	});
-	
 	$("[name=chapterTitle]").blur(
-		function(){
-			const regex = /^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ]{1,60}$/;
+		function() {
+			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
-			
-			
-			
-			$(this).removeClass("is-valid is-invalid").addClass(
-				isValid ? "is-valid" : "is-invalid");
-			status.chapterTitle = isValid;
-		
-		});
 
+			
 
 	$("[name=chapterDetail]").blur(
 		function(){
@@ -146,4 +139,5 @@ $(function() {
 		return status.ok();
 		});
 	});
+});
 
