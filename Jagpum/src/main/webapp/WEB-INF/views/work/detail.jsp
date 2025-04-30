@@ -100,27 +100,13 @@
 			<c:otherwise>
 
 				<h4 class="text-name">챕터 목록</h4>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>챕터 번호</th>
-							<th>제목</th>
-							<th>작성일</th>
-						</tr>
-					</thead>
-					<tbody>
 						<c:forEach var="chapter" items="${chapterList}">
-							<tr>
-								<td>${chapter.chapterOrder}</td>
-								<td>
-								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa ellipsis "> ${chapter.chapterTitle} </a></td>
-								<td class="text-name">${chapter.chapterModified}</td>
-								<c:if test="${chapter.chapterOrder >=30}">
-								<td class="text-name">가격${chapter.chapterPrice}</td></c:if>
-							</tr>
+							<ul class="list-group">
+								<li class="list-group-item text-dis">
+								<span class="text-HH">${chapter.chapterOrder}</span><span class="text=title-2"><a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa ellipsis "> ${chapter.chapterTitle} </a></span><span class="text-item">${chapter.chapterModified}</span> </li>
+								</ul>
+						
 						</c:forEach>
-					</tbody>
-				</table>
 			</c:otherwise>
 		</c:choose>
 		

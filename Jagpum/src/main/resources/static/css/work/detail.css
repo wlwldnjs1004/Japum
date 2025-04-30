@@ -100,18 +100,20 @@
   
     .text-HH{
     font-size:16px;
-    margin-right: 80px;
-    margin-left:10px;
+    margin-right: 78px;
+    margin-left:0px;
   }
   .text-title-2{
     font-size:16px;
-    margin-right: 151px;
+    margin-right: 10px;
     margin-left:30px;
   }
   .text-item{
     font-size:16px;
-    margin-right: 90px;
-    margin-left:124px;
+    margin-right: 10px;
+    margin-left:14px;
   }
-  
+  .text-dis{
+  display: inline-block;
+  }
   
