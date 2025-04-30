@@ -29,9 +29,14 @@
 .change-size {
 	font-size: 18px;
 }
-.w{
+.text-day{
  font-size:20px;
 }
+
+
+
+
+
 .sss{
 font-size:20px;
 }
@@ -58,14 +63,14 @@ font-size:20px;
 						<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
 						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
 							<div class="row mt-5 ">
-							<div class="col w">
+							<div class="col text-day">
 							${workDto.workMon == 'Y' ? '월 ' : ''}</div>
-							<div class="col w">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
-							<div class="col w">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
-							<div class="col w">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
-							<div class="col w">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
-							<div class="col w">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
-							<div class="col w">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
+							<div class="col text-day">${workDto.workTue == 'Y' ? '화 ' : ''}</div>
+							<div class="col text-day">${workDto.workWed == 'Y' ? '수 ' : ''}</div>
+							<div class="col text-day">${workDto.workThu == 'Y' ? '목 ' : ''}</div>
+							<div class="col text-day">${workDto.workFri == 'Y' ? '금 ' : ''}</div>
+							<div class="col text-day">${workDto.workSat == 'Y' ? '토 ' : ''}</div>
+							<div class="col text-day">${workDto.workSun == 'Y' ? '일 ' : ''}</div>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -75,16 +80,16 @@ font-size:20px;
 												<p>${workDto.workPaid=='N'?'유료':'무료'}</p>
 						<h4>${workDto.workGenre}${workDto.workSubGenre}</h4>
 						<div class="row mt-5 ">
-							<div class="col "><span class="w">
+							<div class="col "><span class="text-day">
 							${workDto.workMon == 'Y' ? '월 ' : ''}
 							</span>
 							</div>
-							<div class="col w"><span class="w">${workDto.workTue == 'Y' ? '화 ' : ''}</span></div>
-							<div class="col w"><span class="w">${workDto.workWed == 'Y' ? '수 ' : ''}</span></div>
-							<div class="col w"><span class="w">${workDto.workThu == 'Y' ? '목 ' : ''}</span></div>
-							<div class="col w"><span class="w">${workDto.workFri == 'Y' ? '금 ' : ''}</span></div>
-							<div class="col w"><span class="w">${workDto.workSat == 'Y' ? '토 ' : ''}</span></div>
-							<div class="col w"><span class="w">${workDto.workSun == 'Y' ? '일 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workTue == 'Y' ? '화 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workWed == 'Y' ? '수 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workThu == 'Y' ? '목 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workFri == 'Y' ? '금 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workSat == 'Y' ? '토 ' : ''}</span></div>
+							<div class="col text-day"><span class="text-day">${workDto.workSun == 'Y' ? '일 ' : ''}</span></div>
 						</div>
 
 					</c:otherwise>
