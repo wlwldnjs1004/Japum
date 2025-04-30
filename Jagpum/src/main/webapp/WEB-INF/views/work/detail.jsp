@@ -103,9 +103,13 @@
 						<c:forEach var="chapter" items="${chapterList}">
 							<ul class="list-group">
 								<li class="list-group-item text-dis">
-								<span class="text-HH">${chapter.chapterOrder}</span><span class="text=title-2"><a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa ellipsis "> ${chapter.chapterTitle} </a></span><span class="text-item">${chapter.chapterModified}</span> </li>
+								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa">
+								<span class="text-HH">${chapter.chapterOrder}</span>
+								<span class="text-title-2  ">${chapter.chapterTitle}</span>
+								 <span class="text-item">${chapter.chapterModified}</span>
+								</a>
+								 </li>
 								</ul>
-						
 						</c:forEach>
 			</c:otherwise>
 		</c:choose>

@@ -105,15 +105,21 @@
   }
   .text-title-2{
     font-size:16px;
-    margin-right: 10px;
-    margin-left:30px;
+    margin-right:99px;
+    margin-left:44px;
+    
+      width: 200px; /* 반드시 너비를 정해야 작동함 */
+    overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+    white-space: nowrap;
+     display: inline-block; 
   }
   .text-item{
     font-size:16px;
     margin-right: 10px;
-    margin-left:14px;
+    margin-left:10px;
   }
   .text-dis{
-  display: inline-block;
+  display: grid;
   }
   
