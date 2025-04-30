@@ -49,7 +49,7 @@
 	
 	
 	<form action="add" method="Post" class="needs-validation">
-		<input type="hidden" name="workNo" value="${workNo}">
+		<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
