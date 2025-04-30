@@ -1,32 +1,4 @@
 /*글자 수를 카운트 하기 위한 jQery*/
-/*$(function () {
-  $("[name=chapterDetail]").on("input", function () {
-	const text = $(this).val();
-	$(".sss span").text(text.length);
-  });
-});*/
-let inputValue = "";
-
-$(function() {
-	const $input = $("[name=chapterTitle]");
-	$input.on("keydown", function(e) {
-		if (e.key.length === 1) {
-			inputValue += e.key;
-		} else if (e.key === "Backspace") {
-			inputValue = inputValue.slice(0, -1);
-		}
-
-		$(".sss span").text(inputValue.length);
-	});
-	// input이 바뀌면 val 기준으로 초기화 (실제 텍스트와 동기화)
-	$input.on("input", function() {
-		inputValue = $(this).val();
-		$(".sss span").text(inputValue.length);
-	});
-	});
-	
-	
-	
 $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
@@ -90,7 +62,6 @@ $(function() {
 						for (var i = 0; i < files.length; i++) {
 							form.append("attach", files[i]);
 						}
-						
 						$.ajax({
 							processData: false,
 							contentType: false,
@@ -111,8 +82,6 @@ $(function() {
 				},
 			});
 });
-
-
 $(function() {
 	const status = {
 		chapterTitle: false,
@@ -122,24 +91,35 @@ $(function() {
 		},
 	};
 	
+	$("[name=chapterTitle]").on('input', function() {
+	    let content = $(this).val();
+	    if (content.length > 60) {
+	        $(this).val(content.substring(0, 60));
+	        console.log("60자 초과로 자동 잘림");
+	    }
+	});
 	
 	$("[name=chapterTitle]").blur(
 		function() {
-			const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,60}$/;
+			const regex = /^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
-
 			
+			$(this).removeClass("is-valid is-invalid").addClass(
+				isValid ? "is-valid" : "is-invalid");
+			status.chapterTitle = isValid;
+		});
+
 
 	$("[name=chapterDetail]").blur(
-		function(){
+		function() {
 			const size = $(this).val().length > 0;
-			$(this).removeClass("is-valid is-invalid").addClass(size ? "is-valid" : "is-invalid");
+			$(this).removeClass("is-valid is-invalid").addClass(
+				size ? "is-valid" : "is-invalid");
 			status.chapterDetail = size;
 		});
 	$(".needs-validation").submit(function() {
 		$("[name]").trigger("blur");
 		return status.ok();
-		});
 	});
 });
 
