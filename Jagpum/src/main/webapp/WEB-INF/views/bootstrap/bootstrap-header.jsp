@@ -31,115 +31,120 @@
         integrity="sha512-TUtnNUXMMWp2IALAR9t2z1vuorOUQL4dPWG3J9ANInEj6xu/rz5fzni/faoEGzuqeY1Z1yGD6COYAW72oiDVYA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
 <style>
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-    padding-top: 70px;
-  }
+.drag-prevent {
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+.custom-dark {
+  background-color: e67e22 !important;
+}
 
-  .navbar {
-    background-color: #1a1d23 !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  }
 
-  .nav-link {
-    font-size: 0.95rem;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
 
-  .navbar-brand {
-    font-weight: bold;
-    font-size: 1.3rem;
-    color: #ffffff !important;
-  }
-
-  .form-control::placeholder {
-    color: #ccc;
-    font-size: 0.85rem;
-  }
-
-  .dropdown-menu {
-    font-size: 0.9rem;
-  }
 </style>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-  <div class="container-fluid">
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <script src="${pageContext.request.contextPath}/js/checkbox.js"></script>
+    <script type="text/javascript">
 
-    <!-- 로고 -->
-    <a class="navbar-brand" href="${pageContext.request.contextPath}/">KH문학</a>
+    </script>
+    </head>
 
-    <!-- 반응형 메뉴 토글 -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+	<body class="drag-prevent">
+	   <nav class="navbar navbar-expand-lg bg-dark fixed-top " data-bs-theme="dark">
+        <div class="container-fluid">
 
-    <!-- 메뉴 및 검색창 -->
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <!-- 왼쪽 메뉴 -->
-      <ul class="navbar-nav me-auto">
-        <c:if test="${sessionScope.userLevel == '관리자'}">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">관리</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/home">관리자 페이지</a>
-              <a class="dropdown-item" href="${pageContext.request.contextPath}/admin/work/add">E북 관리</a>
+            <!--좌측 로고(택스트 또는 이미지) -->
+
+            <!--?? 버튼-->
+
+            <a class="navbar-brand" href="/bootstrap">KH정보교육원</a>
+
+            <!-- 메뉴 펄침 버튼(폭이 작을 때만 나옴)-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menui"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--실제 매뉴 영역(폭에 따라 보이는 형태가 다름)-->
+            <div class="collapse navbar-collapse" id="main-menui">
+                <ul class="navbar-nav me-auto">
+                             <c:if test="${sessionScope.userLevel=='관리자'}">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa-solid fa-server"></i>
+                            데이터 관리
+                        </a>
+                        <div class="dropdown-menu">
+                             <!-- <div class="dropdown-divider"></div>  -->
+							<a class="dropdown-item" href="${pageContext.request.contextPath}/admin/home">관리자 페이지</a>
+                        </div>
+                    </li>
+                             </c:if>
+                        <c:if test="${sessionScope.userId !=null}">
+                          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">
+                            책 관리
+                        </a>
+                        <div class="dropdown-menu">
+                        		    <a class="nav-link" href="${pageContext.request.contextPath}/work/list">내 책 리스트</a>
+                        		        <a class="nav-link" href="${pageContext.request.contextPath}/work/add">책 등록</a>
+                            <!-- <div class="dropdown-divider"></div> -->
+				<c:if test="${sessionScope.userLevel =='관리자'}">
+					<a class="nav-link" href="${pageContext.request.contextPath}/admin/work/add">E북</a>			
+				</c:if>
+                        </div>
+                    </li>
+                        </c:if>
+                </ul>
+                <!--우측 메뉴-->
+                <c:choose>
+                <c:when test="${sessionScope.userId !=null}">
+                     <ul class="navbar-nav ">
+                                <li class="nav-item dropdown me-2">
+	                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+	                    aria-haspopup="true" aria-expanded="fasle">
+	                    <i class="fa-solid fa-user"></i>
+	                    ${sessionScope.userId} 님
+	                    </a>
+	                    <div class="dropdown-menu">
+	                    <c:if test="${sessionScope.userId !=null}">
+	                    <a class="dropdown-item" href="${pageContext.request.contextPath}/member/mypage">마이 페이지</a>
+	                    <a class="dropdown-item" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
+	                    
+	                    </c:if>
+	                    </div>
+	                	</li>
+                     </ul>
+                </c:when>
+                <c:otherwise>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/member/login">
+                            <i class="fa-solid fa-right-to-bracket"></i>로그인</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/member/join">
+                            <i class="fa-solid fa-user"></i>회원가입
+                        </a>
+                    </li>
+                </c:otherwise>
+                </c:choose>
+                </ul>
+
             </div>
-          </li>
-        </c:if>
-       <li class="nav-item dropdown">
-      <form class="d-flex mx-auto mt-3" action="${pageContext.request.contextPath}/search" method="get">
-        <input class="form-control form-control-sm me-2" type="search" name="keyword" placeholder="작품명 검색">
-        <button class="btn btn-outline-light btn-sm" type="submit">검색</button>
-      </form>
-</li>
-        <c:if test="${sessionScope.userId != null}">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">책 관리</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="${pageContext.request.contextPath}/work/list">내 책 리스트</a>
-              <a class="dropdown-item" href="${pageContext.request.contextPath}/work/add">책 등록</a>
-            </div>
-          </li>
-        </c:if>
-      </ul>
-
-      <!-- 가운데 검색창 -->
-      
-
-      <!-- 오른쪽 유저 메뉴 -->
-      <ul class="navbar-nav">
-        <c:choose>
-          <c:when test="${sessionScope.userId != null}">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                <i class="fa-solid fa-user"></i> ${sessionScope.userId} 님
-              </a>
-              <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" href="${pageContext.request.contextPath}/member/mypage">마이페이지</a>
-                <a class="dropdown-item" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-              </div>
-            </li>
-          </c:when>
-          <c:otherwise>
-            <li class="nav-item">
-              <a class="nav-link" href="${pageContext.request.contextPath}/member/login">
-                <i class="fa-solid fa-right-to-bracket"></i> 로그인
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="${pageContext.request.contextPath}/member/join">
-                <i class="fa-solid fa-user"></i> 회원가입
-              </a>
-            </li>
-          </c:otherwise>
-        </c:choose>
-      </ul>
-    </div>
-  </div>
-</nav>
+        </div>
+    </nav>
  <!--컨테이너-->
     <div class="container mt-5 pt-5">
 

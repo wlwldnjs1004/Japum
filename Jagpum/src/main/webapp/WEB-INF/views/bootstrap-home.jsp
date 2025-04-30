@@ -9,20 +9,8 @@
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-/* 감성 스크롤 디자인 */
-ul::-webkit-scrollbar {
-  height: 8px;
-}
-ul::-webkit-scrollbar-thumb {
-  background-color: #999;
-  border-radius: 4px;
-}
-ul::-webkit-scrollbar-track {
-  background: transparent;
-}
 
 .drag-prevent{
     -ms-user-select: none;
