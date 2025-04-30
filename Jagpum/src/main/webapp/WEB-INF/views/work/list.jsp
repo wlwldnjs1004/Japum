@@ -5,54 +5,64 @@
 
 <style>
 .img-fixed {
-  width: 120px;
-  height: 120px;
-  border-radius: 10px;
+	width: 110px;
+	height: 110px;
+	border-radius: 10px;
 }
 
+@media ( max-width :768px) {
+	.img-fixed {
+		width: 90px;
+		height: 90px;
+		border-radius: 5px;
+	}
+}
+@media ( max-width :768px) {
+	.text-name{
+	font-size: 14px;
+	}
 
-.drag-prevent{
-    -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+}
+
+.drag-prevent {
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
 }
 </style>
-
-<script >
-$(function(){
-	$(".input").blur(function(){
-		let text = "#";
-		let newText = text.replace("#웹소설", ""); 
-	});
-});
-
-
+<script>
+	/* $(document).ready(function () {
+	 $('.sdd').click(function () {
+	 const url = $(this).data('href');
+	 if (url) {
+	 window.location.href = url;
+	 }
+	 });
+	 }); */
 </script>
+
+
+<script src="${pageContext.request.contextPath}/js/work/add.js"></script>
+
+
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
 <div class="container drag-prevent">
 
 
-<div class="row mt-4">
-<div class="col">
-
-<form class="d-flex mt-5" action="list">
-	<!-- <select name="column" class="form-select w-25">
-	<option value="work_paid">태그</option>
-	<option value="work_">작가</option>
-	<option value="">작품제목</option>
-	</select> -->
-  <input class="form-control me-2 input" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
-  <button class="btn btn-success text-nowrap" type="submit">검색</button>
-</form>
-</div>
-</div>
+	<form class="d-flex mt-5" action="list">
+		<div class="input-group">
+			<input class="form-control w-75" type="search" placeholder="검색어 입력"
+				name="keyword" aria-label="Search">
+			<button class="btn btn-success text-nowrap" type="submit">검색</button>
+		</div>
+	</form>
 
 
-<%-- 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
+	<%-- 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
 	  <c:forEach var="workDto" items="${list}">
     <li class="text-center" >
       <a href="detail?workNo=${workDto.workNo}">
@@ -64,37 +74,37 @@ $(function(){
 </ul> --%>
 
 
-<table class="table table-borderless mb-5">
-<tbody>
-  <tr>
-    <td>
-    <c:forEach var="workDto" items="${list}">
-      <ul class="list-group mt-4">
-        <li class="list-group-item">
-          <div class="row align-items-center mb-3">
-            <div class="col-auto">
-                    <a href="detail?workNo=${workDto.workNo}">
-        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
-      </a>
-            </div>
-            <div class="col">
-              <h5>      ${workDto.workName}</h5>
-              <p class="text-muted"></p>
-            </div>
-          </div>
-        </li>        
-      </ul>
-  </c:forEach>
-    </td>
-  </tr>
-</tbody>
+	<table class="table table-borderless mb-5">
+		<tbody>
+			<tr>
+				<td><c:forEach var="workDto" items="${list}">
+						<ul class="list-group mt-4">
+							<li class="list-group-item sd">
+								<div class="row align-items-center mb-3 sdd"
+									data-href="http://localhost:8080/work/detail?workNo=${workDto.workNo}">
+									<div class="col-auto">
+										<a href="detail?workNo=${workDto.workNo}"> <img
+											src="image?workNo=${workDto.workNo}" class="img-fixed">
+										</a>
+									</div>
+									<div class="col">
+										<h5 class="text-name">${workDto.workName}</h5>
+										<p class="text-muted"></p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</c:forEach></td>
+			</tr>
+		</tbody>
 
-</table>
+	</table>
 
 	<div class="row mt-4">
-	<div class="col">
-	<a class="btn btn-primary" href="${pageContext.request.contextPath}/work/add">작품 등록</a>
-	</div>
+		<div class="col">
+			<a class="btn btn-primary"
+				href="${pageContext.request.contextPath}/work/add">작품 등록</a>
+		</div>
 	</div>
 
 

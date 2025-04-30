@@ -39,6 +39,11 @@
 	-khtml-user-select: none;
 	user-select: none;
 }
+.custom-dark {
+  background-color: e67e22 !important;
+}
+
+
 </style>
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -50,7 +55,7 @@
     </head>
 
 	<body class="drag-prevent">
-	   <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
+	   <nav class="navbar navbar-expand-lg bg-dark fixed-top " data-bs-theme="dark">
         <div class="container-fluid">
 
             <!--좌측 로고(택스트 또는 이미지) -->
@@ -68,6 +73,7 @@
             <!--실제 매뉴 영역(폭에 따라 보이는 형태가 다름)-->
             <div class="collapse navbar-collapse" id="main-menui">
                 <ul class="navbar-nav me-auto">
+                             <c:if test="${sessionScope.userLevel=='관리자'}">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-haspopup="true" aria-expanded="false">
@@ -75,30 +81,11 @@
                             데이터 관리
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/pokemon/bootstrap-add">포켓몬스터 등록</a>
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/country/list">국가정보</a>  
-                           <c:if test="${sessionScope.userId !=null}">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/game-user/list">게임유저정보</a>
-                           </c:if>
-                             <div class="dropdown-divider"></div> 
-                             <c:if test="${sessionScope.userLevel=='관리자'}">
+                             <!-- <div class="dropdown-divider"></div>  -->
 							<a class="dropdown-item" href="${pageContext.request.contextPath}/admin/home">관리자 페이지</a>
-                             </c:if>
                         </div>
                     </li>
-                  <%--   <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa-solid  fa-list-ul"></i>
-                            게시판
-                        </a>
-                    </li>
-                    <c:if test="${sessionScope.userId !=null && sessionScope.userLevel !='관리자'}">
-                    <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/">
-                            <i class="fa-solid fa-money-check-dollar"></i>
-                            상품권 구매</a>
-                    </li> 
-                    </c:if>--%>
+                             </c:if>
                         <c:if test="${sessionScope.userId !=null}">
                           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"

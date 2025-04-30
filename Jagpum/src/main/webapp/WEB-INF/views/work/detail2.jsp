@@ -4,8 +4,106 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<link rel="stylesheet" href="/css/work/detail.css">
+<style>
+  .drag-prevent {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+  }
+  
+  .s {
+    display: flex;
+  }
+  
+  
+  .picture-book {
+    box-shadow: 0 0 1px 1px #bdc3c7;
+    height: 120px;
+    width:120px;
+  }
 
+
+  
+  .aa {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .change-size {
+    font-size: 15px;
+  }
+  
+  .text-name{
+    font-size:16px;
+  }
+
+  .text-day{
+   font-size:18px;
+  }
+  
+  .ellipsis {
+    font-size:15px;
+      display: inline-block;
+    width: 250px; /* 반드시 너비를 정해야 작동함 */
+    overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+    white-space: nowrap; 
+  }
+  
+  @media ( max-width :768px){
+  .ellipsis {
+  font-size:13px;
+    display: inline-block;
+    width: 200px; /* 반드시 너비를 정해야 작동함 */
+    overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+    white-space: nowrap; 
+  }
+  }
+  
+  @media (max-width: 768px){
+    .change-size {
+    font-size: 13px;
+  }
+ 
+  }
+  
+  @media ( max-width :768px) {
+  .text-day{
+   font-size:13px;
+  }
+   .text-name{
+    font-size:13px;
+  }
+  
+  }
+  @media ( max-width :968px) {
+  .text-day{
+   font-size:15px;
+  }
+   .text-name{
+    font-size:15px;
+  }
+  
+  
+  }
+  
+  
+  @media ( max-width :479px;){
+    .picture-book {
+    box-shadow: 0 0 1px 1px #bdc3c7;
+    height: 70px;
+    width:70px;
+  }
+  }
+  
+  
+  .text-letter{
+    letter-spacing:10px;
+  }
+  </style>
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
@@ -100,17 +198,27 @@
 			<c:otherwise>
 
 				<h4 class="text-name">챕터 목록</h4>
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>챕터 번호</th>
+							<th>제목</th>
+							<th>작성일</th>
+						</tr>
+					</thead>
+					<tbody>
 						<c:forEach var="chapter" items="${chapterList}">
-							<ul class="list-group">
-								<li class="list-group-item text-dis">
-								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa">
-								<span class="text-HH">${chapter.chapterOrder}</span>
-								<span class="text-title-2  ">${chapter.chapterTitle}</span>
-								 <span class="text-item">${chapter.chapterModified}</span>
-								</a>
-								 </li>
-								</ul>
+							<tr>
+								<td>${chapter.chapterOrder}</td>
+								<td>
+								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa ellipsis "> ${chapter.chapterTitle} </a></td>
+								<td class="text-name">${chapter.chapterModified}</td>
+								<c:if test="${chapter.chapterOrder >=30}">
+								<td class="text-name">가격${chapter.chapterPrice}</td></c:if>
+							</tr>
 						</c:forEach>
+					</tbody>
+				</table>
 			</c:otherwise>
 		</c:choose>
 		

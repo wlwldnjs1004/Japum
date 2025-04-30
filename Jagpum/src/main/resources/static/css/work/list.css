@@ -1,0 +1,16 @@
+.img-fixed {
+	width: 120px;
+	height: 120px;
+	border-radius: 10px;
+}
+
+.drag-prevent {
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+
+

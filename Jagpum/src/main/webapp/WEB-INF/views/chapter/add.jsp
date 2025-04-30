@@ -49,7 +49,7 @@
 	
 	
 	<form action="add" method="Post" class="needs-validation">
-		<input type="hidden" name="workNo" value="${workNo}">
+		<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 
 		<div class="row mt-4">
 			<div class="col-sm-12">
@@ -63,8 +63,7 @@
 		
 		<div class="row mt-3">
 			<div class="col">
-				<p class="fs-6">* 글 번호는 자동으로 생성됩니다. 소제목에 회차 번호를 입력하시면 중복 표기될 수
-					있습니다.</p>
+				<p class="fs-6">* 글 번호는 자동으로 생성됩니다. 소제목에 회차 번호를 입력하시면 중복 표기될 수 있습니다.</p>
 			</div>
 		</div>
 		
