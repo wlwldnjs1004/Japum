@@ -23,9 +23,10 @@ $(function() {
 		inputValue = $(this).val();
 		$(".sss span").text(inputValue.length);
 	});
-});
-
-
+	});
+	
+	
+	
 $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
@@ -110,6 +111,8 @@ $(function() {
 				},
 			});
 });
+
+
 $(function() {
 	const status = {
 		chapterTitle: false,
@@ -126,15 +129,15 @@ $(function() {
 			
 
 	$("[name=chapterDetail]").blur(
-		function() {
+		function(){
 			const size = $(this).val().length > 0;
-			$(this).removeClass("is-valid is-invalid").addClass(
-				size ? "is-valid" : "is-invalid");
+			$(this).removeClass("is-valid is-invalid").addClass(size ? "is-valid" : "is-invalid");
 			status.chapterDetail = size;
 		});
 	$(".needs-validation").submit(function() {
 		$("[name]").trigger("blur");
 		return status.ok();
+		});
 	});
 });
 
