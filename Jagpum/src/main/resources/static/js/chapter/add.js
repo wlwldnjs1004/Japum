@@ -41,6 +41,8 @@ $(function() {
 			});
 });
 
+
+
 $(function() {
 	$("[name=chapterComment]")
 		.summernote(
@@ -122,4 +124,5 @@ $(function() {
 		return status.ok();
 	});
 });
+
 

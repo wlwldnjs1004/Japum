@@ -19,18 +19,16 @@
     user-select: none;
 }
 </style>
-
-<script >
-$(function(){
-	$(".input").blur(function(){
-		let text = "#";
-		let newText = text.replace("#웹소설", ""); 
-	});
-});
-
-
+<script>
+/* $(document).ready(function () {
+      $('.sdd').click(function () {
+        const url = $(this).data('href');
+        if (url) {
+          window.location.href = url;
+        }
+      });
+    }); */
 </script>
-
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
 <div class="container drag-prevent">
@@ -70,8 +68,8 @@ $(function(){
     <td>
     <c:forEach var="workDto" items="${list}">
       <ul class="list-group mt-4">
-        <li class="list-group-item">
-          <div class="row align-items-center mb-3">
+        <li class="list-group-item sd">
+          <div class="row align-items-center mb-3 sdd" data-href="http://localhost:8080/work/detail?workNo=${workDto.workNo}">
             <div class="col-auto">
                     <a href="detail?workNo=${workDto.workNo}">
         <img src="image?workNo=${workDto.workNo}" class="img-fixed">
