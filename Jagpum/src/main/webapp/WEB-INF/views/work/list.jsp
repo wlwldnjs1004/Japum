@@ -54,12 +54,7 @@ font-size: 13px !important;
 		</div>
 	</form>
 
-
-
-
-	<table
-		class="table table-hover align-middle 
-	table-borderless mb-5">
+	<table class="table table-hover align-middle table-borderless mb-5">
 		<thead>
 			<tr class="text-center">
 				<th  style="width: 20px">이미지</th>
@@ -72,7 +67,7 @@ font-size: 13px !important;
 				<c:forEach var="workDto" items="${list}">
 			<tr>
 				 <td class="text-center">
-                <img src="https://placehold.co/100x100" class="rounded" style="width: 80px; height: 80px;">
+            	<img src="image?workNo=${workDto.workNo}" class="rounded" style="width: 80px; height: 80px;">
               </td>
               <td class="text-center text-muted text-names"  >${workDto.workName}</td>
               <td class="text-start">
