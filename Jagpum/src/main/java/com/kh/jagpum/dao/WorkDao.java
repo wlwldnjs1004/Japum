@@ -110,6 +110,9 @@ public class WorkDao {
 	public List<WorkDto>serch(String keyword){
 		return sqlSession.selectList("work.searchList",keyword);
 	} 
+	public List<WorkListViewDto>serchView(String keyword){
+		return sqlSession.selectList("work.searchListView",keyword);
+	} 
 	
 //	
 //	public List<WorkDto> selectListByPaging(PageVO pageVO) {

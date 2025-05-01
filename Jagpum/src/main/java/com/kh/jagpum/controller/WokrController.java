@@ -82,19 +82,17 @@ public class WokrController {
 	@RequestMapping("/list")
 	public String list(@RequestParam(required = false) String keyword,Model model) {
 	   
-		List<WorkDto> list;
-		
-		
+		List<WorkListViewDto> list;
 		
 		 if (keyword != null && !keyword.isEmpty()) {
 //			 log.debug("검색 결과: {}", keyword); 
 			 if (keyword.contains("#")) {
-		            list = workDao.selectList(); // 목록
+		            list = workDao.selectListview(); // 목록
 		        } 
-			 list = workDao.serch(keyword); 
+			 list = workDao.serchView(keyword); 
 	    }
 	    else {
-	        list = workDao.selectList();//목록 
+	        list = workDao.selectListview();//목록 
 	    }
 	    model.addAttribute("list", list);
 	    model.addAttribute("keyword", keyword);

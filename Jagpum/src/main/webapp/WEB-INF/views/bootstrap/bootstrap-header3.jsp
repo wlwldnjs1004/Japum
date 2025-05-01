@@ -54,7 +54,6 @@
 }
 
 .navbar {
-  background-color: #1a1d23 !important;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* ← 이 줄 추가 */
 }
 

@@ -2,20 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link rel="stylesheet" href="/css/work/list.css">
 
 
 <script>
-	/* $(document).ready(function () {
-	 $('.sdd').click(function () {
-	 const url = $(this).data('href');
-	 if (url) {
-	 window.location.href = url;
-	 }
-	 });
-	 }); */
+var burger=$(".menu-trigger");
+
 </script>
 
 
@@ -51,29 +45,40 @@
 
 	<table class="table table-borderless mb-5">
 		<tbody>
-			<tr>
-				<td><c:forEach var="workDto" items="${list}">
-						<ul class="list-group mt-4">
+			<tr>						
+				<td>
+					<ul class="list-group mt-4">
+							<c:forEach var="workDto" items="${list}">
 							<li class="list-group-item sd">
-								<div class="row align-items-center mb-3 sdd"
-									data-href="http://localhost:8080/work/detail?workNo=${workDto.workNo}">
-									<div class="col-auto">
-										<a href="detail?workNo=${workDto.workNo}"> <img
-											src="image?workNo=${workDto.workNo}" class="img-fixed">
-										</a>
-									</div>
-									<div class="col">
-										<h5 class="text-name">${workDto.workName}</h5>
-										<p class="text-muted"></p>
-									</div>
-								</div>
+						<div class="row align-items-center">
+							    <div class="col-auto">
+      <a href="detail?workNo=${workDto.workNo}">
+        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
+      </a>
+    </div>
+							  <div class="col">
+                  <a href="detail?workNo=${workDto.workNo}" class="text-a">
+                    <h5 class="text-name text-name-big mb-1">${workDto.workName}</h5>
+                  </a>
+                  <p class="text-muted mb-1">${workDto.workSubtotal}</p>
+                  <div class="small text-secondary">
+                     작가: ${workDto.memberNickname} / 장르: ${workDto.workGenre}
+                  </div>
+                   <div class="small text-secondary">
+                     등록일: <fmt:formatDate value="${workDto.workWtime}" pattern="yyyy-MM-dd"/> 
+                     <c:if test="${workDto.workPaid == 'Y'}">|유료</c:if>
+                    <c:if test="${workDto.workPaid == 'N'}">|무료</c:if> 
+                  </div>
+           			  </div> 
+                </div>
 							</li>
+					</c:forEach>
 						</ul>
-					</c:forEach></td>
+					</td>
 			</tr>
 		</tbody>
-
 	</table>
+
 
 	<div class="row mt-4">
 		<div class="col">

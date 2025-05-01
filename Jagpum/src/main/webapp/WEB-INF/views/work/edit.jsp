@@ -168,12 +168,12 @@
 		</div>
 
 		<c:choose>
-			<c:when test="${workDto.workContract=='독점'}">
+			<c:when test="${workDto.workContract=='Y'}">
 				<div class="row mt-4">
 					<div class="col-sm-12 mb-3">
 						<input class="form-check-input size-r" type="radio"
-							name="workContract" value="독점" checked="checked"> 독점 <span> 
-							<input class="form-check-input size-r ms-3" type="radio" name=workContract value="비독점"> 비독점
+							name="workContract" value="Y" checked="checked"> 독점 <span> 
+							<input class="form-check-input size-r ms-3" type="radio" name=workContract value="N"> 비독점
 						</span>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">필수 항목입니다</div>
@@ -184,9 +184,9 @@
 				<div class="row mt-4">
 					<div class="col-sm-12 mb-3">
 						<input class="form-check-input size-r" type="radio"
-							name="workContract" value="독점"> 독점 <span> <input
+							name="workContract" value="Y"> 독점 <span> <input
 							class="form-check-input size-r ms-3" type="radio"
-							name=workContract value="비독점" checked="checked"> 비독점
+							name=workContract value="N" checked="checked"> 비독점
 						</span>
 						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">필수 항목입니다</div>

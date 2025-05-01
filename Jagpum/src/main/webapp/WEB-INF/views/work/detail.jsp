@@ -28,7 +28,7 @@
                 <c:choose>
                   <c:when test="${workDto.workBook =='Y'}">
              <div class="col"></div>
-              <div class="col-auto mt-5">
+              <div class="col-auto  mb-5 mt-5">
 					<div class="col-md-6 mt-1 text-name">작가: ${workDto.memberNickname}</div>
                     <b class="text-name">${workDto.workName}[E]북</b>
                                  <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
@@ -75,22 +75,19 @@
 
             </div>
         
-		<hr class="" />
-		<div class="col-md-12 mt-4 change-size">${workDto.workSubtotal}</div>
+		<hr class="hr-uniform" />
+		<div class="col-md-12 mt-2 change-size text-line">${workDto.workSubtotal}</div>
+		
+		<div class="mt-4"></div>
 	</div>
 
-	<div class="row ">
-		<div class="col">
-			<label class="" style="height: 50px"></label>
-		</div>
-	</div>
 	
+	<hr class="hr-uniform">
 	<div class="my-3 mt-1"></div>
 
 	<div class="row mt-4">
 		<div class="col-md-12"></div>
 	</div>
-	<hr class="">
 	
 	<form class="form-check" action="deleteAll" method="post">
 		<c:choose>
@@ -103,11 +100,11 @@
 						<c:forEach var="chapter" items="${chapterList}">
 							<ul class="list-group">
 								<li class="list-group-item text-dis">
-								<a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa">
-								<span class="text-HH">${chapter.chapterOrder}</span>
-								<span class="text-title-2  ">${chapter.chapterTitle}</span>
-								 <span class="text-item">${chapter.chapterModified}</span>
-								</a>
+							    <a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa d-flex justify-content-between align-items-center">
+          <span class="chapter-order">${chapter.chapterOrder}</span>
+          <span class="chapter-title ellipsis">${chapter.chapterTitle}</span>
+          <span class="chapter-date ">${chapter.chapterModified}</span>
+        </a>
 								 </li>
 								</ul>
 						</c:forEach>

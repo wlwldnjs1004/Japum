@@ -17,16 +17,23 @@
 </style>
 
 
+
+<link rel="stylesheet" href="/css/chapter/detail.css">
+
+
+
+
+
 <div class="container">
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="">${chapterDto.chapterTitle}</div>
 		</div>
 	</div>
-
+	<hr class="mt-1">
 	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent" style="height: 400px;">
+			<div class="font-family drag-prevent dds" >
 				${chapterDto.chapterDetail}</div>
 		</div>
 	</div>

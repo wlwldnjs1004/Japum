@@ -95,6 +95,8 @@ font-size:15px;
                           <option class="text-name" value="연극·시나리오">연극 시나리오</option>
                           <option class="text-name" value="BL">BL</option>
                           <option class="text-name" value="팬픽·페러디">팬픽 페러디</option>
+                                  <option class="text-name" value="공포">공포</option>
+                                          <option class="text-name" value="스릴러">스릴러</option>
                         </select>
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback">필수 선택 사항입니다</div>
@@ -126,6 +128,8 @@ font-size:15px;
                             <option class="text-name" value="연극·시나리오">연극 시나리오</option>
                             <option class="text-name" value="BL">BL</option>
                             <option class="text-name" value="팬픽·페러디">팬픽 페러디</option>
+                                 <option class="text-name" value="공포">공포</option>
+                                          <option class="text-name" value="스릴러">스릴러</option>
                           </select>
                           
                           <div class="valid-feedback"></div>

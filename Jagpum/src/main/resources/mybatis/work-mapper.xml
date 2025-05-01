@@ -149,13 +149,16 @@ select * from work
 where work_prefer LIKE '%'||#{keyword}||'%'
 </select>
 
-
+ <select id="searchListView" resultType="WorkListViewDto" >
+select * from work_list_view
+where work_prefer LIKE '%'||#{keyword}||'%'
+</select>
 
 	<select id="search" resultType="WorkDto">
 		select * from work
 		where
 		instr(${column}, #{keyword})>0
-		order by ${column} asc, pokemon_no asc
+		order by ${column} asc, work_no asc
 	</select>
 
 		

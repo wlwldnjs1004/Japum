@@ -43,10 +43,33 @@
 .custom-dark {
   background-color: e67e22 !important;
 }
+.navbar {
+  background-color: #1a1d23 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+}
+.nav-link {
+  font-size: 0.95rem;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+body{
 
-
-
+}
+.navbar-collapse {
+  border: none;
+}
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important; /* 클릭 시 생기는 효과 제거 */
+}
 </style>
+<script >
+$(function(){
+	
+});
+</script>
+
 
     <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
@@ -65,7 +88,7 @@
 
             <!--?? 버튼-->
 
-            <a class="navbar-brand" href="/bootstrap">KH정보교육원</a>
+            <a class="navbar-brand" href="/bootstrap">kh</a>
 
             <!-- 메뉴 펄침 버튼(폭이 작을 때만 나옴)-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menui"
