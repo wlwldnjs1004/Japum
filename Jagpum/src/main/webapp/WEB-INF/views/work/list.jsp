@@ -2,17 +2,25 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <link rel="stylesheet" href="/css/work/list.css">
 
 
 <script>
-/* var burger=$(".menu-trigger");
- */
+	/* var burger=$(".menu-trigger");
+	 */
 </script>
 
-
+<style>
+.text-names{
+font-size: 16px !important;
+ white-space: nowrap;
+   width: 100px; /* 반드시 너비를 정해야 작동함 */
+     overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+}
+</style>
 
 
 
@@ -32,40 +40,34 @@
 
 
 
-	<table class="table table-borderless mb-5">
-		<tbody>
-			<tr>						
-				<td>
-					<ul class="list-group mt-4">
-							<c:forEach var="workDto" items="${list}">
-							<li class="list-group-item sd">
-						<div class="row align-items-center">
-							    <div class="col-auto">
-      <a href="detail?workNo=${workDto.workNo}">
-        <img src="/work/image?workNo=${workDto.workNo}" class="img-fixed">
-      </a>
-    </div>
-    
-							  <div class="col">
-                  <a href="detail?workNo=${workDto.workNo}" class="text-a ">
-                    <h5 class="text-name text-name-big mb-1">${workDto.workName}</h5>
-                  </a>
-                  <p class="text-muted mb-1">${workDto.workSubtotal}</p>
-                  <div class="text-name text-secondary">
-                     <span class=""> 작가: ${workDto.memberNickname}</span> / <span class="text-name"> 장르: ${workDto.workGenre}</span>
-                  </div>
-<%--                    <div class="small text-secondary">
-                     등록일: <fmt:formatDate value="${workDto.workWtime}" pattern="yyyy-MM-dd"/> 
-                     <c:if test="${workDto.workPaid == 'Y'}">|유료</c:if>
-                    <c:if test="${workDto.workPaid == 'N'}">|무료</c:if> 
-                  </div>
- --%>           			  </div> 
-                </div>
-							</li>
-					</c:forEach>
-						</ul>
-					</td>
+	<table
+		class="table table-hover align-middle 
+	table-borderless mb-5">
+		<thead>
+			<tr class="text-center">
+				<th  style="width: 100px">이미지</th>
+				<th style="width: 90px">제목</th>
+				<th>작품소게</th>
+				<th style="width: 100px">작성일</th>
 			</tr>
+		</thead>
+		<tbody>
+				<c:forEach var="workDto" items="${list}">
+			<tr>
+				 <td class="text-center">
+                <img src="https://placehold.co/100x100" class="rounded" style="width: 80px; height: 80px;">
+              </td>
+              <td class="text-center text-muted text-names"  >${workDto.workName}</td>
+              <td class="text-start">
+                <a href="/work/detail?workNo=${workDto.workNo}" class="text-dark text-decoration-none">
+                  <span class="fw-semibold">${workDto.workSubtotal}</span>
+                </a>
+              </td>
+              <td class="text-center text-muted">
+                <fmt:formatDate value="${workDto.workWtime}" pattern="yyyy-MM-dd" />
+              </td>
+			</tr>
+				</c:forEach>
 		</tbody>
 	</table>
 
