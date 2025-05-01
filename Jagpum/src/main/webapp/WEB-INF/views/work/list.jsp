@@ -20,6 +20,23 @@ font-size: 16px !important;
      overflow: hidden;  /* 넘치는 부분 숨기기 */
     text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
 }
+
+@media ( max-width :479px){
+.text-names{
+font-size: 15px !important;
+ white-space: nowrap;
+   width: 80px; /* 반드시 너비를 정해야 작동함 */
+     overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+}
+.text-tltle{
+font-size: 13px !important;
+ white-space: nowrap;
+   width: 60px; /* 반드시 너비를 정해야 작동함 */
+     overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+}
+}
 </style>
 
 
@@ -45,9 +62,9 @@ font-size: 16px !important;
 	table-borderless mb-5">
 		<thead>
 			<tr class="text-center">
-				<th  style="width: 100px">이미지</th>
-				<th style="width: 90px">제목</th>
-				<th>작품소게</th>
+				<th  style="width: 20px">이미지</th>
+				<th style="width: 50px">제목</th>
+				<th style="width:100px;">작품소게</th>
 				<th style="width: 100px">작성일</th>
 			</tr>
 		</thead>
