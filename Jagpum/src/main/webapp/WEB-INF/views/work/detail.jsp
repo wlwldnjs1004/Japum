@@ -32,7 +32,10 @@
 					<div class="col-md-6 mt-1 text-name">작가: ${workDto.memberNickname}</div>
                     <b class="text-name">${workDto.workName}[E]북</b>
                                  <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
-                           <h5 class="text-name">${workDto.workGenre}${workDto.workSubGenre}</h5>
+                           <h5 class="text-name h5">${workDto.workGenre}</h5>
+                           
+                   	<h5 class="text-name h5">${workDto.workSubGenre}</h5>
+                   	
                    
                     <div class="col ">
                       <span class="text-day text-letter">
@@ -114,11 +117,11 @@
 		<div class="my-4"></div>
 	<div class="row mt-5">
   <div class="col text-end">
-    <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary">
+    <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary w-auto">
     <i class="fa-solid fa-pencil me-2"></i>챕터 작성</a>
-    <a href="/work/delete?workNo=${workDto.workNo}" class="btn btn-outline-danger">
+    <a href="/work/delete?workNo=${workDto.workNo}" class="btn btn-outline-danger w-auto">
     <i class="fa-solid fa-eraser me-2"></i>삭제</a>
-    <a href="/work/edit?workNo=${workDto.workNo}" class="btn btn-outline-secondary"> 
+    <a href="/work/edit?workNo=${workDto.workNo}" class="btn btn-outline-secondary w-auto"> 
     <i class="fa-solid fa-file-pen me-2"></i>수정</a>
   </div>
 </div>
