@@ -59,6 +59,7 @@
 				<tbody class="text-center">
 					<tr>
 						<c:forEach var="chapterDto" items="${list}">
+						
 							<td style="width: 20%;">${chapterDto.chapterNo}</td>
 							<td style="width: 40%;">
 							<a class="a" href="detail?chapterNo=${chapterDto.chapterNo}">

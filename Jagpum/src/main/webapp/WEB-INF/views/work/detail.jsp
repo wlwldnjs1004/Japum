@@ -8,7 +8,7 @@
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
-<div class="container-lg pt-4 pb-5 drag-prevent" style="margin:3px; padding:10px ;">
+<div class="container drag-prevent" >
 
 
 <link rel="stylesheet" href="/css/work/detail.css">

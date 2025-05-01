@@ -8,12 +8,11 @@
 
 
 <script>
-var burger=$(".menu-trigger");
-
+/* var burger=$(".menu-trigger");
+ */
 </script>
 
 
-<script src="${pageContext.request.contextPath}/js/work/add.js"></script>
 
 
 
@@ -31,16 +30,6 @@ var burger=$(".menu-trigger");
 	</form>
 
 
-	<%-- 	<ul class="d-flex flex-wrap list-unstyled p-3 gap-4">
-	  <c:forEach var="workDto" items="${list}">
-    <li class="text-center" >
-      <a href="detail?workNo=${workDto.workNo}">
-        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
-      </a>
-      <p class="mt-2 fw-bold">${workDto.workName}</p>
-    </li>
-  </c:forEach>
-</ul> --%>
 
 
 	<table class="table table-borderless mb-5">
@@ -56,20 +45,21 @@ var burger=$(".menu-trigger");
         <img src="/work/image?workNo=${workDto.workNo}" class="img-fixed">
       </a>
     </div>
+    
 							  <div class="col">
-                  <a href="detail?workNo=${workDto.workNo}" class="text-a">
+                  <a href="detail?workNo=${workDto.workNo}" class="text-a ">
                     <h5 class="text-name text-name-big mb-1">${workDto.workName}</h5>
                   </a>
                   <p class="text-muted mb-1">${workDto.workSubtotal}</p>
-                  <div class="small text-secondary">
-                     작가: ${workDto.memberNickname} / 장르: ${workDto.workGenre}
+                  <div class="text-name text-secondary">
+                     <span class=""> 작가: ${workDto.memberNickname}</span> / <span class="text-name"> 장르: ${workDto.workGenre}</span>
                   </div>
-                   <div class="small text-secondary">
+<%--                    <div class="small text-secondary">
                      등록일: <fmt:formatDate value="${workDto.workWtime}" pattern="yyyy-MM-dd"/> 
                      <c:if test="${workDto.workPaid == 'Y'}">|유료</c:if>
                     <c:if test="${workDto.workPaid == 'N'}">|무료</c:if> 
                   </div>
-           			  </div> 
+ --%>           			  </div> 
                 </div>
 							</li>
 					</c:forEach>

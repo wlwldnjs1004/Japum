@@ -18,6 +18,7 @@
 	resize: none;
 }
 
+
 .form-select text-name{
 font-size:15px;
 }
@@ -139,8 +140,6 @@ font-size:15px;
                         
                       </div>
                       
-                    
-                    
                     <div class="row mt-5">
                       <div class="col-sm-12">
                         <input name="workPrefer" type="text" class="form-control ssss"
