@@ -42,26 +42,38 @@ font-size: 13px !important;
     display: none;
   }
 }
+.sssds {
+  border: 2px solid bdc3c7 !important; /* Bootstrap 기본 파랑 (#0d6efd) */
+}
+.search-input {
+	height: 46px;
+}
 </style>
 
 
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
-<div class="container drag-prevent">
+<div class="container drag-prevent mb-3">
 
 
-	<form class="d-flex mt-5" action="list">
+<ul class="list-group sssds">
+	<li class="list-group-item">
+	<form class="d-flex mt-3" action="list">
 		<div class="input-group">
-			<input class="form-control w-75" type="search" placeholder="검색어 입력"
+			<input  class="form-control w-75 search-input " type="search" placeholder="검색어 입력"
 				name="keyword" aria-label="Search">
-			<button class="btn btn-success text-nowrap" type="submit">검색</button>
+			<button class="btn btn-success text-nowrap search-input" type="submit">검색</button>
 		</div>
-	</form>
+	</form>	
 
-	<table class="table table-hover align-middle table-borderless mb-5">
+
+
+
+<table class="table table-hover align-middle mb-5  table-striped">
 		<thead>
 			<tr class="text-center">
+				<th style="width: 40px">랭킹</th>
 				<th  style="width: 20px">이미지</th>
 				<th style="width: 50px">제목</th>
 				<th style="width:100px;">작품소게</th>
@@ -69,8 +81,9 @@ font-size: 13px !important;
 			</tr>
 		</thead>
 		<tbody>
-				<c:forEach var="workDto" items="${list}">
+				<c:forEach var="workDto" items="${list}"  varStatus="loop">
 			<tr>
+				<td class="text-center">    <label>${loop.index + 1}</label> <!-- 0부터 시작하므로 +1 --></td>
 				 <td class="text-center">
             	<img src="image?workNo=${workDto.workNo}" class="rounded" style="width: 80px; height: 80px;">
               </td>
@@ -87,17 +100,24 @@ font-size: 13px !important;
 				</c:forEach>
 		</tbody>
 	</table>
-
-
-	<div class="row mt-4">
+	<div class="row mt-4 text-center">
 		<div class="col">
-			<a class="btn btn-primary"
-				href="${pageContext.request.contextPath}/work/add">작품 등록</a>
+			<a class="btn btn-primary w-50 "
+				href="${pageContext.request.contextPath}/work/add" >작품 등록</a>
+		
 		</div>
 	</div>
+<div style="height: 50px;"></div>
+<div class="mt-4 text-center">
+  <img src="https://placehold.co/800x300?text=event banner" alt="이벤트 배너" 
+  class="img-fluid rounded" style="width:235px; height:250px;">
+</div>
+	</li>
+</ul>
+
 
 
 
 </div>
-
+<div style="height: 100px;"></div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
