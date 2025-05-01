@@ -53,7 +53,7 @@ var burger=$(".menu-trigger");
 						<div class="row align-items-center">
 							    <div class="col-auto">
       <a href="detail?workNo=${workDto.workNo}">
-        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
+        <img src="/work/image?workNo=${workDto.workNo}" class="img-fixed">
       </a>
     </div>
 							  <div class="col">

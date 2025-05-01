@@ -4,20 +4,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<link rel="stylesheet" href="/css/work/detail.css">
 
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
-<div class="container-lg drag-prevent">
+<div class="container-lg pt-4 pb-5 drag-prevent" style="margin:3px; padding:10px ;">
 
 
-		<form class="d-flex mt-5 my-1" action="list">
+<link rel="stylesheet" href="/css/work/detail.css">
+<!-- 		<form class="d-flex mt-5 my-1" action="list">
 			<div class="input-group">
 				<input class="form-control w-75" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">
 				<button class="btn btn-outline-success text-nowrap" type="submit">검색</button>
 			</div>
-			</form>
+			</form> -->
 
 
 	<div class="row align-items-center mb-3">
@@ -76,7 +76,7 @@
             </div>
         
 		<hr class="hr-uniform" />
-		<div class="col-md-12 mt-2 change-size text-line">${workDto.workSubtotal}</div>
+		<div class="col-md-12 mt-2 change-size text-name text-name" >${workDto.workSubtotal}</div>
 		
 		<div class="mt-4"></div>
 	</div>
@@ -96,7 +96,7 @@
 			</c:when>
 			<c:otherwise>
 
-				<h4 class="text-name">챕터 목록</h4>
+				<h4 class="text-name mt-4 hi">챕터 목록</h4>
 						<c:forEach var="chapter" items="${chapterList}">
 							<ul class="list-group">
 								<li class="list-group-item text-dis">
@@ -112,17 +112,18 @@
 		</c:choose>
 		
 		<div class="my-4"></div>
-		<div class="row mt-5">
-			<div class="col text-end">
-				<a href="/chapter/add?workNo=${workDto.workNo}"
-					class="btn btn-primary ">챕터 작성</a> <a
-					href="/work/delete?workNo=${workDto.workNo}"
-					class="btn btn-primary">작품 삭제</a> <a
-					href="/work/edit?workNo=${workDto.workNo}" class="btn btn-primary">수정하기</a>
-			</div>
-		</div>
+	<div class="row mt-5">
+  <div class="col text-end">
+    <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary">
+    <i class="fa-solid fa-pencil me-2"></i>챕터 작성</a>
+    <a href="/work/delete?workNo=${workDto.workNo}" class="btn btn-outline-danger">
+    <i class="fa-solid fa-eraser me-2"></i>삭제</a>
+    <a href="/work/edit?workNo=${workDto.workNo}" class="btn btn-outline-secondary"> 
+    <i class="fa-solid fa-file-pen me-2"></i>수정</a>
+  </div>
+</div>
 
 	</form>
-
+<div style="height: 10px;"></div>
 </div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
