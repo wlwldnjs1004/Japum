@@ -37,6 +37,11 @@ font-size: 13px !important;
     text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
 }
 }
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
 </style>
 
 
@@ -60,7 +65,7 @@ font-size: 13px !important;
 				<th  style="width: 20px">이미지</th>
 				<th style="width: 50px">제목</th>
 				<th style="width:100px;">작품소게</th>
-				<th style="width: 100px">작성일</th>
+				<th style="width: 100px" class="desktop-only ">작성일</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -72,10 +77,10 @@ font-size: 13px !important;
               <td class="text-center text-muted text-names"  >${workDto.workName}</td>
               <td class="text-start">
                 <a href="/work/detail?workNo=${workDto.workNo}" class="text-dark text-decoration-none">
-                  <span class="fw-semibold">${workDto.workSubtotal}</span>
+                  <span class="fw-semibold text-tltle">${workDto.workSubtotal}</span>
                 </a>
               </td>
-              <td class="text-center text-muted">
+              <td class="text-center text-muted desktop-only ">
                 <fmt:formatDate value="${workDto.workWtime}" pattern="yyyy-MM-dd" />
               </td>
 			</tr>
