@@ -5,6 +5,13 @@
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
 
+
+<style>
+.note-editor .note-editable{
+line-height:1020px;
+}
+
+</style>
 <!--  초기값 넣기-->
 <script>
  $(".chapterDetail").val(${chapterDto.chapterDetail});

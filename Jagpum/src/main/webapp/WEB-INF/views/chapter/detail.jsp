@@ -14,8 +14,8 @@
     -khtml-user-select: none;
     user-select: none;
 }
-.str{
-}
+
+
 </style>
 
 
