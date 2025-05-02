@@ -29,7 +29,7 @@
 			<div class="">${chapterDto.chapterTitle}</div>
 		</div>
 	</div>
-	<hr class="mt-1">
+	<hr class="mt-3">
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="font-family drag-prevent dds " >
@@ -102,6 +102,5 @@
   </div>
 </div>
 
-
-<jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
+<div style="height:50px;"></div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
