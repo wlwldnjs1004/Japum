@@ -10,7 +10,6 @@
   font-family: '맑은 고딕' !important;
   font-size: 16px !important;
   }
-  
 @media (max-width: 768px) {
   .note-editor {
     width: 210px !important;
@@ -18,18 +17,20 @@
   .note-editable {
     height: 240px !important;
   }
-  
   .text-size{
-  font-size: 12px;
-  
+  font-size: 12px;  
   }
 }
-
-
   .text-name-th{
   font-size: 15px;
   width:130px;
   }
+  
+  .text-name-h3{
+  font-size:19px ;
+  font-weight: 800 !important;
+  }
+  
   
   .drag-prevent{
     -ms-user-select: none;
@@ -39,10 +40,41 @@
     user-select: none;
 }
 
+ .hidden-table-no{
+      display: none;
+  }
   
+
+
+.img-fluid{
+	width:115px!important;
+	height:115px!important;
+}
+
+    @media ( max-width :968px) {
+  .text-day{
+   font-size:15px;
+    }
+   .text-name{ 
+   font-size:15px;
+    }  
+    
+    .img-fluid{
+	width:110px;
+	height:110px;
+	margin-bottom: 40px;
+}
+    .hidden-table {
+  display: none;
+}
+  .hidden-table-no{
+    display: block;
+  }
   
+   }
   
-  
+   
+   
   
   
   
