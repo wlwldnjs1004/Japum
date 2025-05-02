@@ -7,24 +7,6 @@
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
 
-<style>
-.sss{
-	font-size: 20px;
-}
-.note-editable {
-  font-family: '맑은 고딕' !important;
-  font-size: 16px !important;
-  }
-  
-@media (max-width: 768px) {
-  .note-editor {
-    width: 210px !important;
-  }
-  .note-editable {
-    height: 240px !important;
-  }
-}
-</style>
 
 
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
@@ -37,7 +19,9 @@
 <link rel="stylesheet" href="/css/chapter/add.css">
 
 
-<div class="container-lg">
+<div class="container-lg drag-prevent">
+		
+		
 		
 <!-- 	<ul class="list-group">
 	<li class="list-group-item"> -->
@@ -69,7 +53,7 @@
 		<table class="table">
 			<tbody>
 				<tr>
-					<th>소제목 입력</th>
+					<th class="text-name-th">소제목 입력</th>
 					<td>
 						<div class="row ">
 							<div class="col-sm-12">
@@ -83,7 +67,7 @@
 				</tr>
 
 				<tr>
-					<th>본문내용 입력</th>
+					<th class="text-name-th">본문내용 입력</th>
 					<td>
 			<div class="row mt-2">
 				<div class="col-sm-12">
@@ -96,7 +80,7 @@
 					</td>
 				</tr>
 				<tr>
-					<th style="width:130px;">작가의 말</th>
+					<th class="text-name-th" >작가의 말</th>
 					<td>
 						<div class="row ">
 							<div class="col-sm-12">
