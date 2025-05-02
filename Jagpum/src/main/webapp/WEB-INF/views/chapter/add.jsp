@@ -18,11 +18,10 @@
   
 @media (max-width: 768px) {
   .note-editor {
-    width: 100% !important;
+    width: 210px !important;
   }
-
   .note-editable {
-    height: auto !important;
+    height: 240px !important;
   }
 }
 </style>
