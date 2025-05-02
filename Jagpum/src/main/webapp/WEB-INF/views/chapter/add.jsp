@@ -21,6 +21,9 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
+<link rel="stylesheet" href="/css/chapter/add.css">
+
+
 <div class="container">
 
 	<!-- 작품 미리보기 -->
@@ -28,7 +31,7 @@
 		<div class="row align-items-center">
 			<div class="col-md-3 text-center a">
 				<img src="/work/image?workNo=${workDto.workNo}"
-					class="img-fluid rounded " style="200">
+					class="img-fluid rounded " >
 			</div>
 			<div class="col-md-9">
 				<h3 class="fw-bold">${workDto.workName}</h3>
@@ -70,8 +73,8 @@
 		
 		<div class="row mt-5">
 			<div class="col-sm-12">
-				<textarea name="chapterDetail" class="form-control"
-					placeholder="내용입력" rows="11"></textarea>
+				<textarea name="chapterDetail" class="form-control text-text"
+					 rows="11"></textarea>
 				<div class="valid-feedback"></div>
 				<div class="invalid-feedback">필수조건입니다</div>
 			</div>
@@ -79,7 +82,7 @@
 
 		<div class="row mt-5 my-4">
 			<div class="col-sm-12">
-				<textarea type="text" name="chapterComment" class="form-control" placeholder="작가의 말을 입력해주세요" rows="6"></textarea>
+				<textarea type="text" name="chapterComment" class="form-control text-text" rows="6"></textarea>
 			</div>
 		</div>
 

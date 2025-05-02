@@ -47,7 +47,8 @@ $(function() {
 	$("[name=chapterComment]")
 		.summernote(
 			{
-				height: 250,//높이(px)
+			
+				height: 150,//높이(px)
 				minHeight: 200,//최소 높이(px)
 				maxHeight: 400,//최대 높이(px)
 				toolbar: [
@@ -110,7 +111,6 @@ $(function() {
 				isValid ? "is-valid" : "is-invalid");
 			status.chapterTitle = isValid;
 		});
-
 
 	$("[name=chapterDetail]").blur(
 		function() {

@@ -16,7 +16,6 @@ $(function () {
 			function () {
 				const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,30}$/;
 				const isValid = regex.test($(this).val());
-
 				
 				$(this).removeClass("is-valid is-invalid").addClass(
 					isValid ? "is-valid" : "is-invalid");

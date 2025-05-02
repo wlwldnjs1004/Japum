@@ -104,7 +104,6 @@
 							<ul class="list-group">
 								<li class="list-group-item text-dis">
 							    <a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa d-flex justify-content-between align-items-center">
-          <span class="chapter-order">${chapter.chapterOrder}</span>
           <span class="chapter-title ellipsis">${chapter.chapterTitle}</span>
           <span class="chapter-date ">${chapter.chapterModified}</span>
         </a>
