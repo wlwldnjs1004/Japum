@@ -3,32 +3,27 @@ $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
 			{
-			
-				height: 250,
-				minHeight: 200,
-				maxHeight: 400,
-				toolbar: [
-				  ["font", ["fontname", "fontsize","fontSizeUnits"]],
-				  ["style", ["bold", "italic", "underline", "strikethrough"]],
-				  ["insert", ["picture"]]
-				],
-				
-				
-				
-				
-				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
-				fontSizes: ['8', '9', '10', '12', '14','15','16', '18', '24', '36', '48'],
-			
-				placeholder: "내용",
-				
-				
-				callbacks: {
-					onInit: function() {
-					  $('.note-editable').css({
-					    'font-family': '맑은 고딕',
-					    'font-size': '16px'
-					  });
-					},
+
+					height: 150,//높이(px)
+					minHeight: 200,//최소 높이(px)
+					maxHeight: 400,//최대 높이(px)
+					toolbar: [
+						["font", ["fontname", "fontsize", "fontSizeUnits"]],
+							["style", ["bold", "italic", "underline", "strikethrough"]],
+							["insert", ["picture"]]
+					],
+					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
+
+					placeholder: "작가의말",
+					callbacks: {
+						onInit: function() {
+										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+										$('.note-editable').css({
+											'font-family': '맑은 고딕',
+											'font-size': '16px'
+										});
+									},
 					onImageUpload: function(files) {
 						if (files.length === 0) return;
 
@@ -56,27 +51,34 @@ $(function() {
 				},
 			});
 
-		
-		});
+
+});
 
 $(function() {
 	$("[name=chapterComment]")
 		.summernote(
 			{
-			
+
 				height: 150,//높이(px)
 				minHeight: 200,//최소 높이(px)
 				maxHeight: 400,//최대 높이(px)
 				toolbar: [
-				  ["font", ["fontname", "fontsize"]],
-				  ["style", ["bold", "italic", "underline", "strikethrough"]],
-				  ["insert", ["picture"]]
+					["font", ["fontname", "fontsize", "fontSizeUnits"]],
+						["style", ["bold", "italic", "underline", "strikethrough"]],
+						["insert", ["picture"]]
 				],
 				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
-				fontSizes: ['8', '9', '10', '12', '14', '18', '24', '36', '48'],
+				fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 
 				placeholder: "작가의말",
 				callbacks: {
+					onInit: function() {
+									$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+									$('.note-editable').css({
+										'font-family': '맑은 고딕',
+										'font-size': '16px'
+									});
+								},
 					onImageUpload: function(files) {
 						if (files.length === 0) return;
 
@@ -103,31 +105,31 @@ $(function() {
 					},
 				},
 			});
-			
-			
+
+
 });
 $(function() {
 	const status = {
 		chapterTitle: false,
 		chapterDetail: false,
 		ok: function() {
-			return  this.chapterTitle && this.chapterDetail;
+			return this.chapterTitle && this.chapterDetail;
 		},
 	};
-	
+
 	$("[name=chapterTitle]").on('input', function() {
-	    let content = $(this).val();
-	    if (content.length > 60) {
-	        $(this).val(content.substring(0, 60));
-	        console.log("60자 초과로 자동 잘림");
-	    }
+		let content = $(this).val();
+		if (content.length > 60) {
+			$(this).val(content.substring(0, 60));
+			console.log("60자 초과로 자동 잘림");
+		}
 	});
-	
+
 	$("[name=chapterTitle]").blur(
 		function() {
 			const regex = /^[a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ]{1,60}$/;
 			const isValid = regex.test($(this).val());
-			
+
 			$(this).removeClass("is-valid is-invalid").addClass(
 				isValid ? "is-valid" : "is-invalid");
 			status.chapterTitle = isValid;
