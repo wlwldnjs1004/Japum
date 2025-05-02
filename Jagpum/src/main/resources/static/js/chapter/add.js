@@ -5,8 +5,8 @@ $(function() {
 			{
 
 					height: 150,//높이(px)
-					minHeight: 200,//최소 높이(px)
-					maxHeight: 400,//최대 높이(px)
+					minHeight: 1,//최소 높이(px)
+					maxHeight: 900,//최대 높이(px)
 					toolbar: [
 						["font", ["fontname", "fontsize", "fontSizeUnits"]],
 							["style", ["bold", "italic", "underline", "strikethrough"]],
@@ -56,8 +56,8 @@ $(function() {
 		.summernote(
 			{
 				height: 150,//높이(px)
-				minHeight: 200,//최소 높이(px)
-				maxHeight: 400,//최대 높이(px)
+				minHeight: 1,//최소 높이(px)
+				maxHeight: 900,//최대 높이(px)
 				toolbar: [
 					["font", ["fontname", "fontsize", "fontSizeUnits"]],
 						["style", ["bold", "italic", "underline", "strikethrough"]],
@@ -102,8 +102,6 @@ $(function() {
 					},
 				},
 			});
-
-
 });
 $(function() {
 	const status = {

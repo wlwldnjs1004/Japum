@@ -15,6 +15,15 @@
   font-family: '맑은 고딕' !important;
   font-size: 16px !important;
   }
+  
+  @media ( max-width:768px){
+	.summernote-content{
+	width:100%;
+	height:auto;}  	
+  	
+  }
+  
+  
 </style>
 
 
@@ -78,7 +87,8 @@
 					<td>
 			<div class="row mt-2">
 				<div class="col-sm-12">
-					<textarea name="chapterDetail" class="form-control text-text" rows="11"></textarea>
+					<textarea name="chapterDetail" class="form-control text-size" rows="11"
+					style="width:1px; height: 1px;"></textarea>
 					<div class="valid-feedback"></div>
 					<div class="invalid-feedback">필수조건입니다</div>
 				</div>
@@ -90,7 +100,8 @@
 					<td>
 						<div class="row ">
 							<div class="col-sm-12">
-								<textarea type="text" name="chapterComment" class="form-control text-text" rows="6"></textarea>
+								<textarea type="text" name="chapterComment" class="form-control text-size" rows="6"
+								style="width:1px; height: 1px;"></textarea>
 							</div>
 						</div>
 					</td>
