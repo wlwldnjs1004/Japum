@@ -16,14 +16,15 @@
   font-size: 16px !important;
   }
   
-  @media ( max-width:768px){
-	.summernote-content{
-	width:100%;
-	height:auto;}  	
-  	
+@media (max-width: 768px) {
+  .note-editor {
+    width: 100% !important;
   }
-  
-  
+
+  .note-editable {
+    height: auto !important;
+  }
+}
 </style>
 
 
