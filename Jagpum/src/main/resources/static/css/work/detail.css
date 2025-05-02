@@ -143,16 +143,6 @@ font-size: 13px;}
   text-align:center;
   }
   
- /*  .hr-uniform {
-  height: 1px;
-  background-color: #ccc;
-  opacity: 1;
-  border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-} */
-
-
 
   .aa {
   text-decoration: none;
@@ -202,10 +192,7 @@ font-size: 13px;}
   }
   
   
-  p{
- 	
- 
- 
- 
+ p{
+ 	font-weight:900;
  }
   

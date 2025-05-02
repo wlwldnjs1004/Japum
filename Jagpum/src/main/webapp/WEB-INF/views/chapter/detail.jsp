@@ -38,17 +38,21 @@
 		</div>
 	</div>
 	
-	
 	<div class="row mt-2">
 	<div class="col-sm-12">
 	
+	
 	</div>
 	</div>
+	
+	
+	
+	
 	
 	<div class="row mt-3">
 		<div class="col-sm-12">
 			<div class="font-family drag-prevent" style="height: 100px;">
-	<p>작가의 말</p>
+	<label>작가의 말</label>
 	<hr>
 			${chapterDto.chapterComment}
 			

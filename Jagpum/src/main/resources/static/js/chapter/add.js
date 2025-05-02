@@ -7,10 +7,13 @@ $(function() {
 				minHeight: 200,
 				maxHeight: 400,
 				toolbar: [
-					["font", ["fontsize"]],
-					["style", ["bold", "italic", "underline", "strikethrough"]],
-					["attach", ["picture"]]
+				  ["font", ["fontname", "fontsize"]],
+				  ["style", ["bold", "italic", "underline", "strikethrough"]],
+				  ["insert", ["picture"]]
 				],
+				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+				fontSizes: ['8', '9', '10', '12', '14', '18', '24', '36', '48'],
+
 				placeholder: "내용",
 				callbacks: {
 					onImageUpload: function(files) {
@@ -41,8 +44,6 @@ $(function() {
 			});
 });
 
-
-
 $(function() {
 	$("[name=chapterComment]")
 		.summernote(
@@ -52,10 +53,13 @@ $(function() {
 				minHeight: 200,//최소 높이(px)
 				maxHeight: 400,//최대 높이(px)
 				toolbar: [
-					["font", ["fontsize"]],
-					["style", ["bold", "italic", "underline", "strikethrough"]],
-					["attach", ["picture"]]
+				  ["font", ["fontname", "fontsize"]],
+				  ["style", ["bold", "italic", "underline", "strikethrough"]],
+				  ["insert", ["picture"]]
 				],
+				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+				fontSizes: ['8', '9', '10', '12', '14', '18', '24', '36', '48'],
+
 				placeholder: "작가의말",
 				callbacks: {
 					onImageUpload: function(files) {
@@ -84,6 +88,8 @@ $(function() {
 					},
 				},
 			});
+			
+			
 });
 $(function() {
 	const status = {
@@ -124,5 +130,7 @@ $(function() {
 		return status.ok();
 	});
 });
+
+
 
 

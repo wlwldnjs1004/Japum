@@ -16,7 +16,10 @@ $(function(){
             ["tool", ["ol", "ul", "table", "hr", "fullscreen"]],
             // ["action", ["undo", "redo"]],
         ],
-
+	fontName:['Arial', 'Arial Black', 'Comic Sans Ms', 'Courier New'],
+		
+	
+		
         //상황에 맞는 callback 함수들
         callbacks: {
             onImageUpload: function(files){

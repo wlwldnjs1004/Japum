@@ -93,16 +93,16 @@
 			<c:otherwise>
 
 				<h4 class="text-name mt-4 hi">챕터 목록</h4>
-						<c:forEach var="chapter" items="${chapterList}">
 							<ul class="list-group">
+						<c:forEach var="chapter" items="${chapterList}">
 								<li class="list-group-item text-dis">
 							    <a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa d-flex justify-content-between align-items-center">
           <span class="chapter-title ellipsis">${chapter.chapterTitle}</span>
           <span class="chapter-date ">${chapter.chapterModified}</span>
         </a>
 								 </li>
-								</ul>
 						</c:forEach>
+								</ul>
 			</c:otherwise>
 		</c:choose>
 		
