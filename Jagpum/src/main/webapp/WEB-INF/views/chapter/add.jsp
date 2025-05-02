@@ -7,24 +7,6 @@
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
 
-<style>
-.sss{
-	font-size: 20px;
-}
-.note-editable {
-  font-family: '맑은 고딕' !important;
-  font-size: 16px !important;
-  }
-  
-@media (max-width: 768px) {
-  .note-editor {
-    width: 210px !important;
-  }
-  .note-editable {
-    height: 240px !important;
-  }
-}
-</style>
 
 
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
