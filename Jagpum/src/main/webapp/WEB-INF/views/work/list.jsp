@@ -108,10 +108,10 @@ font-size: 13px !important;
 		</div>
 	</div>
 <div style="height: 50px;"></div>
-<div class="mt-4 text-center">
+<!-- <div class="mt-4 text-center">
   <img src="https://placehold.co/800x300?text=event banner" alt="이벤트 배너" 
   class="img-fluid rounded" style="width:235px; height:250px;">
-</div>
+</div> -->
 	</li>
 </ul>
 

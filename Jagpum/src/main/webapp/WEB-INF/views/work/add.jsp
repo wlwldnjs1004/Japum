@@ -36,6 +36,7 @@
 
 							<div class="row ">
 								<div class="col">
+								
 									<label>작품표지</label>
 								</div>
 							</div>
@@ -49,9 +50,10 @@
 							</div>
 
 							<div class="row mt-4">
-								
-								<i class="fa-solid fa-circle-exclamation"></i>
-								<label class="col-sm-3">장르 선택</label>
+	<div class="col">
+<i class="fa-solid fa-star-of-life" style=""></i>								
+								<label class="">장르 선택</label>
+	</div>
 							</div>
 								<div class="row ">
 									<div class="col text-input">
@@ -88,6 +90,7 @@
 
 								<div class="row mt-5">
 									<div class="col">
+									
 										<label>부장르 선택</label>
 									</div>
 								</div>
@@ -156,7 +159,6 @@
 								</div>
 							</div>
 
-
 							<div class="row ">
 								<div class="col-sm-12 mb-3 ws">
 									<span class="ms-4 text-name-day me-1">월 </span>
@@ -186,6 +188,7 @@
 
 							<div class="row mt-5">
 								<div class="col">
+								<i class="fa-solid fa-star-of-life" style=""></i>
 									<label>유료여부?</label>
 								</div>
 							</div>
@@ -202,6 +205,7 @@
 
 							<div class="row mt-5">
 								<div class="col">
+								<i class="fa-solid fa-star-of-life" style=""></i>
 									<label>독점 여부</label>
 								</div>
 							</div>
@@ -211,23 +215,17 @@
 									독점 <span>
 										<input class="form-check-input size-r ms-3" type="radio" name="workContract" value="N"> 비독점
 									</span>
-									<div class="valid-feedback"></div>
 									<div class="invalid-feedback">필수 항목입니다</div>
+									<div class="valid-feedback"></div>
 								</div>
 							</div>
-
-
 
 							<div class="row mt-5">
 								<div class="col text-end">
 									<button type="submit" class="btn btn-primary w-100 btn-lg">등록</button>
 								</div>
 							</div>
-
-
 						</form>
-
-
 					</li>
 				</ul>
 			</div>

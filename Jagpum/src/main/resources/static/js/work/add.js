@@ -17,6 +17,7 @@ $(function () {
 				const regex = /^[a-z|A-Z|가-힣|ㄱ-ㅎ|ㅏ-ㅣ]{1,30}$/;
 				const isValid = regex.test($(this).val());
 
+				
 				$(this).removeClass("is-valid is-invalid").addClass(
 					isValid ? "is-valid" : "is-invalid");
 				status.workName = isValid;
@@ -50,13 +51,6 @@ $(function () {
 				status.workGenre = size;
 			});
 
-		$("[name=workPrefer]").blur(
-			function () {
-				const size = $(this).val().length > 0;
-				$(this).removeClass("is-valid is-invalid").addClass(
-					size ? "is-valid" : "is-invalid");
-				status.workPrefer = size;
-			});
 		$("[name=workPaid]").blur(
 			function () {
 				const size = $(this).val().length > 0;
@@ -71,7 +65,6 @@ $(function () {
 					size ? "is-valid" : "is-invalid");
 				status.workContract = size;
 			});
-
 
 		$(".needs-validation").submit(function () {
 			$("[name]").trigger("blur");
