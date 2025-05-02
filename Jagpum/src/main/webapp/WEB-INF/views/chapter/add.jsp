@@ -102,6 +102,7 @@
 		</table>
 	</form>
 	
+	<!--휴대폰 화면  -->
 	
 		<div class=" hidden-table-no">
 		<form action="add" method="Post" class="needs-validation">
@@ -121,8 +122,9 @@
 								<div class="invalid-feedback">필수조건입니다</div>
 							</div>
 						</div>
-		
-		<div class="row">
+
+      
+      <div class="row">
 		<div class="col">
 		<label>본문</label>
 		</div></div>	
@@ -136,21 +138,13 @@
 				</div>
 			</div>
 		
-		<div class="row">
+	
+		
+			<div class="row">
 		<div class="col">
-		<label>작가의말</label>
+		<label>작가의 말</label>
 		</div></div>	
 			
-				<div class="row ">
-							<div class="col-sm-12">
-								<input type="text" name="chapterTitle" class="form-control "
-									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
-								<div class="valid-feedback"></div>
-								<div class="invalid-feedback">필수조건입니다</div>
-							</div>
-						</div>
-		
-		
 		
 			<div class="row ">
 							<div class="col-sm-12">

@@ -51,7 +51,7 @@
 	height:115px!important;
 }
 
-    @media ( max-width :968px) {
+    @media ( max-width :498px) {
   .text-day{
    font-size:15px;
     }
