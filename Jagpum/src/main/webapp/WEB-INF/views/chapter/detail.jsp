@@ -14,6 +14,8 @@
     -khtml-user-select: none;
     user-select: none;
 }
+.str{
+}
 </style>
 
 
@@ -33,8 +35,9 @@
 	<hr class="mt-1">
 	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent dds" >
-				${chapterDto.chapterDetail}</div>
+			<div class="font-family drag-prevent dds str" >
+				<span>${chapterDto.chapterDetail}</span> 
+				</div>
 		</div>
 	</div>
 	
@@ -51,11 +54,10 @@
 	
 	<div class="row mt-3">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent" style="height: 100px;">
+			<div class="font-family drag-prevent str" style="height: 100px;">
 	<label>작가의 말</label>
 	<hr>
-			${chapterDto.chapterComment}
-			
+			<span>${chapterDto.chapterComment}</span> 
 			</div>
 		</div>
 	</div>
