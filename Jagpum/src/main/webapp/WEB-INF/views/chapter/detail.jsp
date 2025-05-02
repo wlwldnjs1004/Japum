@@ -33,7 +33,8 @@
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="font-family drag-prevent dds " >
-				<div  style="line-height:100%;word-space:normal;">${chapterDto.chapterDetail}</div> 
+				<div  style="line-height:100%;word-space:normal;">${chapterDto.chapterDetail}
+				<div style="height:200px;"></div></div> 
 				</div>
 		</div>
 	</div>
@@ -49,12 +50,13 @@
 	
 	
 	
-	<div class="row mt-3">
+	<div class="row mt-4">
 		<div class="col-sm-12">
 	<label>작가의 말</label>
 	<hr>
 			<div class="font-family drag-prevent dds" >
-			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}</div> 
+			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}
+			<div style="height:20px;"></div></div> 
 			</div>
 		</div>
 	</div>
