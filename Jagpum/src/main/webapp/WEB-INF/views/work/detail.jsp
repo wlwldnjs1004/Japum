@@ -33,10 +33,7 @@
                     <b class="text-name">${workDto.workName}[E]북</b>
                                  <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
                            <h5 class="text-name h5">${workDto.workGenre}</h5>
-                           
                    	<h5 class="text-name h5">${workDto.workSubGenre}</h5>
-                   	
-                   
                     <div class="col ">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -58,7 +55,6 @@
                     <label class="text-name">작품 이름:${workDto.workName}</label>            
                     <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
                     <h5 class="text-name">${workDto.workGenre}${workDto.workSubGenre}</h5>
-                   
                       <div class="col">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -70,12 +66,9 @@
 						${workDto.workSun == 'Y' ? '일 ' : ''}
                       </span>
                       </div>
-                 
        			 </div>
                   </c:otherwise>
                 </c:choose>
-
-
             </div>
         
 		<hr class="hr-uniform" />

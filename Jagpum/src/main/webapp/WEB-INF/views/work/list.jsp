@@ -48,6 +48,12 @@ font-size: 13px !important;
 .search-input {
 	height: 46px;
 }
+
+.search-input{
+ border-radius: none ;
+ outline:none ;
+}
+
 </style>
 
 
@@ -55,12 +61,10 @@ font-size: 13px !important;
 
 <div class="container drag-prevent mb-3">
 
-<ul class="list-group sssds">
-	<li class="list-group-item">
+	
 	<form class="d-flex mt-3" action="list">
 		<div class="input-group">
-			<input  class="form-control w-75 search-input " type="search" placeholder="검색어 입력"
-				name="keyword" aria-label="Search">
+			<input  class="form-control w-75 search-input " type="search"  name="keyword" aria-label="Search">
 			<button class="btn btn-success text-nowrap search-input" type="submit">검색</button>
 		</div>
 	</form>	
@@ -71,7 +75,7 @@ font-size: 13px !important;
 <table class="table table-hover align-middle mb-5  table-striped"  style="width: 100%;">
 		<thead>
 			<tr class="text-center">
-				<th style="width: 40px">랭킹</th>
+				<th style="width: 60px">랭킹</th>
 				<th  style="width: 20px">이미지</th>
 				<th style="width: 50px">제목</th>
 				<th style="width:100px;">작품소게</th>
@@ -110,8 +114,6 @@ font-size: 13px !important;
   <img src="https://placehold.co/800x300?text=event banner" alt="이벤트 배너" 
   class="img-fluid rounded" style="width:235px; height:250px;">
 </div> -->
-	</li>
-</ul>
 
 
 
