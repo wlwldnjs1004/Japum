@@ -33,16 +33,16 @@
 					class="img-fluid rounded " >
 			</div>
 			<div class="col-md-9">
-				<h3 class="fw-bold">${workDto.workName}</h3>
+				<h3 class="fw-bold text-name-h3">${workDto.workName}</h3>
 				<p class="mb-1">
-					<strong>태그:</strong> ${workDto.workPrefer}
+					<strong class="text-name">태그:</strong> ${workDto.workPrefer}
 				</p>
 				<p class="mb-1">
-					<strong>작품 설명:</strong> 
+					<strong class="text-name">작품 설명:</strong> 
 					${workDto.workSubtotal}
 				</p>
 				<p class="text-muted">
-					<strong>작성자:</strong> ${workDto.workId}
+					<strong class="text-name">작성자:</strong> ${workDto.workId}
 				</p>
 			</div>
 		</div>
@@ -50,14 +50,14 @@
 		<form action="add" method="Post" class="needs-validation">
 			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 	
-		<table class="table">
-			<tbody>
-				<tr>
-					<th class="text-name-th">소제목 입력</th>
+		<table class="table  hidden-table ">
+			<tbody class=" hidden-table ">
+				<tr class=" hidden-table ">
+					<th class="text-name-th hidden-table ">소제목 입력</th>
 					<td>
 						<div class="row ">
 							<div class="col-sm-12">
-								<input type="text" name="chapterTitle" class="form-control"
+								<input type="text" name="chapterTitle" class="form-control "
 									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
 								<div class="valid-feedback"></div>
 								<div class="invalid-feedback">필수조건입니다</div>
@@ -66,9 +66,9 @@
 					</td>
 				</tr>
 
-				<tr>
-					<th class="text-name-th">본문내용 입력</th>
-					<td>
+				<tr class="hidden-table ">
+					<th class="text-name-th hidden-table ">본문내용 입력</th>
+					<td class="hidden-table ">
 			<div class="row mt-2">
 				<div class="col-sm-12">
 					<textarea name="chapterDetail" class="form-control text-size" rows="11"
@@ -79,9 +79,9 @@
 			</div>
 					</td>
 				</tr>
-				<tr>
-					<th class="text-name-th" >작가의 말</th>
-					<td>
+				<tr class="hidden-table ">
+					<th class="text-name-th hidden-table " >작가의 말</th>
+					<td class="hidden-table ">
 						<div class="row ">
 							<div class="col-sm-12">
 								<textarea type="text" name="chapterComment" class="form-control text-size" rows="6"
@@ -89,9 +89,9 @@
 							</div>
 						</div>
 					</td>
-				<tr>
-					<th></th>
-					<td>			<div class="row mt-5">
+				<tr class="hidden-table ">
+					<th class="hidden-table"></th>
+					<td class="hidden-table">			<div class="row mt-5">
 						<div class="col text-end">
 							<button class="btn btn-primary w-25 " type="submit"><i class="fa-solid fa-pencil"></i>등록</button>
 						</div>
@@ -101,6 +101,78 @@
 			</tbody>
 		</table>
 	</form>
+	
+	
+		<div class=" hidden-table-no">
+		<form action="add" method="Post" class="needs-validation">
+			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
+		
+		<div class="row">
+		<div class="col">
+		<label>제목</label>
+		</div></div>	
+			
+		
+					<div class="row ">
+							<div class="col-sm-12">
+								<input type="text" name="chapterTitle" class="form-control "
+									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
+								<div class="valid-feedback"></div>
+								<div class="invalid-feedback">필수조건입니다</div>
+							</div>
+						</div>
+		
+		<div class="row">
+		<div class="col">
+		<label>본문</label>
+		</div></div>	
+			
+		<div class="row mt-2">
+				<div class="col-sm-12">
+					<textarea name="chapterDetail" class="form-control text-size" rows="11"
+					style="width:1px; height: 1px;"></textarea>
+					<div class="valid-feedback"></div>
+					<div class="invalid-feedback">필수조건입니다</div>
+				</div>
+			</div>
+		
+		<div class="row">
+		<div class="col">
+		<label>작가의말</label>
+		</div></div>	
+			
+				<div class="row ">
+							<div class="col-sm-12">
+								<input type="text" name="chapterTitle" class="form-control "
+									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
+								<div class="valid-feedback"></div>
+								<div class="invalid-feedback">필수조건입니다</div>
+							</div>
+						</div>
+		
+		
+		
+			<div class="row ">
+							<div class="col-sm-12">
+								<textarea type="text" name="chapterComment" class="form-control text-size" rows="6"
+								style="width:1px; height: 1px;"></textarea>
+							</div>
+						</div>
+		
+		
+		<div class="row mt-5">
+						<div class="col text-end">
+							<button class="btn btn-primary w-25 " type="submit"><i class="fa-solid fa-pencil"></i>등록</button>
+						</div>
+					</div>	
+					
+					
+						
+		</form>
+		</div>
+		
+		
+		
 
 
 <div style="height:100px;"></div>
