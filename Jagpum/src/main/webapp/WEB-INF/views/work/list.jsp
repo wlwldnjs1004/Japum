@@ -51,11 +51,9 @@ font-size: 13px !important;
 </style>
 
 
-
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
 <div class="container drag-prevent mb-3">
-
 
 <ul class="list-group sssds">
 	<li class="list-group-item">
@@ -70,7 +68,7 @@ font-size: 13px !important;
 
 
 
-<table class="table table-hover align-middle mb-5  table-striped">
+<table class="table table-hover align-middle mb-5  table-striped"  style="width: 100%;">
 		<thead>
 			<tr class="text-center">
 				<th style="width: 40px">랭킹</th>
@@ -89,7 +87,7 @@ font-size: 13px !important;
               </td>
               <td class="text-center text-muted text-names"  >${workDto.workName}</td>
               <td class="text-start">
-                <a href="/work/detail?workNo=${workDto.workNo}" class="text-dark text-decoration-none">
+                <a href="/work/detail?workNo=${workDto.workNo}" class="text-dark text-decoration-none ellipsis">
                   <span class="fw-semibold text-tltle">${workDto.workSubtotal}</span>
                 </a>
               </td>

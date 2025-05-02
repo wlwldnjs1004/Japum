@@ -36,7 +36,6 @@
 
 							<div class="row ">
 								<div class="col">
-								
 									<label>작품표지</label>
 								</div>
 							</div>
