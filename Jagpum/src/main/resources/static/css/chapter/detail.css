@@ -2,4 +2,30 @@
 	  height: auto;
   width: auto;
 }
+ 
+ .ellipsis {
+    font-size:15px;
+      display: inline-block;
+    width: 250px; /* 반드시 너비를 정해야 작동함 */
+    overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+    white-space: nowrap; 
+  }
+  
+  
+   @media ( max-width :768px){
+  .ellipsis {
+  font-size:13px;
+    display: inline-block;
+    width: 200px; /* 반드시 너비를 정해야 작동함 */
+    overflow: hidden;  /* 넘치는 부분 숨기기 */
+    text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
+    white-space: nowrap; 
+  }
+  }
+  
+  .text-keep{
+  word-spacing:keep-all;
+}
 
+/*overflow-wrap: ;  */

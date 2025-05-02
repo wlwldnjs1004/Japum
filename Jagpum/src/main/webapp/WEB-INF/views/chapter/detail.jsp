@@ -15,15 +15,12 @@
     user-select: none;
 }
 
-
+.note-editoer .note-editable{
+/* line-height:100%; */
+}
 </style>
 
-
-
 <link rel="stylesheet" href="/css/chapter/detail.css">
-
-
-
 
 
 <div class="container">
@@ -35,8 +32,8 @@
 	<hr class="mt-1">
 	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent dds str" >
-				<span>${chapterDto.chapterDetail}</span> 
+			<div class="font-family drag-prevent dds " >
+				<span  style="line-height:100%;word-spacing:keep-all;">${chapterDto.chapterDetail}</span> 
 				</div>
 		</div>
 	</div>
@@ -54,18 +51,15 @@
 	
 	<div class="row mt-3">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent str" style="height: 100px;">
 	<label>작가의 말</label>
 	<hr>
+			<div class="font-family drag-prevent dds" >
 			<span>${chapterDto.chapterComment}</span> 
 			</div>
 		</div>
 	</div>
-	<div class="row mt-4">
-	<div class="col">
 	
-	</div>
-	</div>
+	
 		<div class="row mt-5 ">
 		<div class="col-sm-12">
 		<a class="btn btn-primary w-25"
