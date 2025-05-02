@@ -11,6 +11,20 @@
 .sss{
 	font-size: 20px;
 }
+.note-editable {
+  font-family: '맑은 고딕' !important;
+  font-size: 16px !important;
+  }
+  
+@media (max-width: 768px) {
+  .note-editor {
+    width: 100% !important;
+  }
+
+  .note-editable {
+    height: auto !important;
+  }
+}
 </style>
 
 
@@ -21,14 +35,19 @@
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
-<div class="container">
+<link rel="stylesheet" href="/css/chapter/add.css">
 
+
+<div class="container-lg">
+		
+<!-- 	<ul class="list-group">
+	<li class="list-group-item"> -->
 	<!-- 작품 미리보기 -->
 	<div class="container mt-4 my-2">
 		<div class="row align-items-center">
 			<div class="col-md-3 text-center a">
 				<img src="/work/image?workNo=${workDto.workNo}"
-					class="img-fluid rounded " style="200">
+					class="img-fluid rounded " >
 			</div>
 			<div class="col-md-9">
 				<h3 class="fw-bold">${workDto.workName}</h3>
@@ -45,50 +64,66 @@
 			</div>
 		</div>
 	</div>
-	<hr>
+		<form action="add" method="Post" class="needs-validation">
+			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 	
-	
-	<form action="add" method="Post" class="needs-validation">
-		<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
+		<table class="table">
+			<tbody>
+				<tr>
+					<th>소제목 입력</th>
+					<td>
+						<div class="row ">
+							<div class="col-sm-12">
+								<input type="text" name="chapterTitle" class="form-control"
+									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
+								<div class="valid-feedback"></div>
+								<div class="invalid-feedback">필수조건입니다</div>
+							</div>
+						</div>
+					</td>
+				</tr>
 
-		<div class="row mt-4">
-			<div class="col-sm-12">
-				<input type="text" name="chapterTitle" class="form-control"
-					placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
-				<div class="valid-feedback"></div>
-				<div class="invalid-feedback">필수조건입니다</div>
+				<tr>
+					<th>본문내용 입력</th>
+					<td>
+			<div class="row mt-2">
+				<div class="col-sm-12">
+					<textarea name="chapterDetail" class="form-control text-size" rows="11"
+					style="width:1px; height: 1px;"></textarea>
+					<div class="valid-feedback"></div>
+					<div class="invalid-feedback">필수조건입니다</div>
+				</div>
 			</div>
-		</div>
-		
-		
-		<div class="row mt-3">
-			<div class="col">
-				<p class="fs-6">* 글 번호는 자동으로 생성됩니다. 소제목에 회차 번호를 입력하시면 중복 표기될 수 있습니다.</p>
-			</div>
-		</div>
-		
-		
-		<div class="row mt-5">
-			<div class="col-sm-12">
-				<textarea name="chapterDetail" class="form-control"
-					placeholder="내용입력" rows="11"></textarea>
-				<div class="valid-feedback"></div>
-				<div class="invalid-feedback">필수조건입니다</div>
-			</div>
-		</div>
-
-		<div class="row mt-5 my-4">
-			<div class="col-sm-12">
-				<textarea type="text" name="chapterComment" class="form-control" placeholder="작가의 말을 입력해주세요" rows="6"></textarea>
-			</div>
-		</div>
-
-
-		<div class="row mt-5">
-			<div class="col text-end">
-				<button class="btn btn-primary w-25 btn-lg" type="submit">등록</button>
-			</div>
-		</div>
+					</td>
+				</tr>
+				<tr>
+					<th style="width:130px;">작가의 말</th>
+					<td>
+						<div class="row ">
+							<div class="col-sm-12">
+								<textarea type="text" name="chapterComment" class="form-control text-size" rows="6"
+								style="width:1px; height: 1px;"></textarea>
+							</div>
+						</div>
+					</td>
+				<tr>
+					<th></th>
+					<td>			<div class="row mt-5">
+						<div class="col text-end">
+							<button class="btn btn-primary w-25 " type="submit"><i class="fa-solid fa-pencil"></i>등록</button>
+						</div>
+					</div></td>
+				</tr>
+				
+			</tbody>
+		</table>
 	</form>
+
+
+<div style="height:100px;"></div>
 </div>
+
+	<!-- </li>
+	</ul> -->
+
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

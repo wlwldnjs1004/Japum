@@ -1,0 +1,43 @@
+		.drag-prevent {
+			-ms-user-select: none;
+			-moz-user-select: -moz-none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			user-select: none;
+		}
+
+		.size-r {
+			font-size: 20px;
+		}
+
+		.text {
+			resize: none;
+		}
+
+
+		.form-select text-name {
+			font-size: 15px;
+		}
+
+		.tagify__tag,
+		.tagify__tag__removeBtn,
+		.tagify__input {
+			transition: none !important;
+		}
+
+		.text-name-day {
+			font-size: 16px;
+		}
+
+		span {
+			font-size: 18;
+			font-weight: 400;
+		}
+
+		.shake {
+			animation: shake 0.3s;
+		}
+	
+		.text-input{
+			height:43px;
+		}

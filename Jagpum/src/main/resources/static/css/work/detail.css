@@ -16,9 +16,9 @@
   
   .picture-book {
     box-shadow: 0 0 1px 1px #bdc3c7;
-    height: 120px;
-    width:120px;
-    
+    height: 128px;
+    width:140px;
+    object-fit:cover;
   }
   
   .change-size {
@@ -143,19 +143,6 @@ font-size: 13px;}
   text-align:center;
   }
   
- /*  .hr-uniform {
-  height: 1px;
-  background-color: #ccc;
-  opacity: 1;
-  border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-} */
-
-.text-line{
-	
-}
-
 
   .aa {
   text-decoration: none;
@@ -203,4 +190,9 @@ font-size: 13px;}
     height: auto;
   width: auto; */
   }
+  
+  
+ p{
+ 	font-weight:900;
+ }
   

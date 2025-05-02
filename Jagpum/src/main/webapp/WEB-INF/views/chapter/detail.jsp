@@ -14,14 +14,13 @@
     -khtml-user-select: none;
     user-select: none;
 }
+
+.note-editoer .note-editable{
+/* line-height:100%; */
+}
 </style>
 
-
-
 <link rel="stylesheet" href="/css/chapter/detail.css">
-
-
-
 
 
 <div class="container">
@@ -30,36 +29,39 @@
 			<div class="">${chapterDto.chapterTitle}</div>
 		</div>
 	</div>
-	<hr class="mt-1">
+	<hr class="mt-3">
 	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent dds" >
-				${chapterDto.chapterDetail}</div>
+			<div class="font-family drag-prevent dds " >
+				<div  style="line-height:100%;word-space:normal;">${chapterDto.chapterDetail}
+				<div style="height:200px;"></div></div> 
+				</div>
 		</div>
 	</div>
-	
 	
 	<div class="row mt-2">
 	<div class="col-sm-12">
 	
+	
 	</div>
 	</div>
 	
-	<div class="row mt-3">
+	
+	
+	
+	
+	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="font-family drag-prevent" style="height: 100px;">
-	<p>작가의 말</p>
+	<label>작가의 말</label>
 	<hr>
-			${chapterDto.chapterComment}
-			
+			<div class="font-family drag-prevent dds" >
+			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}
+			<div style="height:20px;"></div></div> 
 			</div>
 		</div>
 	</div>
-	<div class="row mt-4">
-	<div class="col">
 	
-	</div>
-	</div>
+	
 		<div class="row mt-5 ">
 		<div class="col-sm-12">
 		<a class="btn btn-primary w-25"
@@ -100,6 +102,5 @@
   </div>
 </div>
 
-
-<jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
+<div style="height:50px;"></div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

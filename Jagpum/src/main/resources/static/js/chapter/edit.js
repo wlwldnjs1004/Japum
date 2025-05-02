@@ -5,8 +5,8 @@ $(function() {
 			{
 
 					height: 150,//높이(px)
-					minHeight: 1,//최소 높이(px)
-					maxHeight: 900,//최대 높이(px)
+					minHeight: 200,//최소 높이(px)
+					maxHeight: 400,//최대 높이(px)
 					toolbar: [
 						["font", ["fontname", "fontsize", "fontSizeUnits"]],
 							["style", ["bold", "italic", "underline", "strikethrough"]],
@@ -17,13 +17,13 @@ $(function() {
 					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 					placeholder: "작가의말",
 					callbacks: {
-						onInit: function() {
+					/*	onInit: function() {
 										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
 										$('.note-editable').css({
 											'font-family': '맑은 고딕',
 											'font-size': '16px'
 										});
-									},
+									},*/
 					onImageUpload: function(files) {
 						if (files.length === 0) return;
 
@@ -56,8 +56,8 @@ $(function() {
 		.summernote(
 			{
 				height: 150,//높이(px)
-				minHeight: 1,//최소 높이(px)
-				maxHeight: 900,//최대 높이(px)
+				minHeight: 200,//최소 높이(px)
+				maxHeight: 400,//최대 높이(px)
 				toolbar: [
 					["font", ["fontname", "fontsize", "fontSizeUnits"]],
 						["style", ["bold", "italic", "underline", "strikethrough"]],
@@ -69,13 +69,13 @@ $(function() {
 
 				placeholder: "작가의말",
 				callbacks: {
-					onInit: function() {
+			/*		onInit: function() {
 									$("[name=chapterComment]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
 									$('.note-editable').css({
 										'font-family': '맑은 고딕',
 										'font-size': '16px'
 									});
-								},
+								},*/
 					onImageUpload: function(files) {
 						if (files.length === 0) return;
 
@@ -102,6 +102,8 @@ $(function() {
 					},
 				},
 			});
+
+
 });
 $(function() {
 	const status = {

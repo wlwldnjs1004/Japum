@@ -19,12 +19,15 @@
     -khtml-user-select: none;
     user-select: none;
 }
+
 </style>
     
-    
+    	`<body>
     <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
+    
     
 <%-- 
  --%>
             <div class="" style="height:500px"></div>
      <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>
+    	</body>

@@ -2,22 +2,49 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
-<script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
+<script src="${pageContext.request.contextPath}/js/chapter/edit.js"></script>
 
+
+
+<style>
+.sss{
+	font-size: 20px;
+}
+.note-editable {
+  font-family: '맑은 고딕' !important;
+  font-size: 16px !important;
+  }
+</style>
+<!--  초기값 넣기-->
+<script>
+$(function(){
+$(".chapterDetail").val("${chapterDto.chapterDetail}");
+ $(".chapterComment").val("${chapterDto.chapterComment}");
+});
+</script>
 
 
   <!-- summernote cdn -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
-
+<div class="container-lg">
 
 	<form  action="edit" method="Post" class="p-3 rounded">
 
 <input type="hidden" name="chapterNo" value="${chapterDto.chapterNo}" />
 	<input type="hidden" name="workNo" value="${chapterDto.workNo}"/>
 
-		<div class="row mt-4">
+
+	<div class="row mt-3 mb-3">
+	<div class="col">
+		<div class="bg-dark text-light p-4 rounded">
+		<h1>수정창</h1>
+		<p>수정을 하는곳</p>
+		</div>
+	</div></div>
+
+		<div class="row mt-5">
 			<div class="col-sm-12">
 				<input type="text" name="chapterTitle" class="form-control"
 					value="${chapterDto.chapterTitle}">
@@ -36,6 +63,7 @@
 				<textarea type="text" name="chapterComment" class="form-control" rows="6">${chapterDto.chapterComment}</textarea>
 			</div>
 		</div>
+		
 
 
 		<div class="row mt-5">

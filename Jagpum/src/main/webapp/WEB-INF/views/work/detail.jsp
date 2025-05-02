@@ -33,10 +33,7 @@
                     <b class="text-name">${workDto.workName}[E]북</b>
                                  <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
                            <h5 class="text-name h5">${workDto.workGenre}</h5>
-                           
                    	<h5 class="text-name h5">${workDto.workSubGenre}</h5>
-                   	
-                   
                     <div class="col ">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -58,7 +55,6 @@
                     <label class="text-name">작품 이름:${workDto.workName}</label>            
                     <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
                     <h5 class="text-name">${workDto.workGenre}${workDto.workSubGenre}</h5>
-                   
                       <div class="col">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -70,12 +66,9 @@
 						${workDto.workSun == 'Y' ? '일 ' : ''}
                       </span>
                       </div>
-                 
        			 </div>
                   </c:otherwise>
                 </c:choose>
-
-
             </div>
         
 		<hr class="hr-uniform" />
@@ -100,17 +93,16 @@
 			<c:otherwise>
 
 				<h4 class="text-name mt-4 hi">챕터 목록</h4>
-						<c:forEach var="chapter" items="${chapterList}">
 							<ul class="list-group">
+						<c:forEach var="chapter" items="${chapterList}">
 								<li class="list-group-item text-dis">
 							    <a href="/chapter/detail?chapterNo=${chapter.chapterNo}" class="aa d-flex justify-content-between align-items-center">
-          <span class="chapter-order">${chapter.chapterOrder}</span>
           <span class="chapter-title ellipsis">${chapter.chapterTitle}</span>
           <span class="chapter-date ">${chapter.chapterModified}</span>
         </a>
 								 </li>
-								</ul>
 						</c:forEach>
+								</ul>
 			</c:otherwise>
 		</c:choose>
 		
