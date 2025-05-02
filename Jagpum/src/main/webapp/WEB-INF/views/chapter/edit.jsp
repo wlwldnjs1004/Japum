@@ -2,20 +2,20 @@
     pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
-<script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
+<script src="${pageContext.request.contextPath}/js/chapter/edit.js"></script>
 
 
 
 <style>
-.note-editor .note-editable{
-line-height:1020px;
-}
+
 
 </style>
 <!--  초기값 넣기-->
 <script>
- $(".chapterDetail").val(${chapterDto.chapterDetail});
- $(".chapterComment").val(${chapterDto.chapterComment});
+$(function(){
+$(".chapterDetail").val("${chapterDto.chapterDetail}");
+ $(".chapterComment").val("${chapterDto.chapterComment}");
+});
 </script>
 
 
@@ -30,7 +30,16 @@ line-height:1020px;
 <input type="hidden" name="chapterNo" value="${chapterDto.chapterNo}" />
 	<input type="hidden" name="workNo" value="${chapterDto.workNo}"/>
 
-		<div class="row mt-4">
+
+	<div class="row mt-3 mb-3">
+	<div class="col">
+		<div class="bg-dark text-light p-4 rounded">
+		<h1>수정창</h1>
+		<p>수정을 하는곳</p>
+		</div>
+	</div></div>
+
+		<div class="row mt-5">
 			<div class="col-sm-12">
 				<input type="text" name="chapterTitle" class="form-control"
 					value="${chapterDto.chapterTitle}">
@@ -49,6 +58,7 @@ line-height:1020px;
 				<textarea type="text" name="chapterComment" class="form-control" rows="6">${chapterDto.chapterComment}</textarea>
 			</div>
 		</div>
+		
 
 
 		<div class="row mt-5">
