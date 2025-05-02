@@ -5,12 +5,18 @@
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
 
+<!--  초기값 넣기-->
+<script>
+ $(".chapterDetail").val(${chapterDto.chapterDetail});
+ $(".chapterComment").val(${chapterDto.chapterComment});
+</script>
+
 
   <!-- summernote cdn -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
-
+<div class="container-lg">
 
 	<form  action="edit" method="Post" class="p-3 rounded">
 
