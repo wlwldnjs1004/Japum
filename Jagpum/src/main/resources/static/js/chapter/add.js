@@ -3,19 +3,32 @@ $(function() {
 	$("[name=chapterDetail]")
 		.summernote(
 			{
+			
 				height: 250,
 				minHeight: 200,
 				maxHeight: 400,
 				toolbar: [
-				  ["font", ["fontname", "fontsize"]],
+				  ["font", ["fontname", "fontsize","fontSizeUnits"]],
 				  ["style", ["bold", "italic", "underline", "strikethrough"]],
 				  ["insert", ["picture"]]
 				],
+				
+				
+				
+				
 				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
-				fontSizes: ['8', '9', '10', '12', '14', '18', '24', '36', '48'],
-
+				fontSizes: ['8', '9', '10', '12', '14','15','16', '18', '24', '36', '48'],
+			
 				placeholder: "내용",
+				
+				
 				callbacks: {
+					onInit: function() {
+					  $('.note-editable').css({
+					    'font-family': '맑은 고딕',
+					    'font-size': '16px'
+					  });
+					},
 					onImageUpload: function(files) {
 						if (files.length === 0) return;
 
@@ -42,7 +55,9 @@ $(function() {
 					},
 				},
 			});
-});
+
+		
+		});
 
 $(function() {
 	$("[name=chapterComment]")

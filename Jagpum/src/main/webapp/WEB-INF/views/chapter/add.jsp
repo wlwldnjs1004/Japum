@@ -11,6 +11,10 @@
 .sss{
 	font-size: 20px;
 }
+.note-editable {
+  font-family: '맑은 고딕' !important;
+  font-size: 16px !important;
+  }
 </style>
 
 
