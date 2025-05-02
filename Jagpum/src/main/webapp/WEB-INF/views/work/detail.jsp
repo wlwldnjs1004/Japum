@@ -12,6 +12,9 @@
 
 
 <link rel="stylesheet" href="/css/work/detail.css">
+
+
+
 <!-- 		<form class="d-flex mt-5 my-1" action="list">
 			<div class="input-group">
 				<input class="form-control w-75" type="search" placeholder="검색어 입력" name="keyword" aria-label="Search">

@@ -19,6 +19,31 @@
     height: 240px !important;
   }
   
+  .text-size{
+  font-size: 12px;
   
-  
+  }
 }
+
+
+  .text-name-th{
+  font-size: 15px;
+  width:130px;
+  }
+  
+  .drag-prevent{
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
