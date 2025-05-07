@@ -1,5 +1,7 @@
 package com.kh.jagpum.vo;
 
+import org.springframework.stereotype.Service;
+
 import lombok.Data;
 
 //VO(Value Object),필요에 의해 만드는 묶음 데이터

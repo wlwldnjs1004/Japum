@@ -6,9 +6,6 @@
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
-
-
-
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
@@ -17,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
 
 <link rel="stylesheet" href="/css/chapter/add.css">
+
 
   <div class="container drag-prevent">
 
@@ -93,10 +91,6 @@
             </div>
     </form>
     <!--휴대폰 화면  -->
-  
-      
-      
-      
   
   
   <div style="height:100px;">

@@ -14,7 +14,6 @@
     -khtml-user-select: none;
     user-select: none;
 }
-
 .note-editoer .note-editable{
 /* line-height:100%; */
 }
@@ -26,14 +25,15 @@
 <div class="container">
 	<div class="row mt-4">
 		<div class="col-sm-12">
-			<div class="">${chapterDto.chapterTitle}</div>
+			<div class="font-size-title">${chapterDto.chapterTitle}</div>
 		</div>
 	</div>
 	<hr class="mt-3">
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="font-family drag-prevent dds " >
-				<div  style="line-height:100%;word-space:normal;">${chapterDto.chapterDetail}
+				<div  style="line-height:100%;word-space:normal; "
+				class="font-size">${chapterDto.chapterDetail}
 				<div style="height:200px;"></div></div> 
 				</div>
 		</div>
@@ -45,16 +45,14 @@
 	</div>
 	
 	
-	
-	
-	
 	<div class="row mt-4">
 		<div class="col-sm-12">
-	<label>작가의 말</label>
+	<label class="font-size-title">작가의 말</label>
 	<hr>
 		
 			<div class="font-family drag-prevent dds mt-2" >
-			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}
+ 			<div style="line-height:100%;word-space:normal; "
+ 			class="font-size">${chapterDto.chapterComment} 
 			<div style="height:20px;">
 			</div>
 			</div> 
@@ -68,7 +66,7 @@
 		<a class="btn btn-primary w-25 btn-json hidden-table-no"
 		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
 	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-json">삭제 </a>
-		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-json">수정</a>
+		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-success w-25 btn-json">수정</a>
 			<c:if test="${sessionScope.userLevel=='관리자'}">
 			<button type="button" class="btn btn-primary btn-json" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 			가격 변경
@@ -83,7 +81,7 @@
 		<a class="btn btn-primary w-25 btn-sm"
 		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
 	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary  btn-sm w-25 ">삭제 </a>
-		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-sm">수정</a>
+		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-success w-25 btn-sm">수정</a>
 			<c:if test="${sessionScope.userLevel=='관리자'}">
 			<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 			가격 변경

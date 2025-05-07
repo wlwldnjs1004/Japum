@@ -13,10 +13,12 @@ $(function() {
 							["height",["height"]],
 							["insert", ["picture"]]
 					],
-					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
 					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 					placeholder: "작가의말",
-					callbacks: {
+					
+					
+						callbacks: {
 						onInit: function() {
 										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
 										$('.note-editable').css({
@@ -64,7 +66,7 @@ $(function() {
 						["height",['height']],
 						["insert", ["picture"]]
 				],
-				fontNames: ['Arial','Noto Sans KR', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
 				fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 
 				placeholder: "작가의말",
@@ -103,8 +105,6 @@ $(function() {
 				},
 			});
 });
-
-
 $(function() {
 	const status = {
 		chapterTitle: false,
@@ -131,7 +131,6 @@ $(function() {
 				isValid ? "is-valid" : "is-invalid");
 			status.chapterTitle = isValid;
 		});
-
 	$("[name=chapterDetail]").blur(
 		function() {
 			const size = $(this).val().length > 0;
@@ -144,7 +143,5 @@ $(function() {
 		return status.ok();
 	});
 });
-
-
 
 

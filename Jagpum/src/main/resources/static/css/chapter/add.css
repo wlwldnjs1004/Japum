@@ -1,3 +1,5 @@
+
+
 .text-size{
 	width: 50px !important;
 	height: 50px !important;
@@ -46,11 +48,9 @@
 
  .hidden-table-no{
       display: none;
+      
   }
   
-
-
-
 
 .img-fluid{
 	width:115px!important;
@@ -73,43 +73,34 @@
  
   .hidden-table-no{
     display: block;
+    
   }
-     
-  .note-editor,
+   .note-editor,
   .note-toolbar,
   .note-editable,
   .note-placeholder {
     width: 100% !important;
     height: auto !important;
-    font-size: 14px !important;
+   
   }
   
+   
   .note-btn {
   font-size: 13px !important;   
   padding: 5px 8px !important;  
   height: 32px !important;      
   min-width: 32px !important;   
+	
+	}
+	
+	
 }
-  
-   }
-   
-  /* .note-editor       전체 에디터 감싸는 div 
-.note-toolbar      툴바 영역 
-.note-editable     실제 글 입력 영역 
-.note-placeholder  placeholder 있을 때의 텍스트 
+
+
+/* .note-editor, .note-toolbar, .note-editable, .note-placeholder {
+	}
  */
-   
-   
-   .note-editor, .note-toolbar, .note-editable, .note-placeholder {
-}
 
-/* 툴바 내부 버튼 줄바꿈 허용 */
-.note-toolbar {
-  flex-wrap: wrap !important;
-  overflow-x: auto !important;
-}
-
-  
   
   
   

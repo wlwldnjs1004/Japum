@@ -97,8 +97,13 @@ select * from chapter where work_no=#{workNo}
     SELECT * FROM chapter WHERE chapter_no = #{chapterNo}
 </select>
 
-    
-
+<!-- 다음화 -->
+<select id="NextChapterOrder" resultType="ChapterDto">
+SELECT *
+FROM chapter
+WHERE work_no = #{workNo}
+  AND chapter_order = #{currentOrder} + 1
+</select>
     
     
   </mapper>
