@@ -18,7 +18,7 @@ $(function() {
 					placeholder: "작가의말",
 					callbacks: {
 						onInit: function() {
-										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+										$("[name=chapterDetail]").summernote('code', `<p style="font-family:맑은 고딕;">${chapterDto.chapterDetail}</p>`)
 										$('.note-editable').css({
 											'font-family': '맑은 고딕',
 											'font-size': '16px'
@@ -70,7 +70,7 @@ $(function() {
 				placeholder: "작가의말",
 				callbacks: {
 					onInit: function() {
-									$("[name=chapterComment]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+									$("[name=chapterComment]").summernote('code', `<p style="font-family:맑은 고딕;">${chapterDto.chapterDetail}</p>`)
 									$('.note-editable').css({
 										'font-family': '맑은 고딕',
 										'font-size': '16px'

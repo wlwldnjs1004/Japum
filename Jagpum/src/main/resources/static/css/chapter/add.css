@@ -27,6 +27,15 @@
   .text-size{
   font-size: 12px;  
   }
+  
+   .note-editor,
+  .note-toolbar,
+  .note-editable,
+  .note-placeholder {
+    width: 600px !important;
+   
+  }
+  
 }
   .text-name-th{
   font-size: 15px;
