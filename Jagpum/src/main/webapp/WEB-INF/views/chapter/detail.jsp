@@ -54,7 +54,7 @@
 		<div class="col-sm-12">
 	<label>작가의 말</label>
 	<hr>
-			<div class="font-family drag-prevent dds" >
+			<div class="font-family drag-prevent dds mt-2" >
 			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}
 			<div style="height:20px;"></div></div> 
 			</div>
