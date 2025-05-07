@@ -24,6 +24,7 @@ import com.kh.jagpum.dto.WorkListViewDto;
 import com.kh.jagpum.service.AttachmentService;
 import com.kh.jagpum.vo.ChapterPriceVO;
 import com.kh.jagpum.vo.PageVO;
+import com.kh.jagpum.vo.WorkService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
@@ -36,14 +37,15 @@ public class WokrController {
 	@Autowired
 	private WorkDao workDao;
 	
-	
 	@Autowired
 	private AttachmentService attachmentService;
 	
+	
 	@Autowired
 	private ChapterDao chapterDao;
-	
-	
+
+	@Autowired
+	private WorkService workService;
 	
 	@GetMapping("/add")
 	public String add() {
@@ -81,9 +83,8 @@ public class WokrController {
 	
 	@RequestMapping("/list")
 	public String list(@RequestParam(required = false) String keyword,Model model) {
-	   
+
 		List<WorkListViewDto> list;
-		
 		 if (keyword != null && !keyword.isEmpty()) {
 //			 log.debug("검색 결과: {}", keyword); 
 			 if (keyword.contains("#")) {

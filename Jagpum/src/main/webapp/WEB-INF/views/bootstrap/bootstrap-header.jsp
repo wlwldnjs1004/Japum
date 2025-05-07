@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부트스크랩 래이아웃 배우기</title>
+    <title>kh</title>
 
     <!--google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">

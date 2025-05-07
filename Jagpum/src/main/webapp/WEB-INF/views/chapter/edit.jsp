@@ -7,13 +7,7 @@
 
 
 <style>
-.sss{
-	font-size: 20px;
-}
-.note-editable {
-  font-family: '맑은 고딕' !important;
-  font-size: 16px !important;
-  }
+  
 </style>
 <!--  초기값 넣기-->
 <script>
@@ -27,6 +21,9 @@ $(".chapterDetail").val("${chapterDto.chapterDetail}");
   <!-- summernote cdn -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
+
+<link rel="stylesheet" href="/css/chapter/add.css">
+
 
 <div class="container-lg">
 
@@ -64,7 +61,6 @@ $(".chapterDetail").val("${chapterDto.chapterDetail}");
 			</div>
 		</div>
 		
-
 
 		<div class="row mt-5">
 			<div class="col text-end">

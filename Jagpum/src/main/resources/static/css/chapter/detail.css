@@ -22,10 +22,46 @@
     text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
     white-space: nowrap; 
   }
+  
+    .hidden-table{
+  display:none;
+  }
+  
+   .hidden-table-no{
+    display: block;
+  }
+ 
+ .font-size{
+  font-size: 12px !important;
+  }
+  
+    .font-size-title{
+  font-size: 14px !important;
+  }
+  
   }
   
   .text-keep{
   word-spacing:keep-all;
 }
-
-/*overflow-wrap: ;  */
+.note-editable {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+   
+ .hidden-table-no{
+      display: none;
+  }
+  
+  .hidden-table{
+  display:block;
+  }
+  .font-size{
+  font-size: 15px !important;
+  }
+  .font-size-title{
+  font-size: 16px !important;
+  }
+  
+  
+  
+  

@@ -109,6 +109,24 @@ font-size: 13px !important;
 		
 		</div>
 	</div>
+	
+<%-- 	<div class="container mt-5">
+  <div class="d-flex flex-wrap justify-content-start gap-4">
+	<c:forEach var="workDto" items="${list}"  varStatus="loop">
+    <a href="/work/detail?workNo=${workDto.workNo}" class="text-a item-box text-dark">
+      <div class="text-center">
+        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
+        <label class="text-name mt-2">${workDto.workName}</label>
+      </div>
+    </a>
+    	</c:forEach>
+ --%>    	
+    <!-- 원하는 만큼 복붙 -->
+<!--   </div>
+</div> -->
+	
+	
+	
 <div style="height: 50px;"></div>
 <!-- <div class="mt-4 text-center">
   <img src="https://placehold.co/800x300?text=event banner" alt="이벤트 배너" 

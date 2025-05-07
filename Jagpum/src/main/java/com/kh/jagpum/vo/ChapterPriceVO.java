@@ -19,6 +19,7 @@ public class ChapterPriceVO {
 	        this.chapterPrice = chapterDto.getChapterPrice();
 	    }
 
+	    
 	    // 가격 노출 여부만 로직으로 제공 (30화 이상만 보여줌)
 	    public boolean isPriceVisible() {
 	        return chapterOrder >= 30;

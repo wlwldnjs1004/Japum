@@ -52,7 +52,6 @@ public class ChapterController {
 	public String addFininsh() {
 		return "/WEB-INF/views/chapter/addFinish.jsp";
 	}
-	
 	@RequestMapping("/list")
 	public String list(Model model) {
 		List<ChapterDto> list = chapterDao.selectList();
@@ -60,7 +59,6 @@ public class ChapterController {
 		return "/WEB-INF/views/chapter/list.jsp";
 	
 	}
-	
 	@RequestMapping("/detail")
 	public String detail(@RequestParam int chapterNo,Model model) {
 		
