@@ -88,7 +88,6 @@
 		<div class="col-md-12"></div>
 	</div>
 	
-	<form class="form-check" action="deleteAll" method="post">
 		<c:choose>
 			<c:when test="${empty chapterList}">
 				<p class="text-muted">페이지 없음</p>
@@ -111,7 +110,7 @@
 		
 		<div class="my-4"></div>
 	<div class="row mt-5">
-  <div class="col text-end">
+  <div class="col text-end hidden-table">
     <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary w-auto">
     <i class="fa-solid fa-pencil me-2"></i>챕터 작성</a>
     <a href="/work/delete?workNo=${workDto.workNo}" class="btn btn-outline-danger w-auto">
@@ -121,7 +120,19 @@
   </div>
 </div>
 
-	</form>
+	<div class="row mt-5">
+  <div class="col text-end hidden-table-no">
+    <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary w-auto btn-sm">
+    <i class="fa-solid fa-pencil me-2"></i>챕터 작성</a>
+    <a href="/work/delete?workNo=${workDto.workNo}" class="btn btn-outline-danger w-auto btn-sm">
+    <i class="fa-solid fa-eraser me-2"></i>삭제</a>
+    <a href="/work/edit?workNo=${workDto.workNo}" class="btn btn-outline-secondary w-auto btn-sm"> 
+    <i class="fa-solid fa-file-pen me-2"></i>수정</a>
+  </div>
+</div>
+
+
+
 <div style="height: 10px;"></div>
 </div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

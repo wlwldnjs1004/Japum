@@ -64,9 +64,8 @@
               </div> 
               
         <div class="row mt-2">
-          <div class="col-sm-12 text-center">
-            <textarea id="VS1IdchapterDetail" name="chapterDetail" class="form-control text-size" rows="11"
-            style="width:1px; height: 1px;"></textarea>
+          <div class="col-sm-12 ">
+            <textarea id="VS1IdchapterDetail" name="chapterDetail" class="form-control text-size" rows="11"></textarea>
             <div class="valid-feedback"></div>
             <div class="invalid-feedback">필수조건입니다</div>
           </div>
@@ -78,9 +77,8 @@
           </div>
         </div> 
               <div class="row ">
-                <div class="col-sm-12 text-center">
-                  <textarea type="text" id="VS1IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
-                  style="width:1px; height: 1px;"></textarea>
+                <div class="col-sm-12">
+                  <textarea type="text" id="VS1IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"></textarea>
                 </div>
               </div>
            			

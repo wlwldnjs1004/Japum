@@ -60,7 +60,6 @@ $(".chapterDetail").val("${chapterDto.chapterDetail}");
 				<textarea type="text" name="chapterComment" class="form-control" rows="6">${chapterDto.chapterComment}</textarea>
 			</div>
 		</div>
-		
 
 		<div class="row mt-5">
 			<div class="col text-end">
