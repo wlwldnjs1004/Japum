@@ -22,10 +22,30 @@
     text-overflow: ellipsis; /* 넘치면 "..."으로 표시 */
     white-space: nowrap; 
   }
+  
+    .hidden-table{
+  display:none;
+  }
+  
+   .hidden-table-no{
+    display: block;
+  }
+ 
   }
   
   .text-keep{
   word-spacing:keep-all;
 }
-
-/*overflow-wrap: ;  */
+.note-editable {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+   
+ .hidden-table-no{
+      display: none;
+  }
+  
+  .hidden-table{
+  display:block;
+  }
+  
+  

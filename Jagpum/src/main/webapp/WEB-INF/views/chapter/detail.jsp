@@ -41,8 +41,6 @@
 	
 	<div class="row mt-2">
 	<div class="col-sm-12">
-	
-	
 	</div>
 	</div>
 	
@@ -54,36 +52,54 @@
 		<div class="col-sm-12">
 	<label>작가의 말</label>
 	<hr>
+		
 			<div class="font-family drag-prevent dds mt-2" >
 			<div style="line-height:100%;word-space:normal;">${chapterDto.chapterComment}
-			<div style="height:20px;"></div></div> 
+			<div style="height:20px;">
+			</div>
+			</div> 
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 		<div class="row mt-5 ">
-		<div class="col-sm-12">
-		<a class="btn btn-primary w-25"
+		<div class="col-sm-12 hidden-table">
+		<a class="btn btn-primary w-25 btn-json hidden-table-no"
 		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
-	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">삭제 </a>
-		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25">수정</a>
+	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-json">삭제 </a>
+		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-json">수정</a>
 			<c:if test="${sessionScope.userLevel=='관리자'}">
-			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			<button type="button" class="btn btn-primary btn-json" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 			가격 변경
 		</button>
 			</c:if>		
 		</div>
 		</div>
 		
+		
+				<div class="row mt-5 ">
+		<div class="col-sm-12 hidden-table-no">
+		<a class="btn btn-primary w-25 btn-sm"
+		href="/work/detail?workNo=${chapterDto.workNo}">목록으로</a>
+	<a href="/chapter/delete?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary  btn-sm w-25 ">삭제 </a>
+		<a href="/chapter/edit?chapterNo=${chapterDto.chapterNo}" class="btn btn-primary w-25 btn-sm">수정</a>
+			<c:if test="${sessionScope.userLevel=='관리자'}">
+			<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			가격 변경
+		</button>
+			</c:if>		
+		</div>
+		</div>
+		
+		
 </div>
-
 
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 </button> -->
 <!-- Modal -->
 
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<%-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -101,6 +117,6 @@
     </div>
   </div>
 </div>
-
+ --%>
 <div style="height:50px;"></div>
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

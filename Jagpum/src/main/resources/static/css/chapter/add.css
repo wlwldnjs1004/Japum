@@ -85,10 +85,10 @@
   }
   
   .note-btn {
-  font-size: 13px !important;   /* 버튼 글자 크기 */
-  padding: 5px 8px !important;  /* 버튼 내부 여백 */
-  height: 32px !important;      /* 버튼 높이 */
-  min-width: 32px !important;   /* 버튼 최소 너비 */
+  font-size: 13px !important;   
+  padding: 5px 8px !important;  
+  height: 32px !important;      
+  min-width: 32px !important;   
 }
   
    }
@@ -101,10 +101,6 @@
    
    
    .note-editor, .note-toolbar, .note-editable, .note-placeholder {
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 /* 툴바 내부 버튼 줄바꿈 허용 */
@@ -112,7 +108,7 @@
   flex-wrap: wrap !important;
   overflow-x: auto !important;
 }
-   
+
   
   
   

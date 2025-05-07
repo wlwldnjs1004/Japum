@@ -64,7 +64,7 @@ $(function() {
 						["height",['height']],
 						["insert", ["picture"]]
 				],
-				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
+				fontNames: ['Arial','Noto Sans KR', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
 				fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 
 				placeholder: "작가의말",
