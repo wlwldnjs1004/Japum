@@ -71,7 +71,7 @@
 					<td class="hidden-table ">
 			<div class="row mt-2">
 				<div class="col-sm-12">
-					<textarea id="VS1IdchapterDetail" name="chapterDetail" class="form-control text-size" rows="11"
+					<textarea   class="form-control text-size" rows="11"
 					style="width:1px; height: 1px;"></textarea>
 					<div class="valid-feedback"></div>
 					<div class="invalid-feedback">필수조건입니다</div>
@@ -84,7 +84,7 @@
 					<td class="hidden-table ">
 						<div class="row ">
 							<div class="col-sm-12">
-								<textarea type="text" id="VS1IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
+								<textarea type="text"  name="chapterComment" class="form-control text-size" rows="6"
 								style="width:1px; height: 1px;"></textarea>
 							</div>
 						</div>
@@ -103,76 +103,16 @@
 	</form>
 	
 	<!--휴대폰 화면  -->
-	
-		<div class=" hidden-table-no">
-		<form action="add" method="Post" class="needs-validation">
-			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
-		
-		<div class="row">
-		<div class="col">
-		<label>제목</label>
-		</div></div>	
-			
-		
-					<div class="row ">
-							<div class="col-sm-12">
-								<input type="text" id="chapterTitle" name="chapterTitle" class="form-control "
-									placeholder="소제목을 입력해주세요. (최대 60자 까지 입력가능)">
-								<div class="valid-feedback"></div>
-								<div class="invalid-feedback">필수조건입니다</div>
-							</div>
-						</div>
 
-      
-      <div class="row">
-		<div class="col">
-		<label>본문</label>
-		</div></div>	
-			
-		<div class="row mt-2">
-				<div class="col-sm-12">
-					<textarea name="chapterDetail" id="VS2IdchapterDetail" class="form-control text-size" rows="11"
-					style="width:1px; height: 1px;"></textarea>
-					<div class="valid-feedback"></div>
-					<div class="invalid-feedback">필수조건입니다</div>
-				</div>
-			</div>
-		
-	
-		
-			<div class="row">
-		<div class="col">
-		<label>작가의 말</label>
-		</div></div>	
-			
-		
-			<div class="row ">
-							<div class="col-sm-12">
-								<textarea type="text" id="VS2IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
-								style="width:1px; height: 1px;"></textarea>
-							</div>
-						</div>
-		
-		
-		<div class="row mt-5">
-						<div class="col text-end">
-							<button class="btn btn-primary w-25 " type="submit"><i class="fa-solid fa-pencil"></i>등록</button>
-						</div>
-					</div>	
-					
-					
-						
-		</form>
  	</div>
 		
 		
 		
 
 
-<div style="height:100px;"></div>
+<div style="height:100px;">
+</div>
 </div>
 
-	<!-- </li>
-	</ul> -->
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-footer.jsp"></jsp:include>

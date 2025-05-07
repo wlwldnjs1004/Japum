@@ -104,7 +104,7 @@ $(function() {
 				},
 			});
 });
-$(function() {
+/*$(function() {
 	$("#IdchapterDetail")
 		.summernote(
 			{
@@ -209,7 +209,7 @@ $(function() {
 				},
 			});
 });
-
+*/
 $(function() {
 	const status = {
 		chapterTitle: false,
