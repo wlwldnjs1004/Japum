@@ -64,8 +64,8 @@ $(".chapterDetail").val("${chapterDto.chapterDetail}");
 
 		<div class="row mt-5">
 			<div class="col text-end">
-				<button class="btn btn-primary " type="submit">등록</button>
-		<a href="/work/detail?workNo=${chapterDto.workNo}" class="btn btn-primary ">돌아가기</a>
+				<button class="btn btn-primary w-25" type="submit">등록</button>
+		<a href="/work/detail?workNo=${chapterDto.workNo}" class="btn btn-primary w-25">돌아가기</a>
 			</div>
 			
 		</div>s
