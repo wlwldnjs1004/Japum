@@ -63,5 +63,31 @@
   }
   
   
-  
-  
+    .parent{
+    border:1px solid black;
+    margin:1px;
+    padding:10px;
+    text-align: center;
+  }
+  .child{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+  }
+	
+	    .text-name-ms{
+font-size:13px !important ;
+    }
+    
+    .img-fixed-ms{
+      width: 89px;
+      height: 115px;
+      border-radius: 10px;
+    }
+     .text-a {
+      text-decoration: none;
+
+    }
+     /*   .text-line{
+      border: 1px solid #bdc3c7;
+    } */

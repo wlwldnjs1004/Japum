@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kh.jagpum.dto.ChapterDto;
+import com.kh.jagpum.dto.WorkListViewDto;
 
 
 @Repository
@@ -44,8 +45,8 @@ public boolean ChapterPriceBy(ChapterDto chapterDto) {
 }
 
 //work 을 이용한 조회
-public ChapterDto workList(int workNo) {
-	return sqlSession.selectOne("chapter.workList",workNo);
+public List<WorkListViewDto> workList(int workNo) {
+	return sqlSession.selectList("chapter.workList",workNo);
 }
 
 

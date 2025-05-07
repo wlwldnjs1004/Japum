@@ -92,7 +92,25 @@
 		</div>
 		</div>
 		
-		
+		<section class="text-line text-center mt-4">
+
+ 	<div class="container mt-5">
+  <div class="d-flex flex-wrap justify-content-start gap-4">
+	<c:forEach var="workDto" items="${list}"  varStatus="loop">
+    <a href="/work/detail?workNo=${workDto.workNo}" class="text-a item-box text-dark mb-5">
+      <div class="text-center">
+        <img src="image?workNo=${workDto.workNo}" class="img-fixed-ms">
+        <label class="text-name-ms mt-1">${workDto.workName}</label>
+        <label class="text-name-ms mt-1">${workDto.workSubtotal}</label>
+      </div>
+    </a>
+    	</c:forEach>
+    <!-- 원하는 만큼 복붙 -->
+ </div>
+</div> 
+</section>
+
+
 </div>
 
 <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
