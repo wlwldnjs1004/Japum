@@ -10,13 +10,13 @@
   
 </style>
 <!--  초기값 넣기-->
-<script>
+<!-- <script>
 $(function(){
 $(".chapterDetail").val("${chapterDto.chapterDetail}");
  $(".chapterComment").val("${chapterDto.chapterComment}");
 });
 </script>
-
+ -->
 
   <!-- summernote cdn -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
@@ -64,12 +64,14 @@ $(".chapterDetail").val("${chapterDto.chapterDetail}");
 
 		<div class="row mt-5">
 			<div class="col text-end">
-				<button class="btn btn-primary w-25 btn-lg" type="submit">등록</button>
-		<a href="/work/detail?workNo=${chapterDto.workNo}" class="btn btn-primary w-25 btn-lg">목록으로 돌아가기</a>
+				<button class="btn btn-primary " type="submit">등록</button>
+		<a href="/work/detail?workNo=${chapterDto.workNo}" class="btn btn-primary ">돌아가기</a>
 			</div>
 			
-		</div>
-		
+		</div>s
+<div class="row">
+<div class="col">
+</div></div>		
 		
 		
 	</form>
