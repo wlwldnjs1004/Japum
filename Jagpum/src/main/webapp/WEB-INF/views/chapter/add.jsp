@@ -23,8 +23,6 @@
 		
 		
 		
-<!-- 	<ul class="list-group">
-	<li class="list-group-item"> -->
 	<!-- 작품 미리보기 -->
 	<div class="container mt-4 my-2">
 		<div class="row align-items-center">

@@ -3,13 +3,18 @@
 	height: 50px !important;
 	
 }
+
 .sss{
 	font-size: 20px;
 }
+
 .note-editable {
   font-family: '맑은 고딕' !important;
   font-size: 16px !important;
   }
+  
+  
+  
 @media (max-width: 768px) {
   .note-editor {
     width: 210px !important;
@@ -31,7 +36,6 @@
   font-weight: 800 !important;
   }
   
-  
   .drag-prevent{
     -ms-user-select: none;
     -moz-user-select: -moz-none;
@@ -44,6 +48,8 @@
       display: none;
   }
   
+
+
 
 
 .img-fluid{
@@ -64,16 +70,21 @@
 	height:110px;
 	margin-bottom: 40px;
 }
-    .hidden-table {
-  display: none;
-}
+ 
   .hidden-table-no{
     display: block;
   }
   
    }
-  
-   
+  /* .note-editor       전체 에디터 감싸는 div 
+.note-toolbar      툴바 영역 
+.note-editable     실제 글 입력 영역 
+.note-placeholder  placeholder 있을 때의 텍스트 
+ */
+   .note-editor{
+   width:580px;
+   height:auto;
+   }
    
   
   
