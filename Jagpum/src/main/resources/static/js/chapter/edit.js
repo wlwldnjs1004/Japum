@@ -14,11 +14,12 @@ $(function() {
 							["insert", ["picture"]]
 					],
 					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
+								fontNamesIgnoreCheck: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
 					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 					placeholder: "작가의말",
 					callbacks: {
 						onInit: function() {
-										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+										$("[name=chapterDetail]").summernote('code', `<p style="font-family:맑은 고딕;"${'${chapterDto.chapterDetail}'}</p>`)
 										$('.note-editable').css({
 											'font-family': '맑은 고딕',
 											'font-size': '16px'
@@ -65,12 +66,12 @@ $(function() {
 						["insert", ["picture"]]
 				],
 				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
+				fontNamesIgnoreCheck: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서체', '굴림체','나눔명조','Noto Sans KR','Spoqa Han Sans','Pretendard'],
 				fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
-
 				placeholder: "작가의말",
 				callbacks: {
 					onInit: function() {
-									$("[name=chapterComment]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+									$("[name=chapterComment]").summernote('code', `<p style="font-family:맑은 고딕;"${'${chapterDto.chapterComment}'}</p>`)
 									$('.note-editable').css({
 										'font-family': '맑은 고딕',
 										'font-size': '16px'
