@@ -26,8 +26,7 @@
 		</div>
 	</div>
 
-	<form action="add" method="Post" class="needs-validation"
-		enctype="multipart/form-data">
+	<form action="add" method="Post" class="needs-validation" enctype="multipart/form-data">
 
 		<div class="row mt-4 mb-1">
 			<div class="col">

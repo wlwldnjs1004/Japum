@@ -13,7 +13,6 @@ $(function() {
 							["height",["height"]],
 							["insert", ["picture"]]
 					],
-					
 					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
 					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
 					placeholder: "작가의말",
@@ -104,112 +103,8 @@ $(function() {
 				},
 			});
 });
-/*$(function() {
-	$("#IdchapterDetail")
-		.summernote(
-			{
 
-					height: 150,//높이(px)
-					minHeight: 1,//최소 높이(px)
-					maxHeight: 900,//최대 높이(px)
-					toolbar: [
-						["font", ["fontname", "fontsize", "fontSizeUnits"]],
-							["style", ["bold", "italic", "underline", "strikethrough"]],
-							["height",["height"]],
-							["insert", ["picture"]]
-					],
-					
-					fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
-					fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
-					placeholder: "작가의말",
-					callbacks: {
-						onInit: function() {
-										$("#IdchapterDetail").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
-										$('.note-editable').css({
-											'font-family': '맑은 고딕',
-											'font-size': '16px'
-										});
-									},
-					onImageUpload: function(files) {
-						if (files.length === 0) return;
 
-						var form = new FormData();
-						for (var i = 0; i < files.length; i++) {
-							form.append("attach", files[i]);
-						}
-						$.ajax({
-							processData: false,
-							contentType: false,
-							url: "/rest/chapter/uploads",
-							method: "post",
-							data: form,
-							success: function(response) {
-								for (var i = 0; i < response.length; i++) {
-									var tag = $("<img>")
-										.attr("src", "/attachment/download?attachmentNo=" + response[i])
-										.addClass("summernote-img")
-										.attr("data-attachment-no", response[i]);
-									$("#IdchapterDetail").summernote("insertNode", tag[0]);
-								}
-							}
-						});
-					},
-				},
-			});
-});
-$(function() {
-	$("#IdchapterComment")
-		.summernote(
-			{
-				height: 150,//높이(px)
-				minHeight: 1,//최소 높이(px)
-				maxHeight: 900,//최대 높이(px)
-				toolbar: [
-					["font", ["fontname", "fontsize", "fontSizeUnits"]],
-						["style", ["bold", "italic", "underline", "strikethrough"]],
-						["height",['height']],
-						["insert", ["picture"]]
-				],
-				fontNames: ['Arial', 'Comic Sans MS', '맑은 고딕', '궁서', '굴림체'],
-				fontSizes: ['8', '9', '10', '12', '14', '15', '16', '18', '24', '36', '48'],
-
-				placeholder: "작가의말",
-				callbacks: {
-					onInit: function() {
-									$("#IdchapterComment").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
-									$('.note-editable').css({
-										'font-family': '맑은 고딕',
-										'font-size': '16px'
-									});
-								},
-					onImageUpload: function(files) {
-						if (files.length === 0) return;
-
-						var form = new FormData();
-						for (var i = 0; i < files.length; i++) {
-							form.append("attach", files[i]);
-						}
-						$.ajax({
-							processData: false,
-							contentType: false,
-							url: "/rest/chapter/uploads",
-							method: "post",
-							data: form,
-							success: function(response) {
-								for (var i = 0; i < response.length; i++) {
-									var tag = $("<img>")
-										.attr("src", "/attachment/download?attachmentNo=" + response[i])
-										.addClass("summernote-img")
-										.attr("data-attachment-no", response[i]);
-									$("#IdchapterComment").summernote("insertNode", tag[0]);
-								}
-							}
-						});
-					},
-				},
-			});
-});
-*/
 $(function() {
 	const status = {
 		chapterTitle: false,
