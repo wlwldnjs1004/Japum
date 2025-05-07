@@ -74,17 +74,44 @@
   .hidden-table-no{
     display: block;
   }
+     
+  .note-editor,
+  .note-toolbar,
+  .note-editable,
+  .note-placeholder {
+    width: 100% !important;
+    height: auto !important;
+    font-size: 14px !important;
+  }
+  
+  .note-btn {
+  font-size: 13px !important;   /* 버튼 글자 크기 */
+  padding: 5px 8px !important;  /* 버튼 내부 여백 */
+  height: 32px !important;      /* 버튼 높이 */
+  min-width: 32px !important;   /* 버튼 최소 너비 */
+}
   
    }
+   
   /* .note-editor       전체 에디터 감싸는 div 
 .note-toolbar      툴바 영역 
 .note-editable     실제 글 입력 영역 
 .note-placeholder  placeholder 있을 때의 텍스트 
  */
-   .note-editor{
-   width:580px;
-   height:auto;
-   }
+   
+   
+   .note-editor, .note-toolbar, .note-editable, .note-placeholder {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 툴바 내부 버튼 줄바꿈 허용 */
+.note-toolbar {
+  flex-wrap: wrap !important;
+  overflow-x: auto !important;
+}
    
   
   
