@@ -6,23 +6,25 @@
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
 
 
-<style>	
-.drag-prevent{
-    -ms-user-select: none;
-    -moz-user-select: -moz-none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
-}
-.note-editoer .note-editable{
-/* line-height:100%; */
-}
-</style>
 
 <link rel="stylesheet" href="/css/chapter/detail.css">
 
 
-<div class="container">
+<div class="container drag-prevent">
+
+    <!--아이콘-->
+    <div class="text-center text-bar" style="display: none">
+      <div class="div-Line text-center">
+        <i class="fa-solid fa-up-long "></i>
+      </div>
+    </div>
+
+    <div class="text-center text-bar-down" style="display: none">
+      <div class="div-Line text-center">
+        <i class="fa-solid fa-down-long"></i>
+      </div>
+    </div>
+
 	<div class="row mt-4">
 		<div class="col-sm-12">
 			<div class="font-size-title">${chapterDto.chapterTitle}</div>
