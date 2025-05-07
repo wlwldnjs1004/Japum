@@ -103,7 +103,8 @@
 	</form>
 	
 	<!--휴대폰 화면  -->
-		 <div class=" hidden-table-no">
+	
+		<div class=" hidden-table-no">
 		<form action="add" method="Post" class="needs-validation">
 			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 		
@@ -121,8 +122,9 @@
 								<div class="invalid-feedback">필수조건입니다</div>
 							</div>
 						</div>
-	
-		<div class="row">
+
+      
+      <div class="row">
 		<div class="col">
 		<label>본문</label>
 		</div></div>	
