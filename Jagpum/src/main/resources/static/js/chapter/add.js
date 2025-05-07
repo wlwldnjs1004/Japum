@@ -124,7 +124,7 @@ $(function() {
 					placeholder: "작가의말",
 					callbacks: {
 						onInit: function() {
-										$("[name=chapterDetail]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+										$("#IdchapterDetail").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
 										$('.note-editable').css({
 											'font-family': '맑은 고딕',
 											'font-size': '16px'
@@ -149,7 +149,7 @@ $(function() {
 										.attr("src", "/attachment/download?attachmentNo=" + response[i])
 										.addClass("summernote-img")
 										.attr("data-attachment-no", response[i]);
-									$("[name=chapterDetail]").summernote("insertNode", tag[0]);
+									$("#IdchapterDetail").summernote("insertNode", tag[0]);
 								}
 							}
 						});
@@ -176,7 +176,7 @@ $(function() {
 				placeholder: "작가의말",
 				callbacks: {
 					onInit: function() {
-									$("[name=chapterComment]").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
+									$("#IdchapterComment").summernote('code', '<p style="font-family:맑은 고딕;"><br></p>')
 									$('.note-editable').css({
 										'font-family': '맑은 고딕',
 										'font-size': '16px'
@@ -201,7 +201,7 @@ $(function() {
 										.attr("src", "/attachment/download?attachmentNo=" + response[i])
 										.addClass("summernote-img")
 										.attr("data-attachment-no", response[i]);
-									$("[name=chapterComment]").summernote("insertNode", tag[0]);
+									$("#IdchapterComment").summernote("insertNode", tag[0]);
 								}
 							}
 						});

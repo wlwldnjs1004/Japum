@@ -71,7 +71,7 @@
 					<td class="hidden-table ">
 			<div class="row mt-2">
 				<div class="col-sm-12">
-					<textarea name="chapterDetail" class="form-control text-size" rows="11"
+					<textarea id="VS1IdchapterDetail" name="chapterDetail" class="form-control text-size" rows="11"
 					style="width:1px; height: 1px;"></textarea>
 					<div class="valid-feedback"></div>
 					<div class="invalid-feedback">필수조건입니다</div>
@@ -80,11 +80,11 @@
 					</td>
 				</tr>
 				<tr class="hidden-table ">
-					<th class="text-name-th hidden-table " >작가의 말</th>
+					<th class="text-name-th hidden-table" >작가의 말</th>
 					<td class="hidden-table ">
 						<div class="row ">
 							<div class="col-sm-12">
-								<textarea type="text" name="chapterComment" class="form-control text-size" rows="6"
+								<textarea type="text" id="VS1IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
 								style="width:1px; height: 1px;"></textarea>
 							</div>
 						</div>
@@ -103,7 +103,7 @@
 	</form>
 	
 	<!--휴대폰 화면  -->
-		<%-- <div class=" hidden-table-no">
+		 <div class=" hidden-table-no">
 		<form action="add" method="Post" class="needs-validation">
 			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 		
@@ -129,7 +129,7 @@
 			
 		<div class="row mt-2">
 				<div class="col-sm-12">
-					<textarea name="chapterDetail" id="IdchapterDetail" class="form-control text-size" rows="11"
+					<textarea name="chapterDetail" id="VS2IdchapterDetail" class="form-control text-size" rows="11"
 					style="width:1px; height: 1px;"></textarea>
 					<div class="valid-feedback"></div>
 					<div class="invalid-feedback">필수조건입니다</div>
@@ -146,7 +146,7 @@
 		
 			<div class="row ">
 							<div class="col-sm-12">
-								<textarea type="text" id="IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
+								<textarea type="text" id="VS2IdchapterComment" name="chapterComment" class="form-control text-size" rows="6"
 								style="width:1px; height: 1px;"></textarea>
 							</div>
 						</div>
@@ -161,7 +161,7 @@
 					
 						
 		</form>
- --%>		</div>
+ 	</div>
 		
 		
 		
