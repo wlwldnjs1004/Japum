@@ -7,8 +7,6 @@
 <script src="${pageContext.request.contextPath}/js/chapter/add.js"></script>
 
 
-
-
 <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
@@ -103,7 +101,8 @@
 	</form>
 	
 	<!--휴대폰 화면  -->
-		 <div class=" hidden-table-no">
+	
+		<div class=" hidden-table-no">
 		<form action="add" method="Post" class="needs-validation">
 			<input type="hidden" name="workNo" value="${workNo}" maxlength="180">
 		
@@ -121,8 +120,9 @@
 								<div class="invalid-feedback">필수조건입니다</div>
 							</div>
 						</div>
-	
-		<div class="row">
+
+      
+      <div class="row">
 		<div class="col">
 		<label>본문</label>
 		</div></div>	
