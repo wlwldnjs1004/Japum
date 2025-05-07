@@ -28,7 +28,17 @@
 .text-name {
   font-size: 15px !important;
    line-height: 1.6;
+   
 }
+.text-name-sub{
+  font-size: 15px !important;
+   line-height: 1.6;
+  white-space:nowrap;  
+overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-flex;
+  max-width: 100%; 
+  }
 
 
   .text-day{

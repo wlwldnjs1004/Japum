@@ -7,11 +7,11 @@
 
 
 <jsp:include page="/WEB-INF/views/bootstrap/bootstrap-header.jsp"></jsp:include>
+<link rel="stylesheet" href="/css/work/detail.css">
 
 <div class="container drag-prevent" >
 
 
-<link rel="stylesheet" href="/css/work/detail.css">
 
 
 
@@ -33,10 +33,9 @@
              <div class="col"></div>
               <div class="col-auto  mb-5 mt-5">
 					<div class="col-md-6 mt-1 text-name">작가: ${workDto.memberNickname}</div>
-                    <b class="text-name">${workDto.workName}[E]북</b>
-                                 <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
-                           <h5 class="text-name h5">${workDto.workGenre}</h5>
-                   	<h5 class="text-name h5">${workDto.workSubGenre}</h5>
+                    <b class="text-name">${workDto.workName}[E]북</b><br>
+                                 <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'} ${workDto.workPaid=='N'?'유료':'무료'}</span><br>
+                            <h5 class="text-name-sub">${workDto.workGenre}&nbsp${workDto.workSubGenre}</h5>
                     <div class="col ">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -55,9 +54,9 @@
               <div class="col-auto mt-5 mb-5">
 
 					<div class="col-md-6 mt-1 text-name">작가: ${workDto.memberNickname}</div>
-                    <label class="text-name">작품 이름:${workDto.workName}</label>            
-                    <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'}|${workDto.workPaid=='N'?'유료':'무료'}</span>
-                    <h5 class="text-name">${workDto.workGenre}${workDto.workSubGenre}</h5>
+                    <label class="text-name">작품 이름:${workDto.workName}</label><br>            
+                    <span class="text-name">${workDto.workContract =='N'?'비독점':'독점'} ${workDto.workPaid=='N'?'유료':'무료'}</span><br>
+                    <h5 class="text-name-sub">${workDto.workGenre}&nbsp;${workDto.workSubGenre}</h5>
                       <div class="col">
                       <span class="text-day text-letter">
 						${workDto.workMon == 'Y' ? '월 ' : ''}
@@ -119,7 +118,6 @@
     <i class="fa-solid fa-file-pen me-2"></i>수정</a>
   </div>
 </div>
-
 	<div class="row mt-5">
   <div class="col text-end hidden-table-no">
     <a href="/chapter/add?workNo=${workDto.workNo}" class="btn btn-outline-primary w-auto btn-sm">
@@ -130,8 +128,6 @@
     <i class="fa-solid fa-file-pen me-2"></i>수정</a>
   </div>
 </div>
-
-
 
 <div style="height: 10px;"></div>
 </div>

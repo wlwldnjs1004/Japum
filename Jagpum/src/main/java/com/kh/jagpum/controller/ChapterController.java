@@ -17,6 +17,7 @@ import com.kh.jagpum.dao.ChapterDao;
 import com.kh.jagpum.dao.WorkDao;
 import com.kh.jagpum.dto.ChapterDto;
 import com.kh.jagpum.dto.WorkDto;
+import com.kh.jagpum.dto.WorkListViewDto;
 import com.kh.jagpum.service.AttachmentService;
 
 @Controller
@@ -137,6 +138,7 @@ public class ChapterController {
 	public String List(@RequestParam int chapterNo,
 			Model model) {
 		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
+//		List<WorkListViewDto> workDto=chapterDao.workList();
 		model.addAttribute("chapterDto",chapterDto);
 		return "/WEB-INF/views/admin/chapter/edit.jsp";
 	}
@@ -145,7 +147,5 @@ public class ChapterController {
 		chapterDao.ChapterPriceBy(chapterDto);
 		return "redirect:/bootstrap";
 	}
-
-	
 	
 }
