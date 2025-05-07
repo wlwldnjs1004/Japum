@@ -4,6 +4,12 @@
       border-radius: 10px;
     }
 
+    .img-fixed-ms{
+      width: 89px;
+      height: 115px;
+      border-radius: 10px;
+    }
+
     .sd {
       border-radius: none !important;
       padding: 10px;
@@ -68,16 +74,19 @@
 
     }
 
-    .text-name-p {}
     
     .text-tltle{
     font-size: 13px !important;
     }
     .text-name{
     font-size:15px;
-    
     }
-    
+    .text-name-ms{
+font-size:13px !important ;
+    }
+    .text-line{
+      border: 1px solid #bdc3c7;
+    }
       
   .ellipsis {
     font-size:15px;

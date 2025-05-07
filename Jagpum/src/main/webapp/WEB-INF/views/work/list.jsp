@@ -110,20 +110,25 @@ font-size: 13px !important;
 		</div>
 	</div>
 	
-<%-- 	<div class="container mt-5">
+	
+<section class="text-line text-center">
+
+ 	<div class="container mt-5">
   <div class="d-flex flex-wrap justify-content-start gap-4">
 	<c:forEach var="workDto" items="${list}"  varStatus="loop">
-    <a href="/work/detail?workNo=${workDto.workNo}" class="text-a item-box text-dark">
+    <a href="/work/detail?workNo=${workDto.workNo}" class="text-a item-box text-dark mb-5">
       <div class="text-center">
-        <img src="image?workNo=${workDto.workNo}" class="img-fixed">
-        <label class="text-name mt-2">${workDto.workName}</label>
+        <img src="image?workNo=${workDto.workNo}" class="img-fixed-ms">
+        <label class="text-name-ms mt-1">${workDto.workName}</label>
+        <label class="text-name-ms mt-1">${workDto.workSubtotal}</label>
       </div>
     </a>
     	</c:forEach>
- --%>    	
     <!-- 원하는 만큼 복붙 -->
-<!--   </div>
-</div> -->
+ </div>
+</div> 
+</section>
+
 	
 	
 	
