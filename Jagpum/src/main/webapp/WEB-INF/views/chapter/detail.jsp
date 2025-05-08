@@ -73,7 +73,9 @@
 			<button type="button" class="btn btn-primary btn-json" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 			가격 변경
 		</button>
-			</c:if>		
+			</c:if>
+			<a class="btn btn-primary " href="/chapter/detail?chapterNo=${nextChapter.chapterNo}">다음화</a>
+				
 		</div>
 		</div>
 		
@@ -89,6 +91,8 @@
 			가격 변경
 		</button>
 			</c:if>		
+		<a class="btn btn-primary btn-sm" href="/chapter/detail?chapterNo=${nextChapter.chapterNo}">다음화</a>
+		
 		</div>
 		</div>
 		
