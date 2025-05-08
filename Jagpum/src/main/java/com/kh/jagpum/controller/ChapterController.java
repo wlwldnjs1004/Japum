@@ -67,9 +67,15 @@ public class ChapterController {
 
 		ChapterDto chapterDto=chapterDao.seleOne(chapterNo);
 		int workNo=chapterDto.getWorkNo();
+	    int currentOrder = chapterDto.getChapterOrder(); 
+		
+	    ChapterDto nextChapter = chapterDao.seleOrOne(workNo, currentOrder);
+		
 		
 		
 		model.addAttribute("chapterDto",chapterDto);
+		 model.addAttribute("nextChapter", nextChapter);
+		
 		
 		return"/WEB-INF/views/chapter/detail.jsp";
 	}

@@ -1,6 +1,8 @@
 package com.kh.jagpum.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +55,6 @@ public List<WorkListViewDto> workList(int workNo) {
 // 상세
 public ChapterDto seleOne(ChapterDto chapterDto) {
 	
-	
-	
-	
 	return sqlSession.selectOne("chapter.find", chapterDto);
 }
 //상세 조회
@@ -78,7 +77,6 @@ public void increaseView(int chapterNo) {
     sqlSession.update("chapter.increaseView", chapterNo);
 }
 
-
 //삭제
 public boolean delete(int chapterNo) {
 	return sqlSession.delete("chapter.delete", chapterNo) > 0;
@@ -93,6 +91,13 @@ public List<ChapterDto> selectListByWorkNo(int workNo) {
 public List<ChapterDto>selectList(){
 	return sqlSession.selectOne("chapter.list");
 }
+//다음화 넘어가기 버튼을 위한 조회 버튼
+public ChapterDto seleOrOne(int workNo, int currentOrder) {
+    Map<String, Object> param = new HashMap<>();
+    param.put("workNo", workNo);
+    param.put("nextOrder", currentOrder + 1); // Java에서 계산
 
+    return sqlSession.selectOne("chapter.NextChapterOrder", param);
+}
 
 }

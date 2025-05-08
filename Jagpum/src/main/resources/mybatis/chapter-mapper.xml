@@ -105,8 +105,25 @@ select * from work where work_no=#{workNo}
 SELECT *
 FROM chapter
 WHERE work_no = #{workNo}
-  AND chapter_order = #{currentOrder} + 1
+  AND chapter_order = #{nextOrder}
 </select>
+    
+    
+    <!-- <select id="selectChaptersByWork" resultType="ChapterDto">
+  SELECT chapter_no, chapter_title, chapter_price
+  FROM work_chapter_member_view
+  WHERE work_no = #{workNo}
+  ORDER BY chapter_order
+</select>
+
+<select id="selectWorkDetail" resultType="WorkDetailDto">
+  SELECT DISTINCT work_no, work_name, member_id, member_nickname
+  FROM work_chapter_member_view
+  WHERE work_no = #{workNo}
+</select>
+     -->
+    
+    
     
     
   </mapper>
