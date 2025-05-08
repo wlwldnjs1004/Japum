@@ -9,19 +9,31 @@
 	  <!-- 등록 -->
 	  <insert id="add">
 	  insert into member(
+	  <trim suffixOverrides=",">
 	  member_id,
 	  member_pw,
 	  member_nickname,
+	  <if test="memberBirth !=null">  
 	  member_birth,
+	  </if>
 	  member_email,
+	  <if test="memberGender !=null">  	 
 	  member_gender
+	  </if>
+	  </trim>
 	  )values(
+	  <trim suffixOverrides=",">
 	  #{memberId},
 	  #{memberPw},
 	  #{memberNickname},
-	  #{memberBirth},
+	  <if test="memberBirth !=null">  
+	  #{memberBirth,  jdbcType=DATE},
+	  </if>
 	  #{memberEmail},
-	  #{memberGender}
+	  <if test="memberGender !=null">  	 
+	  #{memberGender, jdbcType=VARCHAR}
+	 </if>
+	  </trim>
 	  )
 	  </insert>
   <!-- 수정 -->
@@ -33,7 +45,7 @@
   member_nickname=#{memberNickname},
   member_level=#{memberLevel},
   member_email=#{memberEmail},
-  member_birth=#{memberBirth},
+  member_birth=#{memberBirth, jdbcType=DATE},
   member_item=#{memberItem},
   member_gender=#{memberGender}
   </update>
@@ -41,6 +53,9 @@
   <delete id="delete" >
   delete member where member_id=#{memberId}
   </delete>
+  
+  
+  
   <!-- 상세 조회 -->
   <select id="find" resultType="memberDto">
   select * from member where member_id=#{memberId}

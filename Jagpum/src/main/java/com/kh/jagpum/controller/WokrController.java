@@ -56,22 +56,15 @@ public class WokrController {
 	                  @RequestParam MultipartFile attach,
 	                  HttpSession session) throws IllegalStateException, IOException {
 	    String userId = (String) session.getAttribute("userId");
-	    workDto.setWorkId(userId);
+//	    workDto.setWorkId(userId);
 
-	    workDto.setWorkMon(workDto.getWorkMon()==null? "N":workDto.getWorkMon());
-	    workDto.setWorkTue(workDto.getWorkTue()==null? "N":workDto.getWorkTue());
-	    workDto.setWorkWed(workDto.getWorkWed()==null? "N":workDto.getWorkWed());
-	    workDto.setWorkThu(workDto.getWorkThu()==null? "N":workDto.getWorkThu());
-	    workDto.setWorkFri(workDto.getWorkFri()==null? "N":workDto.getWorkFri());
-	    workDto.setWorkSat(workDto.getWorkSat()==null? "N":workDto.getWorkSat());
-	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
+//	  WorkDto resultDto= workDao.insert2(workDto);
+	  workService.register(workDto, userId, attach);
 	    
-	  WorkDto resultDto= workDao.insert2(workDto);
-	  
-	    if (!attach.isEmpty()) {
-	        AttachmentDto attachmentDto = attachmentService.save(attach);
-	        workDao.connect(resultDto, attachmentDto);
-	    }
+		/*
+		 * if (!attach.isEmpty()) { AttachmentDto attachmentDto =
+		 * attachmentService.save(attach); workDao.connect(resultDto, attachmentDto); }
+		 */
 	    
 	    return "redirect:addFinish";
 	}
@@ -156,31 +149,13 @@ public class WokrController {
 	public String edit(@ModelAttribute WorkDto workDto,
 			@RequestParam MultipartFile attach) throws IllegalStateException, IOException {
 		
-	    workDto.setWorkMon(workDto.getWorkMon()==null? "N":workDto.getWorkMon());
-	    workDto.setWorkTue(workDto.getWorkTue()==null? "N":workDto.getWorkTue());
-	    workDto.setWorkWed(workDto.getWorkWed()==null? "N":workDto.getWorkWed());
-	    workDto.setWorkThu(workDto.getWorkThu()==null? "N":workDto.getWorkThu());
-	    workDto.setWorkFri(workDto.getWorkFri()==null? "N":workDto.getWorkFri());
-	    workDto.setWorkSat(workDto.getWorkSat()==null? "N":workDto.getWorkSat());
-	    workDto.setWorkSun(workDto.getWorkSun()==null? "N":workDto.getWorkSun());
-	    
-		
-		boolean success=workDao.update(workDto);
-		if(!success) {
-			return"redirect:list";
-		}
-		if(attach.isEmpty()==false) {
-			try{
-				int attachmentNo=workDao.findAttachment(workDto.getWorkNo());
-				attachmentService.delete(attachmentNo);
-			}
-			catch(Exception e) {
-			}
-			AttachmentDto attachmentDto=attachmentService.save(attach);
-						workDao.connect(workDto, attachmentDto);;
-		}
+	    try {
+	        workService.updateWork(workDto, attach);
+	        return "redirect:detail?workNo=" + workDto.getWorkNo();
+	    } catch (Exception e) {
+	        return "redirect:list";
 	
-		return"redirect:detail?workNo="+workDto.getWorkNo();
+	    }
 
 	}
 
