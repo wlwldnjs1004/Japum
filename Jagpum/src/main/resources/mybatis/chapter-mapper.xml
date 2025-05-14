@@ -33,19 +33,37 @@
   select chapter_seq.nextval from dual
   </select>
   
-  
+
   <select id="price">
   select NVL(MAX(chapter_price),0)+chapter_price=#{chapterPrice}
   from chapter
   where work_no=#{workNo}
   </select>
   
+  
+  <!-- 내부 정렬 -->
     <select id="getNextChapterOrder" resultType="int">
         SELECT NVL(MAX(chapter_order), 0) + 1
         from chapter
         where work_no = #{workNo}
     </select>
     
+  
+  <!-- 삭제시 번호 정렬 -->
+<!--   <update id="shiftChapterOrders" parameterType="map">
+  UPDATE chapter
+  SET chapter_order = chapter_order - 1
+  WHERE work_no = #{workNo} AND chapter_order > #{deletedOrder}
+</update> -->
+  
+  <update id="shiftChapterOrders">
+  UPDATE chapter
+  SET chapter_order = chapter_order - 1
+  WHERE work_no = #{workNo}
+    AND chapter_order > #{chapterOrder}
+</update>
+  
+  
   
 	<update id="edit"> 
 	update chapter
