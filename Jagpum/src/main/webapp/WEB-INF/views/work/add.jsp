@@ -187,12 +187,12 @@
 			</div>
 		</div>
 
-
 		<div class="row mt-5">
 			<div class="col">
 				<i class="fa-solid fa-star-of-life" style=""></i> <label>유료여부?</label>
 			</div>
 		</div>
+		
 		<div class="row mt-4">
 			<div class="col-sm-12">
 				<input class="form-check-input size-r" type="radio" name="workPaid"
